@@ -33,16 +33,18 @@
 			</div>
 			<div class="report_left">
 				<div class="report_row">
-					<h4>If I could change one thing to improve my block, neighborhood, borough, or city, it would be</h4>
+					<h4><?php echo Kohana::lang('ui_main.reports_title'); ?></h4>
                     
 					<?php print form::textarea('incident_title', $form['incident_title'], ' rows="2" class="textarea long" '); ?>
 				</div>
-                
+                 <div class="report_row">
+					<h4><?php echo Kohana::lang('ui_main.reports_location_name'); ?><br /><span class="example"><?php echo Kohana::lang('ui_main.detailed_location_example'); ?></span></h4>
+					<?php print form::input('location_name', $form['location_name'], ' class="text long"'); ?>
+				</div>
 				<div class="report_row">
-					<h4>Because right now</h4>
+					<h4><?php echo Kohana::lang('ui_main.reports_description'); ?></h4>
 					<?php print form::textarea('incident_description', $form['incident_description'], ' rows="2" class="textarea long" ') ?>
 				</div>
-               
 				<div class="report_row" style="display:none" id="datetime_default">
 					<h4><a href="#" id="date_toggle" class="show-more"><?php echo Kohana::lang('ui_main.modify_date'); ?></a><?php echo Kohana::lang('ui_main.date_time'); ?>: 
 						<?php echo Kohana::lang('ui_main.today_at')." "."<span id='current_time'>".$form['incident_hour']
@@ -96,14 +98,14 @@
 					$("#incident_ampm option[value='"+ampm+"']").attr("selected","true");
 				</script>
 				
-				<div id="custom_forms"><h4>Instead, it would be great if</h4>
+				<div id="custom_forms">
 					
-                                <?php 
+                                <?php
                                 
 					foreach ($disp_custom_fields as $field_id => $field_property)
 					{
 						echo "<div class=\"report_row\">";
-						
+						echo "<h4>" . $field_property['field_name'] . "</h4>";
 						if ($field_property['field_type'] == 1)
 						{ // Text Field
 							// Is this a date field?
@@ -135,10 +137,6 @@
 					}
 					?>
                             </div>
-                             <div class="report_row">
-					<h4>Here's where it should happen<br /><span class="example"><?php echo Kohana::lang('ui_main.detailed_location_example'); ?></span></h4>
-					<?php print form::input('location_name', $form['location_name'], ' class="text long"'); ?>
-				</div>
                            
                 
                 <div class="report_row">
@@ -175,20 +173,16 @@
 				?>
 				<div class="report_row">
                 <h4>Map your Idea</h4>
-              	  	<div class="report-find-location">
-							<p>Click anywhere on map to place marker.</p> <p> Click and drag map to move map. </p><p> Use + and - icons to zoom map.</p>
-                   	</div>
 					<div id="divMap" class="report_map"></div>
-                    <div style="clear:both;" id="find_text"><?php echo Kohana::lang('ui_main.pinpoint_location'); ?>.</div>
-					
-                   	</div>
+                   <div class="report-find-location">
+							<p>Click anywhere on map to place marker.</p> <p> Click and drag map to move map. </p><p> Use + and - icons to zoom map.</p></div>
 					<div class="report-find-location" style="display:none;">
 						<?php print form::input('location_find', '', ' title="'.Kohana::lang('ui_main.location_example').'" class="findtext"'); ?>
 						<div style="float:left;margin:9px 0 0 5px;"><input type="button" name="button" id="button" value="<?php echo Kohana::lang('ui_main.find_location'); ?>" class="btn_find" /></div>
 						<div id="find_loading" class="report-find-loading"></div>
-						
+						<div style="clear:both;" id="find_text"><?php echo Kohana::lang('ui_main.pinpoint_location'); ?>.</div>
+					</div>
 				</div>
-                
                 
                 
                 

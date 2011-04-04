@@ -84,8 +84,7 @@ body{
 
 body#page{
     
-  background: #caecff fixed no-repeat;
-  background-position:center; 
+  background: #fafbf6 url(../images/icon-bg.gif) fixed no-repeat center top;
 
 }
 
@@ -159,9 +158,9 @@ div#middle .layoutright div#left{
 
 /* right column */
 div#right{
-    width: 150px;
+    width: 200px;
 	height: 573px;
-    margin: 46px 50px 0px 0px;
+    margin: 46px 170px 0px 0px;
 	padding: 0px 0px 0px 0px;
 	background: none;
     float: right;
@@ -178,7 +177,7 @@ div#equalright{
 div#main{
     width: auto;
     margin: 0px 0px 0px 0px;
-    padding: 15px 29px 15px 29px;
+    padding: 15px 29px 15px 9px;
 }
 
 div#mainmiddle{
@@ -237,6 +236,7 @@ div#underfooter{
 
 .floatbox{
     overflow: hidden;
+	
 }
 
 /* searchbox */
@@ -244,7 +244,7 @@ div#searchbox{
     position: absolute;
     top: 0px;
     right: 0px;
-	margin: 40px;
+	margin: 5px 75px 10px 0px;
     background: none;
     border: #9F9F9F 0px solid;
     border-top: 0;
@@ -462,9 +462,12 @@ a.share{
 
 /* map */
 div.map {
-    width: 700px;
+    width: 550px;
     height: 573px;
 	position:relative;
+
+	
+
 }
 #mapStatus
 {
@@ -475,7 +478,7 @@ div.map {
 	border-right: solid 1px #999;
 	border-bottom: solid 1px #999;
 	font-size: 10px;
-	width: 700px;
+	width: 550px;
 }
 #mapStatus div
 {
@@ -558,6 +561,14 @@ ul.category-filters{
 	-khtml-border-radius-bottomright:8px;
 	-webkit-border-radius-bottomright:8px;
 	border-bottom-right-radius:8px;
+		-moz-box-shadow: 3px 3px 4px #ccc;
+	-webkit-box-shadow: 3px 3px 4px #ccc;
+	box-shadow: 3px 3px 4px #ccc;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc');
+	border: 1px #ccc solid;
 	
 }
 
@@ -1309,16 +1320,26 @@ label.error {
 	float:left;
 	width:550px;
 	margin:20px 20px 20px 10px;
+	
 	padding: 20px 0px 0px 20px;
 		 filter:alpha(opacity=75);
         -moz-opacity:0.75;
         -khtml-opacity: 0.75;
         opacity: 0.75;
     background: #fff;
+	
 	-moz-border-radius:8px;
 	-khtml-border-radius:8px;
 	-webkit-border-radius:8px;
 	border-radius:8px;
+	-moz-box-shadow: 3px 3px 4px #ccc;
+	-webkit-box-shadow: 3px 3px 4px #ccc;
+	box-shadow: 3px 3px 4px #ccc;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc');
+	border: 1px #ccc solid;
 }
 .report_left table {
 	width: 100%;
@@ -1340,6 +1361,14 @@ label.error {
 	-khtml-border-radius:8px;
 	-webkit-border-radius:8px;
 	border-radius:8px;
+		-moz-box-shadow: 3px 3px 4px #ccc;
+	-webkit-box-shadow: 3px 3px 4px #ccc;
+	box-shadow: 3px 3px 4px #ccc;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc');
+	border: 1px #ccc solid;
 }
 .report_block{
   margin: 20px 0 20px 25px;
@@ -1649,14 +1678,15 @@ a.show-more {
 }
 .big-block .page_text p{
 	margin-bottom:15px;
+	width: 550px;
 }
 
 /*---New Reports Styles CB:10.14.10 ---*/
 
 /* Reports View */
-.reports-box {}
+.reports-box {  }
 	
-	.rb_report { position:relative; border-top:1px solid #fff; overflow:auto; padding-bottom:10px; }
+	.rb_report { position:relative; border-top:1px solid #333; overflow:auto; padding-bottom:10px; }
 		.reports-box .hover { background: none; }
 		.r_media { float:left; width:100px; margin:15px 15px 15px 0; }
 		.r_photo a { display:inline-block; padding: 2px; border:1px solid #c0c2b8;}
@@ -1685,7 +1715,7 @@ a.show-more {
 			.r_details h3 span.r_verified { background:#368C00; }
 			.r_details h3 span.r_unverified { background:#A60003; }
 			
-			p.r_date { position:absolute; top:0px; right:0px; padding:3px 5px 4px 23px; background:#fff url(../images/icon_sprite.png) 0px -133px no-repeat; color:#908b88; }
+			p.r_date { position:absolute; top:0px; right:0px; padding:3px 5px 4px 23px; background: transparent url(../images/icon_sprite.png) 0px -133px no-repeat; color:#908b88; }
 			
 			div.r_description { margin-bottom:5px; }
 			
@@ -1884,7 +1914,7 @@ ul.pager li a.active {background:#f2f7fa;}
 
 /*-search-*/
 .search_block{
-	padding:30px;
+	padding:5px 60px 10px 0px;
 }
 .search_info{
 	margin:0 0 15px 0;
@@ -2088,6 +2118,14 @@ div.green-box {
 	-khtml-border-radius:8px;
 	-webkit-border-radius:8px;
 	border-radius:8px;
+		-moz-box-shadow: 3px 3px 4px #ccc;
+	-webkit-box-shadow: 3px 3px 4px #ccc;
+	box-shadow: 3px 3px 4px #ccc;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc');
+	border: 1px #ccc solid;
 }
 div.red-box {
 	margin:10px 0 25px 0;
