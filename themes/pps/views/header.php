@@ -4,20 +4,20 @@
 	<title><?php echo $site_name; ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
    <link rel="shortcut icon" href="/placemap/nyc-demo/favicon.ico">
-   
+
     <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
 	<?php echo $header_block; ?>
 	<?php
 	// Action::header_scripts - Additional Inline Scripts from Plugins
 	Event::run('ushahidi_action.header_scripts');
 	?>
- <meta property="og:title" content="BY THE CITY / FOR THE CITY" />
+ <meta property="og:title" content="<?php echo $site_name; ?>" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="http://pps.org/placemap/nyc-demo/" />
-<meta property="og:image" content="http://pps.org/placemap/nyc-demo/themes/pps/images/btc-ftc.png" />
-<meta property="og:site_name" content="" />
-<meta property="fb:admins" content="753810374" />   
-    
+<meta property="og:url" content="<?php echo url::base(); ?>" />
+<meta property="og:image" content="<?php echo url::site('themes/pps/images/btc-ftc.png'); ?>" />
+<meta property="og:site_name" content="<?php echo $site_name; ?>" />
+<meta property="fb:admins" content="753810374" />
+
   <!--  <meta property="og:title" content="ShareThis Homepage" />
 <meta property="og:type" content="Sharing Widgets" />
 <meta property="og:url" content="http://urbandesignweek.org/bythecityforthecity/" />
@@ -25,10 +25,6 @@
 <meta property="og:description" content="Sample copy" />
 <meta property="og:site_name" content="BY THE CITY / FOR THE CITY" />-->
   <script type="text/javascript">var switchTo5x=false;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'247bd840-c484-4e7e-8df6-e3412a4fb36c'});</script>
-   
-   
-   
-   
 </head>
 
 <body id="page">
@@ -49,16 +45,16 @@
 				<!--<?php echo $search; ?>-->
 				<!-- / searchform -->
 
-			</div> 
+			</div>
 			<!-- / searchbox -->
 
 			<!-- logo -->
 			<div id="logo">
-				<span><img src="/placemap/nyc-demo/themes/pps/images/btc-ftc.png"  />
+				<span><img src="<?php echo url::site('themes/pps/images/btc-ftc.png'); ?>" />
 				<?php echo $site_tagline; ?></span>
 			</div>
 			<!-- / logo -->
-			
+
 			<!-- submit incident -->
 			<!--<?php echo $submit_btn; ?>-->
 			<!-- / submit incident -->

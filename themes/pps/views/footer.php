@@ -47,10 +47,10 @@
        <table border="0" cellpadding="20">
  
   <tr>
-    <td><a href="http://urbandesignweek.org/"><img src="/placemap/nyc-demo/themes/pps/images/logo_udw.png"  align="middle" s /></a></td>
+    <td><a href="http://urbandesignweek.org/"><img src="<?php echo url::site('themes/pps/images/logo_udw.png'); ?>" align="middle" /></a></td>
     <td valign="top"><br /><br />Brought to you by<br />
-    <a href="http://www.ifud.org/"><img src="/placemap/nyc-demo/themes/pps/images/logo_ifud.png"  align="middle"  </a></td>
-    <td valign="top"><br /><br />Digital Placemaking App by<br /><a href="http://www.pps.org"><img src="/placemap/nyc-demo/themes/pps/images/logo_pps.png"  align="middle" </a></td>
+    <a href="http://www.ifud.org/"><img src="<?php echo url::site('themes/pps/images/logo_ifud.png'); ?>" align="middle" /></a></td>
+    <td valign="top"><br /><br />Digital Placemaking App by<br /><a href="http://www.pps.org"><img src="<?php echo url::site('themes/pps/images/logo_pps.png'); ?>"  align="middle" /></a></td>
   </tr>
 </table>
 
