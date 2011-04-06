@@ -35,7 +35,7 @@
 						range: [1,4]
 					},
 					"data_include[]": {
-						range: [1,5]
+						range: [1,6]
 					},
 					from_date: {
 						date: true
