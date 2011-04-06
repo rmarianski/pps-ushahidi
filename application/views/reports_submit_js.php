@@ -101,7 +101,10 @@
 					},
 					"incident_video[]": {
 						url: true
-					}
+                                        },
+                                        "custom_field[14]": {
+                                                required: true
+                                        }
 				},
 				messages: {
 					incident_title: {
@@ -147,7 +150,10 @@
 					},
 					"incident_news[]": {
 						url: "Please enter a valid Video link"
-					}	
+                                        },
+                                        "custom_field[14]": {
+                                                required: "Please enter what you want the city to be more like"
+                                        }
 				},
 				groups: {
 					incident_date_time: "incident_date incident_hour",
