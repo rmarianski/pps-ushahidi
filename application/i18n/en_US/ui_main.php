@@ -311,7 +311,7 @@
 	'reporter_phone' => 'Reporter Phone',
 	'reports' => 'View by List',
 	'reports_btn_browse' => 'Browse',
-	'reports_btn_submit' => 'SHARE IT',
+	'reports_btn_submit' => 'SEND IT',
 	'reports_categories' => 'Categories',
 	'reports_date' => 'Date',
 	'reports_description' => 'So that people could...',

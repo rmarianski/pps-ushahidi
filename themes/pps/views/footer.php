@@ -44,13 +44,13 @@
 				<a href="http://feedback.ushahidi.com/fillsurvey.php?sid=5"><?php echo Kohana::lang('ui_main.feedback'); ?></a>
 			</h2>-->
             
-       <table border="0" cellpadding="20">
+       <table border="0">
  
   <tr>
-    <td><a href="http://urbandesignweek.org/"><img src="<?php echo url::site('themes/pps/images/logo_udw.png'); ?>" align="middle" /></a></td>
-    <td valign="top"><br /><br />Brought to you by<br />
-    <a href="http://www.ifud.org/"><img src="<?php echo url::site('themes/pps/images/logo_ifud.png'); ?>" align="middle" /></a></td>
-    <td valign="top"><br /><br />Digital Placemaking App by<br /><a href="http://www.pps.org"><img src="<?php echo url::site('themes/pps/images/logo_pps.png'); ?>"  align="middle" /></a></td>
+    <td style="padding:20px;"><a href="http://urbandesignweek.org/"><img src="<?php echo url::site('themes/pps/images/logo_udw.png'); ?>" align="left" /></a></td>
+    <td valign="top" style="padding:20px;"><br /><br />Brought to you by<br />
+    <a href="http://www.ifud.org/"><img src="<?php echo url::site('themes/pps/images/logo_ifud.png'); ?>" align="left" /></a></td>
+    <td valign="top" style="padding:20px;"><br /><br />Digital Placemaking App by<br /><a href="http://www.pps.org"><img src="<?php echo url::site('themes/pps/images/logo_pps.png'); ?>"  align="left" /></a></td>
   </tr>
 </table>
 

@@ -33,9 +33,9 @@
 			</div>
 			<div class="report_left">
 				<div class="report_row">
-					<h4><?php echo Kohana::lang('ui_main.reports_title'); ?></h4>
+					<h3><?php echo Kohana::lang('ui_main.reports_title'); ?></h3>
                     
-					<?php print form::textarea('incident_title', $form['incident_title'], ' rows="2" class="textarea long" placeholder="...share one idea to improve your block, neighborhood, city..."'); ?>
+					<?php print form::textarea('incident_title', $form['incident_title'], ' rows="2" class="textarea long" placeholder="...share one idea to improve your block, neighborhood, city..."'); ?><br /><br />
 				</div>
                  <div class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.reports_location_name'); ?><br /><span class="example"><?php echo Kohana::lang('ui_main.detailed_location_example'); ?></span></h4>
@@ -334,15 +334,22 @@
 			<div class="report_right">
 		
                 
-              <h5 style=" font-size:100%; font-weight:normal;">Tell us how you think New York City's public spaces could be made better! We're interested
+              <h5 style=" font-size:110%; font-weight:normal;">Tell us how you think New York City's public spaces could be made better! We're interested
 in ideas big and small-from streets, sidewalks, and parks all the way up to systems like
 transportation and other city infrastructure. If you've got an idea about improving the
 physical environment of your block, neighborhood, borough, or the city as a whole, we
 want to hear it.</h5>
 
-<h5  style=" font-size:100%; font-weight:normal;">From now until April 30, we're gathering up all your ideas; in May, we're going to rally the
+<h5  style=" font-size:110%; font-weight:normal;">From now until April 30, we're gathering up all your ideas; in May, we're going to rally the
 designers from around the world to create proposals that address many of the situations
 and sites you share. The more ideas the better, so tell us what you think!</h5>
+
+<h5  style=" font-size:110%; font-weight:normal;">Here are 3 great examples:</h5>
+<h5  style=" font-size:110%; font-weight:bold;">Wouldn't be great if...</h5>
+
+<h5  style=" font-size:110%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/41">there were no mountains of trash in the sidewalks or rats in the parking lot in the 5th street</a></h5>
+<h5  style=" font-size:110%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/43">there were a gym, grocery store, and/or library near the Astoria Blvd. stop.</a></h5>
+<h5  style=" font-size:110%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/47">Expand N/R subway entrance on Broadway south of Astor Pl.</a></h5>
 
 
 				
