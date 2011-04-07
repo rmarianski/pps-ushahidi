@@ -148,9 +148,22 @@
                 if (!empty($form['incident_category']) && is_array($form['incident_category'])) {
 							$selected_categories = $form['incident_category'];
 						}
-						$columns = 2;
-						echo category::tree($categories, $selected_categories, 'incident_category', $columns);
-						?>
+?>
+<ul>
+<?php
+$visible_categories = Kohana::config('pps.visible_categories');
+foreach ($categories as $category)
+{
+  if (in_array($category->category_title, $visible_categories))
+  {
+    foreach ($category->children as $child)
+    {
+      echo '<li>'.category::display_category_checkbox($child, $selected_categories, 'incident_category').'</li>';
+    }
+  }
+}
+?>
+</ul>
 					</div>
 				</div>
 				<?php
