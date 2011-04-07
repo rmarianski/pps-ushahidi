@@ -30,8 +30,15 @@
 		<div class="report-description-text">
 			<h4><?php echo Kohana::lang('ui_main.reports_description');?>&nbsp;</h4>
 			<h6> <?php echo $incident_description; ?></h6>
-            
-			
+<?php
+// XXX hard coded to return the custom field
+// can make this more generic by iterating through the custom form fields
+$cat_id = 14;
+if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])):
+?>
+<h4>Because I want the city to be more...</h4>
+<h6><?php echo $disp_custom_fields[$cat_id]; ?></h6>
+<?php endif; ?>
 			<div class="credibility">
 				<table class="rating-table" cellspacing="0" cellpadding="0" border="0">
           <tr>

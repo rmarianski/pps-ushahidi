@@ -1077,7 +1077,7 @@ class Reports_Controller extends Admin_Controller
 
             // Add some rules, the input field, followed by a list of checks, carried out in order
             $post->add_rules('data_point.*','required','numeric','between[1,4]');
-            $post->add_rules('data_include.*','numeric','between[1,5]');
+            $post->add_rules('data_include.*','numeric','between[1,6]');
             $post->add_rules('from_date','date_mmddyyyy');
             $post->add_rules('to_date','date_mmddyyyy');
 
@@ -1155,6 +1155,10 @@ class Reports_Controller extends Admin_Controller
                     if($item == 5) {
                         $report_csv .= ",LONGITUDE";
                     }
+                    
+                    if($item == 6) {
+                        $report_csv .= ",CITY_TO_BE_MORE";
+                    }
                 }
                 $report_csv .= ",APPROVED,VERIFIED";
                 $report_csv .= "\n";
@@ -1196,6 +1200,26 @@ class Reports_Controller extends Admin_Controller
                         
                             case 5:
                                 $report_csv .= ',"'.$this->_csv_text($incident->location->longitude).'"';
+                            break;
+                        
+                            case 6:
+                                $form_id = 1;
+                                $custom_form = ORM::factory('form', $form_id)->orderby('field_position','asc');
+                                $custom_fieldid = 14;
+                                $custom_field_written = FALSE;
+                                foreach ($custom_form->form_field as $custom_formfield) {
+                                  if ($custom_formfield->id == $custom_fieldid) {
+                                    foreach ($custom_formfield->form_response as $form_response) {
+                                      if ($form_response->incident_id == $incident->id) {
+                                        $report_csv .= ',"'.$this->_csv_text($form_response->form_response).'"';
+                                        $custom_field_written = TRUE;
+                                      }
+                                    }
+                                  }
+                                }
+                                if (!$custom_field_written) {
+                                  $report_csv .= ',';
+                                }
                             break;
                         }
                     }
