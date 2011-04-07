@@ -1,6 +1,9 @@
 <?php
 	$lang = array(
 	'comments_form_error' => 'error!',
+        'custom_field[14]' => array(
+                'required' => "The what you want the city to be like field is required",
+        ),
 	'custom_field' => array(
 		'values' => 'Please enter a valid value for one of your custom form items',
 	),

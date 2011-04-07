@@ -389,8 +389,25 @@ class Reports_Controller extends Main_Controller {
 				$post->add_rules('person_email', 'email', 'length[3,100]');
 			}
 
+                        $custom_fields = (!isset($_POST['custom_field']) OR
+                                          !is_array($_POST['custom_field']))
+                          ? array() : $_POST['custom_field'];
+
+                        // XXX can make more generic by iterating through field definitions
+                        // and verifying the required ones are present in the post
+                        $custom_fieldid = 14;
+                        $custom_fieldname = "custom_field[$custom_fieldid]";
+                        $custom_error = false;
+                        if (!isset($custom_fields[$custom_fieldid]) OR
+                            empty($custom_fields[$custom_fieldid]))
+                        {
+                          $custom_message_key = "report.$custom_fieldname.required";
+                          $errors[$custom_fieldname] = Kohana::lang($custom_message_key);
+                          $custom_error = true;
+                        }
+
 			// Test to see if things passed the rule checks
-			if ($post->validate())
+			if ($post->validate() AND !$custom_error)
 			{
 				// STEP 1: SAVE LOCATION
 				$location = new Location_Model();
