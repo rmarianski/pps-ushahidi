@@ -60,11 +60,13 @@
 				rules: {
 					incident_title: {
 						required: true,
-						minlength: 3
+                                  minlength: 3,
+                                  maxlength: 200
 					},
 					incident_description: {
 						required: true,
-						minlength: 3
+                                  minlength: 3,
+                                  maxlength: 200
 					},
 					incident_date: {
 						required: true,
@@ -109,11 +111,13 @@
 				messages: {
 					incident_title: {
 						required: "Please enter a Title",
-						minlength: "Your Title must consist of at least 3 characters"
+                                  minlength: "Your Title must consist of at least 3 characters",
+                                  maxlength: "Your Title must consist of at most 200 characters"
 					},
 					incident_description: {
 						required: "Please enter a Description",
-						minlength: "Your Description must be at least 3 characters long"
+                                  minlength: "Your Description must be at least 3 characters long",
+                                  maxlength: "Your Description must be at most 200 characters long"
 					},
 					incident_date: {
 						required: "Please enter a Date",

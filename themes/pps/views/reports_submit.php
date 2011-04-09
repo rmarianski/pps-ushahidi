@@ -35,7 +35,7 @@
 				<div class="report_row">
 					<h3><?php echo Kohana::lang('ui_main.reports_title'); ?></h3>
                     
-					<?php print form::textarea('incident_title', $form['incident_title'], ' rows="2" class="textarea long" placeholder="...share one idea to improve your block, neighborhood, city..."'); ?><br /><br />
+					<?php print form::textarea('incident_title', $form['incident_title'], ' rows="2" class="textarea long" placeholder="...share one idea to improve your block, neighborhood, city..."'); ?>
 				</div>
                  <div class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.reports_location_name'); ?><br /><span class="example"><?php echo Kohana::lang('ui_main.detailed_location_example'); ?></span></h4>
@@ -377,3 +377,17 @@ and sites you share. The more ideas the better, so tell us what you think!</h5>
 		<!-- end report form block -->
 	</div>
 </div>
+<script type="text/javascript">
+(function($) {
+  $(document).ready(function() {
+      var options = {
+          allowed: 200,
+          warning: 20,
+          counterText: "Characters left: ",
+          counterElement: 'p'
+      };
+      $('#incident_title').charCount(options);
+      $('#incident_description').charCount(options);
+  });
+})(jQuery);
+</script>
