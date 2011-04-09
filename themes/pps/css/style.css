@@ -2176,3 +2176,8 @@ div.green-box ul, div.red-box ul{
 .left-cap		{ -webkit-border-top-left-radius: 0px; -webkit-border-bottom-left-radius: 0px; -moz-border-radius-topleft: 0px; -moz-border-radius-bottomleft: 0px; border-top-left-radius: 0px; border-bottom-left-radius: 0px; }
 
 
+.counter          { color: #777; }
+.counter.warning  { color: orange; }
+.counter.exceeded { color: red; }
+
+#reportForm .counter { margin: 0.25em; }
