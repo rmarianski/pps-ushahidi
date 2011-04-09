@@ -11,19 +11,16 @@
 	// Action::header_scripts - Additional Inline Scripts from Plugins
 	Event::run('ushahidi_action.header_scripts');
 	?>
- <meta property="og:title" content="<?php echo $site_name; ?>" />
+<meta property="og:title" content="<?php echo $site_name; ?>" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="<?php echo url::base(); ?>" />
+<meta property="og:description" content="How would you improve New York City's public realm? From April 11-30 share ideas about improving the physical environment of your block, neighborhood, or your entire city, we want to hear it!"/>
+<!--<meta property="og:url" content="<?php echo url::base(); ?>" /> -->
+<meta property="og:url" content="http://urbandesignweek.org/by-the-city/reports/submit" /> 
 <meta property="og:image" content="<?php echo url::site('themes/pps/images/btc-ftc.png'); ?>" />
 <meta property="og:site_name" content="<?php echo $site_name; ?>" />
 <meta property="fb:admins" content="753810374" />
 
-  <!--  <meta property="og:title" content="ShareThis Homepage" />
-<meta property="og:type" content="Sharing Widgets" />
-<meta property="og:url" content="http://urbandesignweek.org/bythecityforthecity/" />
-<meta property="og:image" content="http://pps.org/placemap/nyc-demo/themes/pps/images/btc-ftc.png" />
-<meta property="og:description" content="Sample copy" />
-<meta property="og:site_name" content="BY THE CITY / FOR THE CITY" />-->
+
   <script type="text/javascript">var switchTo5x=false;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'247bd840-c484-4e7e-8df6-e3412a4fb36c'});</script>
 </head>
 
@@ -36,7 +33,7 @@
 
 			<!-- searchbox -->
 			<div id="searchbox">
-           <span class='st_twitter_button' displayText='Tweet' ></span><span class='st_facebook_button' displayText='Facebook'></span><span class='st_email_button' displayText='Email'></span><span class='st_sharethis_button' displayText='ShareThis'></span>
+           <span class='st_twitter_button' displayText='Tweet' st_url="http://ht.ly/4uAcb" st_title="I just shared my idea for improving NYC. What's yours? #btcftc"></span><span class='st_facebook_button' displayText='Facebook'></span><span class='st_email_button' displayText='Email'></span><span class='st_sharethis_button' displayText='ShareThis'></span>
 				<!-- languages -->
 				<!--<?php echo $languages;?>-->
 				<!-- / languages -->

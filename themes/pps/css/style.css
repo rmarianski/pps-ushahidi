@@ -85,7 +85,7 @@ body{
 
 body#page{
     
-  background: #fafbf6 url(../images/icon-bg.gif) fixed no-repeat center top;
+  background: #c3dcf2 fixed no-repeat center top;
 
 }
 
@@ -178,7 +178,7 @@ div#equalright{
 div#main{
     width: auto;
     margin: 0px 0px 0px 0px;
-    padding: 15px 29px 15px 9px;
+    padding: 15px 29px 15px 10px;
 }
 
 div#mainmiddle{
@@ -1320,7 +1320,7 @@ label.error {
 .report_left{
 	float:left;
 	width:550px;
-	margin:20px 20px 20px 10px;
+	margin:20px 20px 20px 0px;
 	
 	padding: 20px 0px 0px 20px;
 		 filter:alpha(opacity=75);
@@ -1584,7 +1584,7 @@ a.show-more {
 .big-block {
 	overflow:hidden;
 /*	width:930px; */
-	padding:16px 25px 10px 0px;
+	padding:16px 35px 10px 10px;
 	
 }
 /* Min-Height */

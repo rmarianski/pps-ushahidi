@@ -347,15 +347,9 @@ foreach ($categories as $category)
 			<div class="report_right">
 		
                 
-              <h5 style=" font-size:110%; font-weight:normal;">Tell us how you think New York City's public spaces could be made better! We're interested
-in ideas big and small-from streets, sidewalks, and parks all the way up to systems like
-transportation and other city infrastructure. If you've got an idea about improving the
-physical environment of your block, neighborhood, borough, or the city as a whole, we
-want to hear it.</h5>
+              <h5 style=" font-size:110%; font-weight:normal;">How would you improve New York City's public realm? From streets and parks all the way up to systems like transportation and garbage disposal-if you've got an idea about improving the physical environment of your block, neighborhood, borough, or your entire city, <strong>we want to hear it!</strong></h5>
 
-<h5  style=" font-size:110%; font-weight:normal;">From now until April 30, we're gathering up all your ideas; in May, we're going to rally the
-designers from around the world to create proposals that address many of the situations
-and sites you share. The more ideas the better, so tell us what you think!</h5>
+<h5  style=" font-size:110%; font-weight:normal;">From April 11-30, we're gathering up everyone's ideas, and you can explore, discuss, and debate them right here; in May, we'll rally designers around the world to create proposals that address many of the situations and sites you share.</h5>
 
 <h5  style=" font-size:110%; font-weight:normal;">Here are 3 great examples:</h5>
 <h5  style=" font-size:110%; font-weight:bold;">Wouldn't be great if...</h5>
