@@ -14,10 +14,10 @@ if (!empty($category_titles))
        echo 'in '.implode(', ',$category_titles).' - ';
      }
 ?>
-<?php echo $pagination_stats; ?>
+<?php echo $pagination_stats; ?></h1>
 <form method="GET" action="<?php echo url::site('reports'); ?>">
 <ul>
-<span>Filter by</span>
+<span style="font-weight: bold">Filter by</span>
 <?php
 foreach ($visible_categories as $visible_category)
   {
@@ -30,10 +30,14 @@ foreach ($visible_categories as $visible_category)
 <?php if (isset($_GET['ne'])): ?>
 <input type="hidden" name="ne" value="<?php echo $_GET['ne']; ?>" />
 <?php endif; ?>
+<span style="font-weight: bold; margin-left: 1em">Sort on</span>
+<select name="sort">
+   <option value="date">Date</option>
+   <option value="comments" <?php if (isset($_GET['sort']) AND $_GET['sort'] == "comments"): ?>selected="true"<?php endif; ?>>Comments</option>
+</select>
 <input type="submit" value="Apply" />
 </ul>
 </form>
-</h1>
 			<div style="clear:both;"></div>
 			<div class="r_cat_tooltip"> <a href="#" class="r-3">2a. Structures a risque | Structures at risk</a> </div>
 

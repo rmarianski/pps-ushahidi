@@ -138,12 +138,34 @@ class Reports_Controller extends Main_Controller {
 				));
 
 		// Reports
-		$incidents = ORM::factory("incident")
-			->where("incident_active", 1)
-			->where($location_id_in)
-			->where($incident_id_in)
-			->orderby("incident_date", "desc")
-			->find_all((int) Kohana::config('settings.items_per_page_admin'), $pagination->sql_offset);
+                if (isset($_GET['sort']) AND $_GET['sort'] == 'comments')
+                {
+                  // XXX this is an inefficient way of doing things, but I can't figure out how to get the orm to do this for us
+
+                  $loc_id_in = str_replace('id', 'incident.id', $location_id_in);
+                  $inc_id_in = str_replace('id', 'incident.id', $incident_id_in);
+                  $incident_query = 'SELECT incident.id, COUNT(comment.incident_id) as numcomments FROM incident LEFT JOIN comment on incident.id=comment.incident_id where incident_active=1 AND '.$inc_id_in.' AND '.$loc_id_in.' GROUP BY incident.id ORDER BY numcomments desc';
+                  $incident_query .= ' LIMIT '.Kohana::config('settings.items_per_page_admin').' OFFSET '.$pagination->sql_offset;
+                  $incident_id_results = $db->query($incident_query);
+                  $incidents = array();
+                  foreach ($incident_id_results as $incident)
+                    {
+                      $incident_obj = ORM::factory("incident")->where("id=".$incident->id)->find_all();
+                      if (!empty($incident_obj))
+                        {
+                          $incidents[] = $incident_obj[0];
+                        }
+                    }
+                }
+                else
+                {
+                  $incidents = ORM::factory("incident")
+                    ->where("incident_active", 1)
+                    ->where($location_id_in)
+                    ->where($incident_id_in)
+                    ->orderby("incident_date", "desc")
+                    ->find_all((int) Kohana::config('settings.items_per_page_admin'), $pagination->sql_offset);
+                }
 
 		// Swap out category titles with their proper localizations using an array (cleaner way to do this?)
 
