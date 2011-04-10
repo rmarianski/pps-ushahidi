@@ -51,7 +51,7 @@ if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])
           </tr>
         </table>-->
 <a href="http://twitter.com/share"; class="twitter-share-button" data-count="vertical">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-
+<iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo urlencode(url::base() . url::current()) ?>&amp;width=292&amp;colorscheme=light&amp;show_faces=true&amp;stream=true&amp;header=true&amp;height=55" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:55px;" allowTransparency="true"></iframe>
 			</div>
 		</div>
    
