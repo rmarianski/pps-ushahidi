@@ -65,8 +65,7 @@
 					},
 					incident_description: {
 						required: true,
-                                  minlength: 3,
-                                  maxlength: 200
+                                                minlength: 3
 					},
 					incident_date: {
 						required: true,
@@ -96,7 +95,9 @@
 						range: [-180,180]
 					},
 					location_name: {
-						required: true
+                                            required: true,
+                                            minlength: 3,
+                                            maxlength: 200
 					},
 					"incident_news[]": {
 						url: true
@@ -116,8 +117,7 @@
 					},
 					incident_description: {
 						required: "Please enter a Description",
-                                  minlength: "Your Description must be at least 3 characters long",
-                                  maxlength: "Your Description must be at most 200 characters long"
+                                  minlength: "Your Description must be at least 3 characters long"
 					},
 					incident_date: {
 						required: "Please enter a Date",
@@ -147,7 +147,9 @@
 						range: "Please select a valid point on the map"
 					},
 					location_name: {
-						required: "Please enter a Location Name"
+                                            required: "Please enter a Location Name",
+                                            minlength: "Your location must consist of at least 3 characters",
+                                            maxlength: "Your location must consist of at most 200 characters"
 					},
 					"incident_news[]": {
 						url: "Please enter a valid News link"

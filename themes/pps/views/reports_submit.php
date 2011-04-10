@@ -387,7 +387,7 @@ and sites you share. The more ideas the better, so tell us what you think!</h5>
           counterElement: 'p'
       };
       $('#incident_title').charCount(options);
-      $('#incident_description').charCount(options);
+      $('#location_name').charCount(options);
   });
 })(jQuery);
 </script>
