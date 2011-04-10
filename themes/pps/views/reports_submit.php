@@ -381,7 +381,7 @@ foreach ($categories as $category)
           counterElement: 'p'
       };
       $('#incident_title').charCount(options);
-      $('#incident_description').charCount(options);
+      $('#location_name').charCount(options);
   });
 })(jQuery);
 </script>
