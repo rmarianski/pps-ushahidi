@@ -438,6 +438,10 @@
 										<span><?php echo Kohana::lang('ui_main.email_address');?></span>
 										<?php print form::input('person_email', $form['person_email'], ' class="text"'); ?>
 									</label>
+									<label>
+										<span>Neighborhood</span>
+										<?php print form::input('person_neighborhood', $form['person_neighborhood'], ' class="text"'); ?>
+									</label>
 								</div>
 							</div>
 							<!-- f-col-bottom-1 -->

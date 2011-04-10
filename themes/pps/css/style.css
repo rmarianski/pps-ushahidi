@@ -2181,3 +2181,9 @@ div.green-box ul, div.red-box ul{
 .counter.exceeded { color: red; }
 
 #reportForm .counter { margin: 0.25em; }
+
+.discreet {
+    color: #999;
+    font-size: 0.9em;
+    font-weight: normal;
+}

@@ -331,6 +331,10 @@ foreach ($categories as $category)
 						<h4><?php echo Kohana::lang('ui_main.reports_last'); ?></h4>
 						<?php print form::input('person_last', $form['person_last'], ' class="text long"'); ?>
 					</div>
+                                        <div class="report_row">
+                                                  <h4>Neighborhood <span style="margin-left: 2em" class="discreet">Example: Astoria, Queens</span></h4>
+                                                  <?php print form::input('person_neighborhood', $form['person_neighborhood'], ' class="text long"'); ?>
+                                        </div>
 					<div class="report_row">
 						<h4><?php echo Kohana::lang('ui_main.reports_email'); ?></h4>
 						<?php print form::input('person_email', $form['person_email'], ' class="text long"'); ?>

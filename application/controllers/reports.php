@@ -272,6 +272,7 @@ class Reports_Controller extends Main_Controller {
 			'person_first' => '',
 			'person_last' => '',
 			'person_email' => '',
+                        'person_neighborhood' => '',
 			'form_id'	  => '',
 			'custom_field' => array()
 		);
@@ -550,6 +551,7 @@ class Reports_Controller extends Main_Controller {
 				$person->person_last = $post->person_last;
 				$person->person_email = $post->person_email;
 				$person->person_date = date("Y-m-d H:i:s",time());
+                                $person->person_neighborhood = $post->person_neighborhood;
 				$person->save();
 
 				// Action::report_add - Added a New Report
