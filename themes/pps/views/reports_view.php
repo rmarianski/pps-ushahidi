@@ -154,6 +154,18 @@ if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])
 			<!-- end videos -->
 		
 		</div>
+<?php if (!empty($incident_news)): ?>
+<div class="report-news">
+<h4>Related links for this idea</h4>
+<div class="rb_report">
+<ul>
+<?php foreach ($incident_news as $news_link): ?>
+<li><a href="<?php echo $news_link; ?>"><?php echo $news_link; ?></a></li>
+<?php endforeach; ?>
+</ul>
+</div>
+</div>
+<?php endif; ?>
 		<div class="report-additional-reports">
 			<h4><?php echo Kohana::lang('ui_main.additional_reports');?></h4>
 			<?php foreach($incident_neighbors as $neighbor) { ?>
