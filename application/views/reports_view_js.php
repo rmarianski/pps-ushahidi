@@ -98,7 +98,7 @@
 			
 			// display the map centered on a latitude and longitude (Google zoom levels)
 
-			map.setCenter(myPoint, 10);
+                        map.setCenter(myPoint, 15);
 		});
 		
 		$(document).ready(function(){
