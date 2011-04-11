@@ -11,10 +11,14 @@
 				<p><?php echo Kohana::lang('ui_main.reports_submitted');?></p><br />
 				<br />
 
-				<p>More ways to help:<br /><br />
-					- Add another <a href="../reports/submit">idea</a><br /><br />
-                    - Share this w/ friends with the buttons at the top of the page.<br /><br />
-					- Vote or comment on fellow New Yorker's ideas; <a href="../">view the map</a> or <a href="../reports">view by list</a></p>	
+				<p style="font-size:12px">More ways to participate:<br /><br />
+					- You can also <a href="../reports/submit">add another</a> idea<br /><br />
+                    - Comment on other New Yorkers' ideas, check out the <a href="../main">map</a> or  <a href="../reports">list</a> of everyone's suggestions. <br /><br /><br />In the meantime, you can help spread the word by:<br /><br />
+                    - Sharing this via <span class='st_facebook_button' displayText='Facebook'></span> &  <span class='st_twitter_button' displayText='Tweet' st_url="http://ht.ly/4uAcb" st_title="I just shared my idea for improving NYC. What's yours? #btcftc"></span> to get your friends involved.<br /><br />
+                    - Keeping up with updates & interesting trends on our <a href="http://urbandesignweek.tumblr.com/">Tumblr</a>.<br /><br />
+                    - Emailing your idea once it's approved to friends & neighbors to get a debate going. <br /><br /><br />
+                    Remember: the more public interest there is in your idea, the more likely it is to attract a designer's attention in the next phase!
+</p>	
                 
                 <a href="<?php echo
 					url::site().'reports' ?>"><?php echo Kohana::lang('ui_main.reports_return');?></a>

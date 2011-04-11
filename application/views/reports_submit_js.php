@@ -110,14 +110,14 @@
 				},
 				messages: {
 					incident_title: {
-						required: "Please enter a Title",
-                                  minlength: "Your Title must consist of at least 3 characters",
-                                  maxlength: "Your Title must consist of at most 200 characters"
+						required: "Please enter an idea",
+                                  minlength: "Your idea must consist of at least 3 characters",
+                                  maxlength: "Your idea must consist of at most 200 characters"
 					},
 					incident_description: {
-						required: "Please enter a Description",
-                                  minlength: "Your Description must be at least 3 characters long",
-                                  maxlength: "Your Description must be at most 200 characters long"
+						required: "Please enter a response",
+                                  minlength: "Your response must be at least 3 characters long",
+                                  maxlength: "Your response must be at most 200 characters long"
 					},
 					incident_date: {
 						required: "Please enter a Date",
@@ -135,8 +135,8 @@
 						required: "Please enter either AM or PM"
 					},
 					"incident_category[]": {
-						required: "Please select at least one Category",
-						minlength: "Please select at least one Category"
+						required: "Please select at least one category",
+						minlength: "Please select at least one category"
 					},
 					latitude: {
 						required: "Please select a valid point on the map",
@@ -147,16 +147,16 @@
 						range: "Please select a valid point on the map"
 					},
 					location_name: {
-						required: "Please enter a Location Name"
+						required: "Please enter a location"
 					},
 					"incident_news[]": {
 						url: "Please enter a valid News link"
 					},
 					"incident_news[]": {
-						url: "Please enter a valid Video link"
+						url: "Please enter a valid link, e.g. http://domain.com/item"
                                         },
                                         "custom_field[14]": {
-                                                required: "Please enter what you want the city to be more like"
+                                                required: "Please enter a response"
                                         }
 				},
 				groups: {
