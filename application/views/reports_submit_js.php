@@ -158,7 +158,7 @@
 						url: "Please enter a valid Video link"
                                         },
                                         "custom_field[14]": {
-                                                required: "Please enter what you want the city to be more like"
+                                                required: "Please enter what you want the city to be like"
                                         }
 				},
 				groups: {
