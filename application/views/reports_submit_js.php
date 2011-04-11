@@ -376,9 +376,3 @@ if (!elementSupportsAttribute('textarea', 'placeholder')) {
     .attr("placeholder", $("#example-three").text())
     .text("");
 }
-
-
-
-
-
-
