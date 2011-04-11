@@ -285,7 +285,9 @@ foreach ($categories as $category)
 
 				<!-- Photo Fields -->
 				<div id="divPhoto"  class="report_row">
-					<h4><?php echo Kohana::lang('ui_main.reports_photos'); ?></h4>
+                                    <h4><?php echo Kohana::lang('ui_main.reports_photos'); ?>
+                                    <span class="discreet" style="margin: 0 0 0 2em">jpg, gif, or png up to 2 megabytes</span>
+                                    </h4>
 					<?php
 						$this_div = "divPhoto";
 						$this_field = "incident_photo";
