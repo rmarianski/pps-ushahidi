@@ -14,7 +14,7 @@
   	  ?>	
     
 
-	<h4 class="report-title">Wouldn't it be great if</h4> <h6><?php
+	<h4 class="report-title"><?php echo Kohana::lang('ui_main.reports_title');?></h4> <h6><?php
 			echo $incident_title;
 			
 			// If Admin is Logged In - Allow For Edit Link
@@ -36,7 +36,7 @@
 $cat_id = 14;
 if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])):
 ?>
-<h4>Because I want the city to be more...</h4>
+<h4>Because I want the city to be...</h4>
 <h6><?php echo $disp_custom_fields[$cat_id]; ?></h6>
 <?php endif; ?>
 			<div class="credibility">

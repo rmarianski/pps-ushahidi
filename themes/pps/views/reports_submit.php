@@ -141,7 +141,7 @@
                            
                 
                 <div class="report_row">
-					<h4><?php echo Kohana::lang('ui_main.reports_categories'); ?><br /><span class="example">Check all that apply</span></h4>
+					<h4><?php echo Kohana::lang('ui_main.reports_categories'); ?><br /><span class="example"><?php echo Kohana::lang('ui_main.reports_categories_subtext'); ?></span></h4>
 					<div class="report_category" id="categories">
 						<?php
 						$selected_categories = array();
@@ -188,7 +188,7 @@ foreach ($categories as $category)
 				<div class="report_row">
                 <h4>Map your Idea</h4>
               	  	<div class="report-find-location">
-							<p>Click anywhere on map to place marker.</p> <p> Click and drag map to move map. </p><p> Use + and - icons to zoom map.</p>
+							<p>Click anywhere on map to place marker.</p> <p> Click and drag map to move map. </p><p> Use + and - icons to zoom map.</p><br /><p>If your idea is for a citywide system or condition, please select one representative site.</p>
                    	</div>
 					<div id="divMap" class="report_map"></div>
                     <div style="clear:both;" id="find_text"><?php echo Kohana::lang('ui_main.pinpoint_location'); ?>.</div>
@@ -208,7 +208,7 @@ foreach ($categories as $category)
                 
 
 				<div class="report_optional">
-					<h4 style="font-size:175%"><?php echo Kohana::lang('ui_main.reports_optional'); ?></h4>
+					<h4 style="font-size:175%"><?php echo Kohana::lang('ui_main.reports_optional'); ?><br /><span class="subtext"><?php echo Kohana::lang('ui_main.reports_optional_subtext'); ?></span></h4>
 					<!-- News Fields -->
 				<div id="divNews" class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.reports_news'); ?></h4>
@@ -332,7 +332,8 @@ foreach ($categories as $category)
 						<?php print form::input('person_last', $form['person_last'], ' class="text long"'); ?>
 					</div>
 					<div class="report_row">
-						<h4><?php echo Kohana::lang('ui_main.reports_email'); ?></h4>
+						<h4><?php echo Kohana::lang('ui_main.reports_email'); ?><br />
+                        <span class="example"><?php echo Kohana::lang('ui_main.reports_email_privacy'); ?></span></h4>
 						<?php print form::input('person_email', $form['person_email'], ' class="text long"'); ?>
 					</div>
 					<?php
@@ -347,16 +348,14 @@ foreach ($categories as $category)
 			<div class="report_right">
 		
                 
-              <h5 style=" font-size:110%; font-weight:normal;">How would you improve New York City's public realm? From streets and parks all the way up to systems like transportation and garbage disposal-if you've got an idea about improving the physical environment of your block, neighborhood, borough, or your entire city, <strong>we want to hear it!</strong></h5>
+              <h5 style=" font-size:110%; font-weight:normal;">How would you improve New York City's public realm? From April 11-30, we're gathering up everyone's ideas about how to build a better city, and you can explore, discuss, and debate those ideas right here. In May, we'll rally designers around the world to create proposals that address many of the situations and sites you share.</h5>
 
-<h5  style=" font-size:110%; font-weight:normal;">From April 11-30, we're gathering up everyone's ideas, and you can explore, discuss, and debate them right here; in May, we'll rally designers around the world to create proposals that address many of the situations and sites you share.</h5>
-
-<h5  style=" font-size:110%; font-weight:normal;">Here are 3 great examples:</h5>
+<h5  style=" font-size:110%; font-weight:normal;">Here are three great examples:</h5>
 <h5  style=" font-size:110%; font-weight:bold;">Wouldn't be great if...</h5>
 
-<h5  style=" font-size:110%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/41">there were no mountains of trash in the sidewalks or rats in the parking lot in the 5th street</a></h5>
-<h5  style=" font-size:110%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/43">there were a gym, grocery store, and/or library near the Astoria Blvd. stop.</a></h5>
-<h5  style=" font-size:110%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/47">Expand N/R subway entrance on Broadway south of Astor Pl.</a></h5>
+<h5  style=" font-size:110%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/60">Create a traditional open air market place on the site of the old West Harlem Bernheimer Brewery and stables.</a></h5>
+<h5  style=" font-size:110%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/35">There was an easier way to get from Queens to Brooklyn.</a></h5>
+<h5  style=" font-size:110%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/51">corporate Manhattan recovered some of its messiness. Everyplace seems to be geared toward seating and eating comfort.</a></h5>
 
 
 				

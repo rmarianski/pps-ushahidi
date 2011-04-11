@@ -715,8 +715,8 @@ div.report-category-list {
 	overflow:auto;
 }
 
-div.report-category-list a { font-size:11px; padding:1px 5px; margin:0px 5px 5px 0; background:#fffded; display:inline-block; float:left; line-height:18px; color:#828784; }
-div.report-category-list a:hover { text-decoration:none; color:#333; }
+div.report-category-list a { font-size:11px; padding:1px 5px; margin:0px 5px 5px 0; background: transparent; display:inline-block; float:left; line-height:18px; color: #f60; }
+div.report-category-list a:hover { text-decoration:none; color:#f60; }
 
 div.report-category-list a span.r_cat-box { height:16px; width:16px; display:inline-block; margin:3px 3px 3px 0; }
 
@@ -766,10 +766,17 @@ div.comment-block {
 }
 
 div.comment-block h5 {
-	padding:0px 0px 5px 0px;
+	padding:10px 0px 15px 10px;
 	margin:0px;
 	font-size:14px;
 	text-transform: capitalize;
+}
+
+div.comment-block h5 .subtext {
+	
+	font-weight:normal;
+	
+	
 }
 
 div.comment-block form { padding:0 0 0 10px; }
@@ -839,7 +846,7 @@ div.report-additional-reports h4 {
 }
 
 div.report-additional-reports h5 { font-size:12px; margin:4px 120px 2px 0; }
-div.report-additional-reports .r_date { font-size:10px; background:#f2f2f2 url(../images/icon_sprite.png) 0px -133px no-repeat; }
+div.report-additional-reports .r_date { font-size:10px; background:transparent url(../images/icon_sprite.png) 0px -133px no-repeat; }
 div.report-additional-reports .r_location { font-size:10px; padding:3px 0 3px 18px; color:#828784; }
 
 div.report-details ul.details{
@@ -1425,9 +1432,9 @@ label.error {
 }
 .report_row h4 .example{
 	font-weight: normal;
-	font-size: 14px;
-	line-height: 18px;
-	color: #000;
+	font-size: 12px;
+	line-height: 15px;
+	color: #777;
 }
 .report_row .date-box{
 	float:left;
@@ -1486,11 +1493,20 @@ ul.treeview li.lastExpandable { width:155px; }
 }
 .report_optional h4
 {
-	margin:0 0 15px 0;
+	margin:15px 0 5px 0;
 	padding:0;
 	font-size:110%;
 	font-weight:bold;
 }
+
+.report_optional h4 .subtext
+{
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 15px;
+	color: #777;
+}
+
 .report_comment, .contact{
 	border:1px #ccc solid;
 	padding:20px;

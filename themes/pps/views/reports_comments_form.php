@@ -1,7 +1,7 @@
 <!-- start submit comments block -->
 <div class="comment-block">
 	
-	<h5><?php echo Kohana::lang('ui_main.leave_a_comment');?></h5>
+	<h5><?php echo Kohana::lang('ui_main.leave_a_comment');?><br /><span style="subtext"><?php echo Kohana::lang('ui_main.leave_a_comment_subtext');?></span></h5>
 	<?php
 		if ($form_error) {
 	?>
@@ -44,7 +44,7 @@
 	Event::run('ushahidi_action.comment_form');
 	?>
 	<div class="report_row">
-		<input name="submit" type="submit" value="<?php echo Kohana::lang('ui_main.reports_btn_submit'); ?> <?php echo Kohana::lang('ui_main.comment'); ?>" class="btn_blue" />
+		<input name="submit" type="submit" value="<?php echo Kohana::lang('ui_main.comment'); ?>" class="btn_blue" />
 	</div>
 	<?php print form::close(); ?>
 	
