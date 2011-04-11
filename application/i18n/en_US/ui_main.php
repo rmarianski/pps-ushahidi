@@ -197,6 +197,7 @@
 	'layer_url' => 'Layer URL',
 	'leave_a_comment' => 'Comment:',
 	'leave_a_comment_subtext' => 'Tell us what you think about this idea, or share links and photos to make your case.',
+	'post_comment' => 'Post It',
 	'level' => 'Level',
 	'level_has_been' => 'This level has been',
 	'level_name' => 'Level Name',
