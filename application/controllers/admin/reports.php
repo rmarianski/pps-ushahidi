@@ -360,6 +360,7 @@ class Reports_Controller extends Admin_Controller
             'person_first' => '',
             'person_last' => '',
             'person_email' => '',
+            'person_neighborhood' => '',
             'custom_field' => array(),
             'incident_active' => '',
             'incident_verified' => '',
@@ -824,6 +825,7 @@ class Reports_Controller extends Admin_Controller
                 $person->person_last = $post->person_last;
                 $person->person_email = $post->person_email;
                 $person->person_date = date("Y-m-d H:i:s",time());
+                $person->person_neighborhood = $post->person_neighborhood;
                 $person->save();
 
 
@@ -974,6 +976,7 @@ class Reports_Controller extends Admin_Controller
                         'person_first' => $incident->incident_person->person_first,
                         'person_last' => $incident->incident_person->person_last,
                         'person_email' => $incident->incident_person->person_email,
+                        'person_neighborhood' => $incident->incident_person->person_neighborhood,
                         'custom_field' => $this->_get_custom_form_fields($id,$incident->form_id,true),
                         'incident_active' => $incident->incident_active,
                         'incident_verified' => $incident->incident_verified,
