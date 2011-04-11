@@ -156,6 +156,20 @@ class Reports_Controller extends Main_Controller {
 
 		$this->template->content->incidents = $incidents;
 
+                // add in person submitted information
+                $person_submitted_info = array();
+                foreach ($incidents as $incident)
+                {
+                  $incident_person = ORM::factory('incident_person')->where('incident_id', $incident->id)->find();
+                  if ($incident_person->loaded)
+                  {
+                    $person_submitted_info[$incident->id] = array('first_name' => $incident_person->person_first,
+                                                                  'last_name' => $incident_person->person_last);
+                  }
+                }
+
+                $this->template->content->person_submitted_info = $person_submitted_info;
+
 		//Set default as not showing pagination. Will change below if necessary.
 		$this->template->content->pagination = "";
 
