@@ -838,11 +838,23 @@ div.report-additional-reports {
 	border-bottom:1px dotted #C0C2B8;
 }
 div.report-additional-reports .rb_report {  }
-div.report-additional-reports h4 {
+div.report-additional-reports h4,
+div.report-news h4 {
 	padding:0px 0px 5px 0px;
 	margin:0px;
 	font-size:14px;
 	text-transform: capitalize;
+}
+
+div.report-news ul {
+    list-style: none;
+    margin-top: 0.25em 0 0 0;
+}
+div.report-news li {
+    margin: 0.25em 0;
+}
+div.report-news a {
+    font-weight: bold;
 }
 
 div.report-additional-reports h5 { font-size:12px; margin:4px 120px 2px 0; }
