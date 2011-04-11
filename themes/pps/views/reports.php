@@ -93,6 +93,12 @@
 							<p class="r_date r-3 bottom-cap"><?php echo $incident_date; ?></p>
 							<div class="r_description" style="display:none"> <?php echo $incident_description; ?> </div>
 							<h3 class="r_title">Where? <b style="font-weight:normal"><?php echo $location_name; ?></b></h3>
+<?php if (isset($person_submitted_info[$incident->id])) {
+$person_info = $person_submitted_info[$incident->id];
+if ($person_info['first_name'] || $person_info['last_name']) { ?>
+<h3>By <b style="font-weight: normal"><?php echo $person_info['first_name'].' '.$person_info['last_name']; ?></b></h3>
+<?php } ?>
+<?php } ?>
 						</div>
 					</div>
 				<?php } ?>
