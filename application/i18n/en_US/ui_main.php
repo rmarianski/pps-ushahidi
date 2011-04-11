@@ -196,6 +196,7 @@
 	'layer_name' => 'Layer Name',
 	'layer_url' => 'Layer URL',
 	'leave_a_comment' => 'Leave a Comment',
+        'post_comment' => 'Post It',
 	'level' => 'Level',
 	'level_has_been' => 'This level has been',
 	'level_name' => 'Level Name',

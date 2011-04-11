@@ -44,7 +44,7 @@
 	Event::run('ushahidi_action.comment_form');
 	?>
 	<div class="report_row">
-		<input name="submit" type="submit" value="<?php echo Kohana::lang('ui_main.reports_btn_submit'); ?> <?php echo Kohana::lang('ui_main.comment'); ?>" class="btn_blue" />
+		<input name="submit" type="submit" value="<?php echo Kohana::lang('ui_main.post_comment'); ?>" class="btn_blue" />
 	</div>
 	<?php print form::close(); ?>
 	
