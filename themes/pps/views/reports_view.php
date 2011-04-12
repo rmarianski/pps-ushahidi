@@ -59,9 +59,12 @@ if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])
 	<p class="report-when-where">
 			
             <span class="r_date"><?php echo $incident_time.' '.$incident_date; ?> </span>
-<?php if ($submitted_first_name || $submitted_last_name): ?>
-<span>by <?php echo $submitted_first_name; ?> <?php echo $submitted_last_name; ?></span>
+<span>Submitted by:
+<?php echo ($submitted_first_name || $submitted_last_name) ? $submitted_first_name." ".$submitted_last_name." " : "Anonymous " ?>
+<?php if ($submitted_neighborhood): ?>
+in <?php echo $submitted_neighborhood; ?>
 <?php endif; ?>
+</span>
 		</p>
 		<div class="report-category-list">
 		<p>

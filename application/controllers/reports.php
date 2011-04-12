@@ -947,14 +947,17 @@ class Reports_Controller extends Main_Controller {
                 // add in person information
                 $submitted_first_name = '';
                 $submitted_last_name = '';
+                $submitted_neighborhood = '';
                 $incident_person = ORM::factory('incident_person')->where('incident_id', $incident->id)->find();
                 if ($incident_person->loaded == true)
                 {
                   $submitted_first_name = $incident_person->person_first;
                   $submitted_last_name = $incident_person->person_last;
+                  $submitted_neighborhood = $incident_person->person_neighborhood;
                 }
                 $this->template->content->submitted_first_name = $submitted_first_name;
                 $this->template->content->submitted_last_name = $submitted_last_name;
+                $this->template->content->submitted_neighborhood = $submitted_neighborhood;
 	}
 
 	/**
