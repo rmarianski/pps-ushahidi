@@ -242,7 +242,7 @@ foreach ($categories as $category)
 						}
 					}
 					print "<input type=\"hidden\" name=\"$this_startid\" value=\"$i\" id=\"$this_startid\">";
-				?>
+				?><br />
 				</div>
 
 

@@ -33,7 +33,7 @@
 
 			<!-- searchbox -->
 			<div id="searchbox">
-           <span class='st_twitter_button' displayText='Tweet' st_url="http://ht.ly/4uAcb" st_title="I just shared my idea for improving NYC. What's yours? #btcftc"></span><span class='st_facebook_button' displayText='Facebook'></span><span class='st_email_button' displayText='Email'></span><span class='st_sharethis_button' displayText='ShareThis'></span>
+           <span class='st_twitter_button' displayText='Tweet' st_url="http://ht.ly/4uAcb" st_title="I just shared my idea for improving NYC. What's yours? #bythecity"></span><span class='st_facebook_button' displayText='Facebook'></span><span class='st_email_button' displayText='Email'></span><span class='st_sharethis_button' displayText='ShareThis'></span>
 				<!-- languages -->
 				<!--<?php echo $languages;?>-->
 				<!-- / languages -->
