@@ -10,7 +10,7 @@ if(substr_count($_SERVER["HTTP_HOST"],'.') > 1) $subdomain = substr($_SERVER["HT
 
 $config = array
 (
-	'site_name' => 'Ushahidi',
+	'site_name' => 'By the City / For the City',
 	'site_email' => '',
 	'default_map' => '',
 	'api_google' => '',
