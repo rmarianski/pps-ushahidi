@@ -1,7 +1,7 @@
 <!-- start submit comments block -->
 <div class="comment-block">
 	
-	<h5><?php echo Kohana::lang('ui_main.leave_a_comment');?><br /><span style="subtext"><?php echo Kohana::lang('ui_main.leave_a_comment_subtext');?></span></h5>
+	<h5><?php echo Kohana::lang('ui_main.leave_a_comment');?><br /><span class="subtext"><?php echo Kohana::lang('ui_main.leave_a_comment_subtext');?></span></h5>
 	<?php
 		if ($form_error) {
 	?>

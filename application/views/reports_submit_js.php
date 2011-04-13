@@ -151,7 +151,7 @@
 						required: "Please enter a location"
 					},
 					"incident_news[]": {
-						url: "Please enter a valid News link"
+						url: "Please enter a valid link, e.g. http://domain.com/item"
 					},
 					"incident_news[]": {
 						url: "Please enter a valid link, e.g. http://domain.com/item"

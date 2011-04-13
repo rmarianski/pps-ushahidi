@@ -354,14 +354,14 @@ foreach ($categories as $category)
 			<div class="report_right">
 		
                 
-              <h5 style=" font-size:110%; font-weight:normal;">How would you improve New York City's public realm? From April 11-30, we're gathering up everyone's ideas about how to build a better city, and you can explore, discuss, and debate those ideas right here. In May, we'll rally designers around the world to create proposals that address many of the situations and sites you share.</h5>
+              <h5 style=" font-size:120%;">How would you improve New York City's public realm?</h5> <h5 style=" font-size:120%; font-weight:normal;">From April 11-30, we're gathering up everyone's ideas about how to build a better city, and you can explore, discuss, and debate those ideas right here. In May, we'll rally designers around the world to create proposals that address many of the situations and sites you share.</h5>
 
-<h5  style=" font-size:110%; font-weight:normal;">Here are three great examples:</h5>
-<h5  style=" font-size:110%; font-weight:bold;">Wouldn't be great if...</h5>
+<h5  style=" font-size:120%; font-weight:bold;">Here are three great examples:</h5>
+<h5  style=" font-size:120%; font-weight:normal;">Wouldn't be great if...</h5>
 
-<h5  style=" font-size:110%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/60">Create a traditional open air market place on the site of the old West Harlem Bernheimer Brewery and stables.</a></h5>
-<h5  style=" font-size:110%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/35">There was an easier way to get from Queens to Brooklyn.</a></h5>
-<h5  style=" font-size:110%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/51">corporate Manhattan recovered some of its messiness. Everyplace seems to be geared toward seating and eating comfort.</a></h5>
+<h5  style=" font-size:120%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/60">Create a traditional open air market place on the site of the old West Harlem Bernheimer Brewery and stables.</a></h5>
+<h5  style=" font-size:120%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/35">There was an easier way to get from Queens to Brooklyn.</a></h5>
+<h5  style=" font-size:120%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/51">corporate Manhattan recovered some of its messiness. Everyplace seems to be geared toward seating and eating comfort.</a></h5>
 
 
 				
