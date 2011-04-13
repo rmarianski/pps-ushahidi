@@ -942,6 +942,7 @@ class Reports_Controller extends Main_Controller {
 		$this->template->content->logged_in = $this->logged_in;
 
 		// Rebuild Header Block
+                $this->template->header->og_description = "Wouldn't it be great if ... ".$incident_title;
 		$this->template->header->header_block = $this->themes->header_block();
 
                 // add in person information

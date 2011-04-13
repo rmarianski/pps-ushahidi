@@ -11,14 +11,16 @@
 	// Action::header_scripts - Additional Inline Scripts from Plugins
 	Event::run('ushahidi_action.header_scripts');
 	?>
-<meta property="og:title" content="<?php echo $site_name; ?>" />
+<meta property="og:title" content="<?php echo Kohana::config('pps.og_title'); ?>" />
 <meta property="og:type" content="website" />
-<meta property="og:description" content="How would you improve New York City's public realm? From April 11-30 share ideas about improving the physical environment of your block, neighborhood, or your entire city, we want to hear it!"/>
-<!--<meta property="og:url" content="<?php echo url::base(); ?>" /> -->
-<meta property="og:url" content="http://urbandesignweek.org/by-the-city/reports/submit" /> 
+<?php if (!isset($og_description) OR !$og_description): ?>
+<?php $og_description = "How would you improve New York City's public realm? From April 11-30 share ideas about improving the physical environment of your block, neighborhood, or your entire city, we want to hear it!"; ?>
+<?php endif; ?>
+<meta property="og:description" content="<?php echo $og_description; ?>" />
+<meta property="og:url" content="<?php echo url::base() . url::current() ?>" /> 
 <meta property="og:image" content="<?php echo url::site('themes/pps/images/btc-ftc.png'); ?>" />
 <meta property="og:site_name" content="<?php echo $site_name; ?>" />
-<meta property="fb:admins" content="753810374" />
+<meta property="fb:admins" content="<?php echo Kohana::config('pps.fb_admins'); ?>" />
 
 
   <script type="text/javascript">var switchTo5x=false;</script><script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script><script type="text/javascript">stLight.options({publisher:'247bd840-c484-4e7e-8df6-e3412a4fb36c'});</script>
