@@ -354,7 +354,8 @@ foreach ($categories as $category)
 			<div class="report_right">
 		
                 
-              <h5 style=" font-size:120%;">How would you improve New York City's public realm?</h5> <h5 style=" font-size:120%; font-weight:normal;">From April 11-30, we're gathering up everyone's ideas about how to build a better city, and you can explore, discuss, and debate those ideas right here. In May, we'll rally designers around the world to create proposals that address many of the situations and sites you share.</h5>
+              <h5 style=" font-size:120%;">How would you design a better city?</h5>
+              <h5 style=" font-size:120%; font-weight:normal;">From April 11-30, we're gathering up your ideas: from improving local parks and streets all the way up to rethinking whole systems, like transit and trash disposal. You can explore, discuss, and debate everyone's ideas right here. In May, we'll rally urban designers around the world to imagine the future of New York City based on your suggestions.</h5>
 
 <h5  style=" font-size:120%; font-weight:bold;">Here are three great examples:</h5>
 <h5  style=" font-size:120%; font-weight:normal;">Wouldn't be great if...</h5>
