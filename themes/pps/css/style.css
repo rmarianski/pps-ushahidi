@@ -159,9 +159,9 @@ div#middle .layoutright div#left{
 
 /* right column */
 div#right{
-    width: 200px;
+    width: 180px;
 	height: 573px;
-    margin: 46px 170px 0px 0px;
+    margin: 15px 190px 0px 0px;
 	padding: 0px 0px 0px 0px;
 	background: none;
     float: right;
@@ -417,7 +417,7 @@ div#mainmenu a.active{
 div.filters{
     font-size: 85%;
     text-transform: uppercase;
-    margin: 5px 0 15px;
+    margin: 0px 0 15px;
 }
 
 div.filters strong{
@@ -522,7 +522,7 @@ div.slider-holder label{
 div.cat-filters{
     font-size: 85%;
     text-transform: uppercase;
-    margin: 0 0 15px 0;
+    margin: 0 0 0px 0;
 	
 }
 
@@ -535,7 +535,7 @@ div.cat-filters strong{
 
 div.cat-filters span{
 	font-weight:normal;
-	font-size:90%;
+	font-size:80%;
 	margin-left:5px;
 	color:#666;
 	letter-spacing:2px;
@@ -581,16 +581,16 @@ ul.category-filters li{
 
 ul.category-filters li a{
     display: block;
-    padding: 8px 10px 8px 15px;
+    padding: 6px 8px 6px 13px;
 /*    padding: 8px 10px 8px 35px; maxf change */
-    font-size: 11px;
+    font-size: 10px;
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
     color: #f60;
     border: #E7E3DA 0px solid;
     position: relative;
-    line-height: 14px;
+    line-height: 13px;
     overflow: hidden;
 }
 
@@ -1258,23 +1258,10 @@ label.error {
 
 /* Submit Rollover Form Button */
 
- /*.btn_submit {  
-    display: block;  
-    width: 225px;  
-    height: 59px;  
-    background: url(/images/submit.png) no-repeat 0 0; 
-    overflow: hidden;  
-    text-indent: -10000px;  
-    font-size: 0px;  
-    line-height: 0px;  	
-	margin: 20px 20px 0 0;
-	padding: 8px 10px 8px 10px;
-	
-	border: 0;
-}  */
-.btn_submit {display: block;  
+
+/*.btn_submit {display: block;  
     width: 160px;  
-    height: 50px;  
+    height: 40px;  
     background-color: #ff6600;    
     font-size: 18px;  
     line-height: 24px;  	
@@ -1282,9 +1269,6 @@ label.error {
 	padding: 8px 10px 8px 10px;
 	border: 0;
 	text-transform:uppercase;
-	/*border-width:1px;
-	border-style:solid;
-	border-color:#333;*/
 	-moz-border-radius:8px;
 	-khtml-border-radius:8px;
 	-webkit-border-radius:8px;
@@ -1292,19 +1276,41 @@ label.error {
 	text-shadow:1px 1px 0 #ccc;
 	color:#fff;
 	cursor:pointer;
+	} */
+	
+	/*.btn_submit {display: block;  
+    width: 160px;  
+    height: 40px;  
+    background-color: #ff6600;    
+    font-size: 18px;  
+    line-height: 24px;  	
+	margin: 40px 40px 40px 185px;
+	padding: 8px 10px 8px 10px;
+	border: 0;
+	text-transform:uppercase;
+	-moz-border-radius:8px;
+	-khtml-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	text-shadow:1px 1px 0 #ccc;
+	color:#fff;
+	cursor:pointer;
+	} */
+
+	
+	.btn_submit {display: block; margin: 40px 40px 40px 185px; background:#fdb415 /*url(../images/submit.png) repeat-x 0 0*/;display:block;padding:12px 45px;/*border:1px solid #f60;*/-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px;text-decoration:none;text-align:center;color:#fff;/*text-shadow:0 1px 0 #fff;*/font:bold 18px Helvetica,Arial,Sans-serif;-moz-box-shadow: 3px 3px 4px #ccc;-webkit-box-shadow: 3px 3px 4px #ccc;box-shadow: 3px 3px 4px #ccc;/* For IE 8 */-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc')";/* For IE 5.5 - 7 */filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc');}.btn_submit:hover,.btn_submit:focus{ background:#f60;/*background-position:0 -5px;color:#fff;*/}.btn_submit:active{background:#f60;-moz-box-shadow: none;-webkit-box-shadow: none;box-shadow: none;/* For IE 8 */-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=0, Color='#fff')";/* For IE 5.5 - 7 */filter: progid:DXImageTransform.Microsoft.Shadow(Strength=0, Direction=0, Color='#fff');}
 	
 	
-	}
 /*.btn_submit {background:#ddd url(/images/gradient.png) repeat-x 0 0;width:auto;margin:0;overflow:visible;padding:4px 8px 5px;border-width:1px;border-style:solid;border-color:#ddd;border-bottom-color:#ccc;-moz-border-radius:4px;-khtml-border-radius:4px;-webkit-border-radius:4px;border-radius:4px;color:#333;text-shadow:1px 1px 0 #fff;cursor:pointer;margin: 20px 20px 0 0;
 	padding: 8px 10px 8px 10px;}*/
 
-.btn_submit:hover {  
+/*.btn_submit:hover {  
     text-shadow:1px 1px 0 #ccc;  
 }  
   
 .btn_submit:active {  
       
-}  
+} */ 
 
 
 .btn_find {
