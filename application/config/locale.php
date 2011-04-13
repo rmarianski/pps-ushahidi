@@ -19,4 +19,4 @@ $config['all_languages'] = array ( 'en_US'=>'English (US)', 'fr_FR'=>'Français'
  * Locale timezone. Defaults to use the server timezone.
  * @see http://php.net/timezones
  */
-$config['timezone'] = '';
+$config['timezone'] = 'America/New_York';
