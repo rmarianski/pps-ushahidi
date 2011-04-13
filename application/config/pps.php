@@ -3,7 +3,7 @@
 // pps specific configuration values
 
 // what categories to list as visible
-$config['visible_categories'] = array('Scale');
+$config['visible_categories'] = array('Context');
 
 // og data to use
 $config['og_title'] = 'By the City / For the City - Urban Design Week 2011';
