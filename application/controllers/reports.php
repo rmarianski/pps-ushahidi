@@ -273,27 +273,27 @@ class Reports_Controller extends Main_Controller {
                 }
                 $this->template->content->category_titles = $category_titles;
 
-                $visible_categories_cfg = Kohana::config('pps.visible_categories');
+                $user_categories_cfg = Kohana::config('pps.user_categories');
                 $visible_category_titles = array();
-                foreach($visible_categories_cfg as $visible_category_title)
+                foreach($user_categories_cfg as $visible_category_title)
                 {
                   $visible_category_titles[] = $db->escape($visible_category_title);
                 }
-                $visible_categories_in = 'category_title IN ('.implode(',',$visible_category_titles).')';
-                $query_visible_category_parents = ORM::factory('category')->where($visible_categories_in)->find_all();
+                $user_categories_in = 'category_title IN ('.implode(',',$visible_category_titles).')';
+                $query_visible_category_parents = ORM::factory('category')->where($user_categories_in)->find_all();
                 $visible_category_parentids = array();
                 foreach ($query_visible_category_parents as $visible_category_parent)
                 {
                     $visible_category_parentids[] = $visible_category_parent->id;
                 }
                 $category_visible_parent_in = 'parent_id IN ('.implode(',',$visible_category_parentids).')';
-                $query_visible_categories = ORM::factory('category')->where($category_visible_parent_in)->find_all();
-                $visible_categories = array();
-                foreach ($query_visible_categories as $category)
+                $query_user_categories = ORM::factory('category')->where($category_visible_parent_in)->find_all();
+                $user_categories = array();
+                foreach ($query_user_categories as $category)
                 {
-                    $visible_categories[] = $category;
+                    $user_categories[] = $category;
                 }
-                $this->template->content->visible_categories = $visible_categories;
+                $this->template->content->user_categories = $user_categories;
                 $this->template->content->selected_categories = $category_ids;
 
 		// Collect report stats

@@ -19,7 +19,7 @@ if (!empty($category_titles))
 <ul>
 <span style="font-weight: bold">Filter by</span>
 <?php
-foreach ($visible_categories as $visible_category)
+foreach ($user_categories as $visible_category)
   {
           echo '<li style="list-style: none; display: inline; padding: 0 5px">'.category::display_category_checkbox($visible_category, $selected_categories, 'c').'</li>';
   }

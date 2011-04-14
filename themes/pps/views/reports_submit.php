@@ -151,10 +151,10 @@
 ?>
 <ul>
 <?php
-$visible_categories = Kohana::config('pps.visible_categories');
+$user_categories = Kohana::config('pps.user_categories');
 foreach ($categories as $category)
 {
-  if (in_array($category->category_title, $visible_categories))
+  if (in_array($category->category_title, $user_categories))
   {
     foreach ($category->children as $child)
     {
