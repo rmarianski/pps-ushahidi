@@ -51,10 +51,23 @@ class Reports_Controller extends Main_Controller {
 
 		// Get incident_ids if we are to filter by category
 		$allowed_ids = array();
+                $category_ids_in = NULL;
+                $category_ids = array();
+                $category_ids_string = array();
 		if (isset($_GET['c']) AND !empty($_GET['c']) AND $_GET['c']!=0)
+                {
+                  $category_ids_string = is_array($_GET['c']) ? $_GET['c'] : array($_GET['c']);
+                }
+                if (!empty($category_ids_string))
 		{
-			$category_id = $db->escape($_GET['c']);
-			$query = 'SELECT ic.incident_id AS incident_id FROM '.$this->table_prefix.'incident_category AS ic INNER JOIN '.$this->table_prefix.'category AS c ON (ic.category_id = c.id)  WHERE c.id='.$category_id.' OR c.parent_id='.$category_id.';';
+                  //$category_id = $db->escape($_GET['c']);
+                  foreach ($category_ids_string as $category_id) {
+                    $category_ids[] = (int)str_replace("'", "", $db->escape($category_id));
+                  }
+                  $category_ids_string = implode(',',$category_ids);
+                  $category_ids_in = "IN ($category_ids_string)";
+                  //			$query = 'SELECT ic.incident_id AS incident_id FROM '.$this->table_prefix.'incident_category AS ic INNER JOIN '.$this->table_prefix.'category AS c ON (ic.category_id = c.id)  WHERE c.id='.$category_id.' OR c.parent_id='.$category_id.';';
+                  $query = 'SELECT ic.incident_id AS incident_id FROM '.$this->table_prefix.'incident_category AS ic INNER JOIN '.$this->table_prefix.'category AS c ON (ic.category_id = c.id)  WHERE c.id '.$category_ids_in.' OR c.parent_id '.$category_ids_in.';';
 			$query = $db->query($query);
 
 			foreach ( $query as $items )
@@ -125,12 +138,34 @@ class Reports_Controller extends Main_Controller {
 				));
 
 		// Reports
-		$incidents = ORM::factory("incident")
-			->where("incident_active", 1)
-			->where($location_id_in)
-			->where($incident_id_in)
-			->orderby("incident_date", "desc")
-			->find_all((int) Kohana::config('settings.items_per_page_admin'), $pagination->sql_offset);
+                if (isset($_GET['sort']) AND $_GET['sort'] == 'comments')
+                {
+                  // XXX this is an inefficient way of doing things, but I can't figure out how to get the orm to do this for us
+
+                  $loc_id_in = str_replace('id', 'incident.id', $location_id_in);
+                  $inc_id_in = str_replace('id', 'incident.id', $incident_id_in);
+                  $incident_query = 'SELECT incident.id, COUNT(comment.incident_id) as numcomments FROM incident LEFT JOIN comment on incident.id=comment.incident_id where incident_active=1 AND '.$inc_id_in.' AND '.$loc_id_in.' GROUP BY incident.id ORDER BY numcomments desc';
+                  $incident_query .= ' LIMIT '.Kohana::config('settings.items_per_page_admin').' OFFSET '.$pagination->sql_offset;
+                  $incident_id_results = $db->query($incident_query);
+                  $incidents = array();
+                  foreach ($incident_id_results as $incident)
+                    {
+                      $incident_obj = ORM::factory("incident")->where("id=".$incident->id)->find_all();
+                      if (!empty($incident_obj))
+                        {
+                          $incidents[] = $incident_obj[0];
+                        }
+                    }
+                }
+                else
+                {
+                  $incidents = ORM::factory("incident")
+                    ->where("incident_active", 1)
+                    ->where($location_id_in)
+                    ->where($incident_id_in)
+                    ->orderby("incident_date", "desc")
+                    ->find_all((int) Kohana::config('settings.items_per_page_admin'), $pagination->sql_offset);
+                }
 
 		// Swap out category titles with their proper localizations using an array (cleaner way to do this?)
 
@@ -206,11 +241,12 @@ class Reports_Controller extends Main_Controller {
 
 		// Category Title, if Category ID available
 
-		$category_id = ( isset($_GET['c']) AND !empty($_GET['c']) )
-			? $_GET['c'] : "0";
-		$category = ORM::factory('category')
-			->find($category_id);
+		//$category_id = ( isset($_GET['c']) AND !empty($_GET['c']) )
+		//	? $_GET['c'] : "0";
+                //		$categories = ORM::factory('category')
+		//	->find($category_id);
 
+                /*
 		if($category->loaded)
 		{
 			$translated_title = Category_Lang_Model::category_title($category_id,$l);
@@ -222,7 +258,43 @@ class Reports_Controller extends Main_Controller {
 			}
 		}else{
 			$this->template->content->category_title = "";
-		}
+                        }*/
+
+                $category_titles = array();
+                if ($category_ids_in)
+                {
+                  $categories = ORM::factory('category')
+                    ->where('id '.$category_ids_in)
+                    ->find_all();
+                  foreach ($categories as $category)
+                  {
+                    $category_titles[] = $category->category_title;
+                  }
+                }
+                $this->template->content->category_titles = $category_titles;
+
+                $visible_categories_cfg = Kohana::config('pps.visible_categories');
+                $visible_category_titles = array();
+                foreach($visible_categories_cfg as $visible_category_title)
+                {
+                  $visible_category_titles[] = $db->escape($visible_category_title);
+                }
+                $visible_categories_in = 'category_title IN ('.implode(',',$visible_category_titles).')';
+                $query_visible_category_parents = ORM::factory('category')->where($visible_categories_in)->find_all();
+                $visible_category_parentids = array();
+                foreach ($query_visible_category_parents as $visible_category_parent)
+                {
+                    $visible_category_parentids[] = $visible_category_parent->id;
+                }
+                $category_visible_parent_in = 'parent_id IN ('.implode(',',$visible_category_parentids).')';
+                $query_visible_categories = ORM::factory('category')->where($category_visible_parent_in)->find_all();
+                $visible_categories = array();
+                foreach ($query_visible_categories as $category)
+                {
+                    $visible_categories[] = $category;
+                }
+                $this->template->content->visible_categories = $visible_categories;
+                $this->template->content->selected_categories = $category_ids;
 
 		// Collect report stats
 		$this->template->content->report_stats = new View('reports_stats');
@@ -250,6 +322,7 @@ class Reports_Controller extends Main_Controller {
 		$this->template->content->report_stats->percent_verified = $percent_verified;
 
 		$this->template->header->header_block = $this->themes->header_block();
+
 	}
 
 	/**

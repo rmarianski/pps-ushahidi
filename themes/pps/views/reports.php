@@ -2,14 +2,47 @@
 	<div class="content-bg">
 		<!-- start reports block -->
 		<div class="big-block">
-			<span style="display:none;"><?php
+			<!--span><?php
 			// Filter::report_stats - The block that contains reports list statistics
-			Event::run('ushahidi_filter.report_stats', $report_stats);
-			echo $report_stats;
-			?></span>
-			<h1><?php echo Kohana::lang('ui_main.reports').": ";?> <?php echo ($category_title) ? " in $category_title" : ""?> <?php echo $pagination_stats; ?></h1>
+			//Event::run('ushahidi_filter.report_stats', $report_stats);
+			//echo $report_stats;
+			?></span-->
+<h1><?php echo Kohana::lang('ui_main.reports').": ";?>
+ <?php
+if (!empty($category_titles))
+     {
+       echo 'in '.implode(', ',$category_titles).' - ';
+     }
+?>
+<?php echo $pagination_stats; ?></h1>
+<form method="GET" action="<?php echo url::site('reports'); ?>">
+<ul>
+<span style="font-weight: bold">Filter by</span>
+<?php
+foreach ($visible_categories as $visible_category)
+  {
+          echo '<li style="list-style: none; display: inline; padding: 0 5px">'.category::display_category_checkbox($visible_category, $selected_categories, 'c').'</li>';
+  }
+?>
+<?php if (isset($_GET['sw'])): ?>
+<input type="hidden" name="sw" value="<?php echo $_GET['sw']; ?>" />
+<?php endif; ?>
+<?php if (isset($_GET['ne'])): ?>
+<input type="hidden" name="ne" value="<?php echo $_GET['ne']; ?>" />
+<?php endif; ?>
+<span style="font-weight: bold; margin-left: 1em">Sort on</span>
+<select name="sort">
+   <option value="date">Date</option>
+   <option value="comments" <?php if (isset($_GET['sort']) AND $_GET['sort'] == "comments"): ?>selected="true"<?php endif; ?>>Comments</option>
+</select>
+<input type="submit" value="Apply" />
+</ul>
+</form>
 			<div style="clear:both;"></div>
 			<div class="r_cat_tooltip"> <a href="#" class="r-3">2a. Structures a risque | Structures at risk</a> </div>
+
+   
+
 			<div class="reports-box">
             
 				<?php
