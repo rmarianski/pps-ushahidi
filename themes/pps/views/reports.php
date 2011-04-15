@@ -56,8 +56,8 @@ foreach ($user_categories as $visible_category)
 					// XXX: Perhaps delcare 150 as constant
 
 					$incident_description = text::limit_chars(strip_tags($incident_description), 150, "...", true);
-					$incident_date = date('g:ia M d, Y', strtotime($incident->incident_date));
-					//$incident_time = date('H:i', strtotime($incident->incident_date));
+					$incident_date = date('g:ia M d, Y', strtotime($incident->incident_dateadd));
+					//$incident_time = date('H:i', strtotime($incident->incident_dateadd));
 					$location_id = $incident->location_id;
 					$location_name = $incident->location->location_name;
 					$incident_verified = $incident->incident_verified;

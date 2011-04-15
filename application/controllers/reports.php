@@ -163,7 +163,7 @@ class Reports_Controller extends Main_Controller {
                     ->where("incident_active", 1)
                     ->where($location_id_in)
                     ->where($incident_id_in)
-                    ->orderby("incident_date", "desc")
+                    ->orderby("incident_dateadd", "desc")
                     ->find_all((int) Kohana::config('settings.items_per_page_admin'), $pagination->sql_offset);
                 }
 
@@ -901,8 +901,8 @@ class Reports_Controller extends Main_Controller {
 			$this->template->content->incident_location = $incident->location->location_name;
 			$this->template->content->incident_latitude = $incident->location->latitude;
 			$this->template->content->incident_longitude = $incident->location->longitude;
-			$this->template->content->incident_date = date('M j Y', strtotime($incident->incident_date));
-			$this->template->content->incident_time = date('g:ia', strtotime($incident->incident_date));
+			$this->template->content->incident_date = date('M j Y', strtotime($incident->incident_dateadd));
+			$this->template->content->incident_time = date('g:ia', strtotime($incident->incident_dateadd));
 			$this->template->content->incident_category = $incident->incident_category;
 
 			if ($incident->incident_rating == '')
