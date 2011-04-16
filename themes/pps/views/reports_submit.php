@@ -188,7 +188,7 @@ foreach ($categories as $category)
 				<div class="report_row">
                 <h4>Map your Idea</h4>
               	  	<div class="report-find-location">
-							<p>Click anywhere on map to place marker.</p> <p> Click and drag map to move map. </p><p> Use <img src="../themes/pps/images/plus.gif" / align="absmiddle" style="padding:2px;"> and <img src="../themes/pps/images/minus.gif"  align="absmiddle" style="padding:2px;"/> icons to zoom map.</p><br /><p>If your idea is for a citywide system or condition, please select one representative site.</p>
+							<p>Click anywhere on map to place marker.</p> <p> Click and drag map to move map. </p><p> Use <img src="http://urbandesignweek.org/by-the-city/themes/pps/images/plus.gif" / align="absmiddle" style="padding:2px;"> and <img src="http://urbandesignweek.org/by-the-city/themes/pps/images/minus.gif"  align="absmiddle" style="padding:2px;"/> icons to zoom map.</p><br /><p>If your idea is for a citywide system or condition, please select one representative site.</p>
                    	</div>
 					<div id="divMap" class="report_map"></div>
                     <div style="clear:both;" id="find_text"><?php echo Kohana::lang('ui_main.pinpoint_location'); ?>.</div>
@@ -354,8 +354,8 @@ foreach ($categories as $category)
 			<div class="report_right">
 		
                 
-              <h5 style=" font-size:120%;">How would you design a better New York City?</h5>
-              <h5 style=" font-size:120%; font-weight:normal;">From April 11-30, we're gathering up your ideas: from improving local parks and streets all the way up to rethinking whole systems, like transit and trash disposal. You can explore, discuss, and debate everyone's ideas right here.</h5>
+              
+              <h5 style=" font-size:120%; font-weight:normal;"><strong>From April 11-30, we're gathering up your ideas:</strong> from improving local parks and streets all the way up to rethinking whole systems, like transit and trash disposal. You can explore, discuss, and debate everyone's ideas right here.</h5>
               <h5 style=" font-size:120%; font-weight:normal;">In May, we'll rally urban designers around the world to imagine the future of New York City based on your suggestions.</h5>
 
 <h5  style=" font-size:120%; font-weight:bold;">Here are three great examples:</h5>

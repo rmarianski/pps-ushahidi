@@ -93,13 +93,15 @@ body#page{
 div.rapidxwpr{
     margin: auto;
     width: 960px;
+	
 }
 
 /* header */
 div#header{
     position: relative;
-    height: 144px;
+    height: 210px;
     margin: 0px 0px 0px 0px;
+	background: transparent url(../images/sun.png) no-repeat center top;
 }
 
 /* logo */
@@ -161,7 +163,7 @@ div#middle .layoutright div#left{
 div#right{
     width: 180px;
 	height: 573px;
-    margin: 15px 190px 0px 0px;
+    margin: 15px 40px 0px 0px;
 	padding: 0px 0px 0px 0px;
 	background: none;
     float: right;
@@ -471,7 +473,7 @@ a.share{
 
 /* map */
 div.map {
-    width: 550px;
+    width: 700px;
     height: 573px;
 	position:relative;
 
@@ -570,14 +572,14 @@ ul.category-filters{
 	-khtml-border-radius-bottomright:8px;
 	-webkit-border-radius-bottomright:8px;
 	border-bottom-right-radius:8px;
-		-moz-box-shadow: 3px 3px 4px #ccc;
+	/*	-moz-box-shadow: 3px 3px 4px #ccc;
 	-webkit-box-shadow: 3px 3px 4px #ccc;
-	box-shadow: 3px 3px 4px #ccc;
+	box-shadow: 3px 3px 4px #ccc;*/
 	/* For IE 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc')";
+	/*-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc')";*/
 	/* For IE 5.5 - 7 */
-	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc');
-	border: 1px #ccc solid;
+	/*filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc');
+	border: 1px #ccc solid;*/
 	
 }
 
