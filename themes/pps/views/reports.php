@@ -30,6 +30,17 @@ foreach ($user_categories as $visible_category)
 <?php if (isset($_GET['ne'])): ?>
 <input type="hidden" name="ne" value="<?php echo $_GET['ne']; ?>" />
 <?php endif; ?>
+
+<span style="font-weight: bold; margin-left: 1em">Borough</span>
+<select name="b">
+   <option value="any">Any</option>
+   <option value="Queens" <?php if (isset($_GET['b']) AND $_GET['b'] == "Queens"): ?>selected="true"<?php endif; ?>>Queens</option>
+   <option value="Brooklyn" <?php if (isset($_GET['b']) AND $_GET['b'] == "Brooklyn"): ?>selected="true"<?php endif; ?>>Brooklyn</option>
+   <option value="Manhattan" <?php if (isset($_GET['b']) AND $_GET['b'] == "Manhattan"): ?>selected="true"<?php endif; ?>>Manhattan</option>
+   <option value="Bronx" <?php if (isset($_GET['b']) AND $_GET['b'] == "Bronx"): ?>selected="true"<?php endif; ?>>Bronx</option>
+   <option value="Staten Island" <?php if (isset($_GET['b']) AND $_GET['b'] == "Staten Island"): ?>selected="true"<?php endif; ?>>Staten Island</option>
+</select>
+
 <span style="font-weight: bold; margin-left: 1em">Sort on</span>
 <select name="sort">
    <option value="date">Date</option>

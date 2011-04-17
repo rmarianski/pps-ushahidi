@@ -113,6 +113,40 @@ class Reports_Controller extends Main_Controller {
 			$location_ids[] = (int) $_GET['l'];
 		}
 
+                // borough filtering
+                if (isset($_GET['b']) and $_GET['b'] !== "any")
+                {
+                  $query = 'SELECT id FROM location where borough='.$db->escape($_GET['b']);
+                  $query = $db->query($query);
+                  $boro_ids = array();
+                  foreach ($query as $items)
+                  {
+                    $boro_ids[] = $items->id;
+                  }
+                  if (count($boro_ids) === 0)
+                  {
+                    // no boroughs found, trigger no results for query
+                    $location_ids = array(-1);
+                  }
+                  elseif (count($location_ids) > 0)
+                  {
+                    // make locations_ids the intersection of the two
+                    $new_locids = array();
+                    foreach ($location_ids as $locid)
+                    {
+                      if (in_array($locid, $boro_ids))
+                      {
+                        $new_locids[] = $locid;
+                      }
+                    }
+                    $location_ids = $new_locids;
+                  }
+                  else
+                  {
+                    $location_ids = $boro_ids;
+                  }
+                }
+
 		// Get the count
 		$incident_id_in = '1=1';
 		if (count($allowed_ids) > 0)
