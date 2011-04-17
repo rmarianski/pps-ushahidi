@@ -2505,6 +2505,40 @@ class GoogleMapAPI_Core {
         }         
     }    
 
+    function reverseGeocode($lat, $lng) {
+      if (!$lat OR !$lng) {
+        return NULL;
+      }
+      // XXX only support google reverse geocode
+      $sensor = "false";
+      $url = 'http://maps.googleapis.com/maps/api/geocode/json?latlng='.$lat.','.$lng.'&sensor='.$sensor;
+      $result = $this->fetchURL($url);
+      return $result ? json_decode($result) : NULL;
+    }
+
+    function parseBorough($res) {
+      // $res is the reverse geocode json decoded response
+      if (!$res) {
+        return NULL;
+      }
+      if ($res->status === "OK" AND $res->results) {
+        foreach ($res->results as $result) {
+          if ($result->address_components) {
+            foreach ($result->address_components as $component) {
+              if ($component->types AND
+                  isset($component->types[0]) AND $component->types[0] === "sublocality" AND
+                  isset($component->types[1]) AND $component->types[1] === "political") {
+                if ($component->short_name) {
+                  return $component->short_name;
+                }
+              }
+            }
+          }
+        }
+      }
+      return NULL;
+    }
+
     /**
      * fetch a URL. Override this method to change the way URLs are fetched.
      * 

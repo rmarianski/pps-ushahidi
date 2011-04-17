@@ -420,4 +420,16 @@ class map_Core {
 			return false;
 		}
 	}
+
+        public static function reverseGeocode($lat, $lng) {
+          $map_object = new GoogleMapAPI;
+          $result = $map_object->reverseGeocode($lat, $lng);
+          return $result;
+        }
+
+        public static function borough($lat, $lng) {
+          $map_object = new GoogleMapAPI;
+          $geocode_result = map::reverseGeocode($lat, $lng);
+          return $map_object->parseBorough($geocode_result);
+        }
 }

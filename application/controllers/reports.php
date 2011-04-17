@@ -503,7 +503,14 @@ class Reports_Controller extends Main_Controller {
 				$location->latitude = $post->latitude;
 				$location->longitude = $post->longitude;
 				$location->location_date = date("Y-m-d H:i:s",time());
-				$location->save();
+
+                                // reverse geocode to get borough
+                                $borough = map::borough($post->latitude, $post->longitude);
+                                if ($borough) {
+                                  $location->borough = $borough;
+                                }
+
+                                $location->save();
 
 				// STEP 2: SAVE INCIDENT
 				$incident = new Incident_Model();
