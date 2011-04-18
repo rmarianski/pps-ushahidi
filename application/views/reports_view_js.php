@@ -181,9 +181,10 @@
 						$('.report-map').hide().prependTo($('.report-media-box-content'));
 						$('.map-holder').css({"height":"350px", "width": "348px"});
 						$('a.wider-map').parent().show();
-						$('a.tab-item').parent().removeClass("report-tab-selected");
-						$('.report-media-box-content > div').hide(); // hide everything incase video/images were showing
-						$('a[href=#report-map]').parent().addClass('report-tab-selected').show();
+                                                // we always want to show images and not any tabs
+						//$('a.tab-item').parent().removeClass("report-tab-selected");
+						//$('.report-media-box-content > div').hide(); // hide everything incase video/images were showing
+						//$('a[href=#report-map]').parent().addClass('report-tab-selected').show();
 						$('.report-map').show()
 						break;
 				};

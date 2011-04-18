@@ -826,7 +826,8 @@ div.report-media-box-tabs .report-tab-selected a { background:#fff; color:#333; 
 div.report-media-box-tabs .report-tab-selected a:hover { text-decoration:none; } 
 
 div.report-media-box-content {
-	border-top:2px solid #fff;
+	border: none;
+	/*border-top:2px solid #fff;*/
 	clear: both;
 	padding:5px 0px;
 }

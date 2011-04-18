@@ -109,7 +109,7 @@ in <?php echo $submitted_neighborhood; ?>
 	
 	<div style="float:right;width:350px;">
 
-		<div class="report-media-box-tabs">
+		<!--div class="report-media-box-tabs">
 			<ul>
 				<li class="report-tab-selected"><a class="tab-item" href="#report-map"><?php echo Kohana::lang('ui_main.map');?></a></li>
 				<?php if( count($incident_photos) > 0 ) { ?>
@@ -119,7 +119,7 @@ in <?php echo $submitted_neighborhood; ?>
 					<li><a class="tab-item" href="#report-video"><?php echo Kohana::lang('ui_main.video');?></a></li>
 				<?php } ?>
 			</ul>
-		</div>
+		</div-->
 		
 		<div class="report-media-box-content">
 			
@@ -136,7 +136,7 @@ in <?php echo $submitted_neighborhood; ?>
 			
 			<!-- start images -->
 			<?php if( count($incident_photos) > 0 ) { ?>
-				<div id="report-images" style="display:none;">
+				<div id="report-images">
 						<?php
 						foreach ($incident_photos as $photo)
 						{
