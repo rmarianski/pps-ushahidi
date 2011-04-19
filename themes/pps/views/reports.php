@@ -24,13 +24,6 @@ foreach ($user_categories as $visible_category)
           echo '<li style="list-style: none; display: inline; padding: 0 5px">'.category::display_category_checkbox($visible_category, $selected_categories, 'c').'</li>';
   }
 ?>
-<?php if (isset($_GET['sw'])): ?>
-<input type="hidden" name="sw" value="<?php echo $_GET['sw']; ?>" />
-<?php endif; ?>
-<?php if (isset($_GET['ne'])): ?>
-<input type="hidden" name="ne" value="<?php echo $_GET['ne']; ?>" />
-<?php endif; ?>
-
 <span style="font-weight: bold; margin-left: 1em">Borough</span>
 <select name="b">
    <option value="any">Any</option>
