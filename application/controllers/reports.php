@@ -174,16 +174,16 @@ class Reports_Controller extends Main_Controller {
 		// Reports
                 if (isset($_GET['sort']) AND $_GET['sort'] == 'comments')
                 {
-                  // XXX this is an inefficient way of doing things, but I can't figure out how to get the orm to do this for us
-
-                  $loc_id_in = str_replace('id', 'incident.id', $location_id_in);
+                  $loc_id_in = (count($location_ids) === 0) ? "1=1" : "location.id in (".implode(',',$location_ids).")";
                   $inc_id_in = str_replace('id', 'incident.id', $incident_id_in);
-                  $incident_query = 'SELECT incident.id, COUNT(comment.incident_id) as numcomments FROM incident LEFT JOIN comment on incident.id=comment.incident_id where incident_active=1 AND '.$inc_id_in.' AND '.$loc_id_in.' GROUP BY incident.id ORDER BY numcomments desc';
+                  $incident_query = 'SELECT incident.id, COUNT(comment.incident_id) as numcomments FROM incident LEFT JOIN comment on incident.id=comment.incident_id LEFT JOIN location on incident.location_id=location.id where incident_active=1 AND '.$inc_id_in.' AND '.$loc_id_in.' GROUP BY incident.id ORDER BY numcomments desc';
                   $incident_query .= ' LIMIT '.Kohana::config('settings.items_per_page_admin').' OFFSET '.$pagination->sql_offset;
                   $incident_id_results = $db->query($incident_query);
                   $incidents = array();
                   foreach ($incident_id_results as $incident)
                     {
+                      // XXX geting each incident individually to populate the array is inefficient
+                      // but I can't figure out how to tell the orm to do this with our version of kohana
                       $incident_obj = ORM::factory("incident")->where("id=".$incident->id)->find_all();
                       if (!empty($incident_obj))
                         {
