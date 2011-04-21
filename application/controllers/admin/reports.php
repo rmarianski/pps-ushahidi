@@ -136,6 +136,17 @@ class Reports_Controller extends Admin_Controller
 
                             // Action::report_approve - Approve a Report
                             Event::run('ushahidi_action.report_approve', $update);
+
+                            // XXX notify user that incident has been approved
+                            if (!empty($update->incident_person->person_email))
+                            {
+                              $to = $update->incident_person->person_email;
+                              $from = Kohana::lang('ui_admin.incident_approved_from');
+                              $subject = Kohana::lang('ui_admin.incident_approved_subject');
+                              $message = "Yay! Your entry has been approved.\n\n";
+                              $message .= "See it now: ".url::site('reports/view/'.$update->id)."\n";
+                              email::send($to, $from, $subject, $message);
+                            }
                         }
                     }
                     $form_action = strtoupper(Kohana::lang('ui_admin.approved'));

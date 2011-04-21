@@ -143,6 +143,8 @@
 	'password_reset_message_line_3' => 'To change your password, please click on the link below (or copy and paste it into your browser).',
 	'password_reset_message_line_4' => 'As you requested, your password has now been reset. Your new details are as follows',
 	'password_reset_subject' => 'Ushahidi password reset',
+        'incident_approved_from' => 'no-reply@urbandesignweek.org',
+        'incident_approved_subject' => '[Urban Design Week] Idea Approved',
 	'phone' => 'Phone',
 	'pm' => 'PM',
 	'post_method_not_used' => 'Data was not sent by post method',
