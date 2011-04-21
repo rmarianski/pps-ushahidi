@@ -51,7 +51,7 @@
 			<div id="logo">
 				<span><img src="<?php echo url::site('themes/pps/images/btc-ftc.png'); ?>" />
 				<?php echo $site_tagline; ?></span>
-			</div>
+			</div><a href="http://www.urbandesignweek.org/by-the-city/reports/submit"><span>http://www.urbandesignweek.org/by-the-city/reports/submit</span></a>
 			<!-- / logo -->
 
 			<!-- submit incident -->

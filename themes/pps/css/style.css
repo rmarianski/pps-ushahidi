@@ -99,10 +99,32 @@ div.rapidxwpr{
 /* header */
 div#header{
     position: relative;
-    height: 210px;
+    height: 220px;
     margin: 0px 0px 0px 0px;
-	background: transparent url(../images/sun.png) no-repeat center top;
 }
+
+div#header a:hover{
+    position: absolute;
+	display: block;
+    height: 220px;
+	width:240px;
+    margin: 0px 0px 0px 50%;
+	background: transparent url(../images/sun_hover.png) no-repeat 60% top;
+}
+div#header a {
+	position: absolute;
+ 	display: block;
+    height: 220px;
+	width:240px;
+    margin: 0px 0px 0px 50%;
+	background: transparent url(../images/sun_a.png) no-repeat 60% top;
+}
+
+div#header a span {
+
+visibility: hidden;
+}
+
 
 /* logo */
 div#logo{
