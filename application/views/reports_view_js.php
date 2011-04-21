@@ -189,7 +189,7 @@
 						break;
 				};
 				
-				map.setCenter(myPoint, 10);
+				map.setCenter(myPoint, 15);
 				
 				return false;
 			});
