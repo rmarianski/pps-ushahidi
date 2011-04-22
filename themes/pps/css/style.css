@@ -110,6 +110,7 @@ div#header a:hover{
 	width:240px;
     margin: 0px 0px 0px 50%;
 	background: transparent url(../images/sun_hover.png) no-repeat 60% top;
+        text-decoration: none;
 }
 div#header a {
 	position: absolute;
