@@ -1091,7 +1091,7 @@ class Reports_Controller extends Admin_Controller
 
             // Add some rules, the input field, followed by a list of checks, carried out in order
             $post->add_rules('data_point.*','required','numeric','between[1,4]');
-            $post->add_rules('data_include.*','numeric','between[1,6]');
+            $post->add_rules('data_include.*','numeric','between[1,7]');
             $post->add_rules('from_date','date_mmddyyyy');
             $post->add_rules('to_date','date_mmddyyyy');
 
@@ -1183,6 +1183,10 @@ class Reports_Controller extends Admin_Controller
                     if($item == 6) {
                         $report_csv .= ",CITY_TO_BE_MORE";
                     }
+
+                    if ($item == 7) {
+                      $report_csv .= ",BOROUGH";
+                    }
                 }
                 $report_csv .= ",APPROVED,VERIFIED";
                 $report_csv .= "\n";
@@ -1243,6 +1247,10 @@ class Reports_Controller extends Admin_Controller
                                   $report_csv .= ',';
                                 }
                             break;
+
+                        case 7:
+                          $borough = $incident->location->borough;
+                          $report_csv .= "," . ($borough ? $borough : "");
                         }
                     }
                     
