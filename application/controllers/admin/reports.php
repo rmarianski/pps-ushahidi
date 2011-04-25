@@ -1148,6 +1148,7 @@ class Reports_Controller extends Admin_Controller
 
                 // Column Titles
                 $report_csv = "#,INCIDENT TITLE,INCIDENT DATE";
+                $categories = array();
                 foreach($post->data_include as $item)
                 {
                     if ($item == 1) {
@@ -1159,7 +1160,16 @@ class Reports_Controller extends Admin_Controller
                     }
                     
                     if ($item == 3) {
-                        $report_csv .= ",CATEGORY";
+                      $query_categories = ORM::factory('category')->find_all();
+                      foreach ($query_categories as $query_category) {
+                        if ($query_category->parent_id !== 0) {
+                          $categories[] = $query_category->category_title;
+                        }
+                      }
+                      asort($categories);
+                      foreach ($categories as $category) {
+                        $report_csv .= "," . $category;
+                      }
                     }
                     
                     if ($item == 4) {
@@ -1196,16 +1206,14 @@ class Reports_Controller extends Admin_Controller
                             break;
 
                             case 3:
-                                $report_csv .= ',"';
-                            
-                                foreach($incident->incident_category as $category)
-                                {
-                                    if ($category->category->category_title)
-                                    {
-                                        $report_csv .= $this->_csv_text($category->category->category_title) . ", ";
-                                    }
-                                }
-                                $report_csv .= '"';
+                              $incident_categories = array();
+                              foreach ($incident->incident_category as $incident_category) {
+                                $incident_categories[] = $incident_category->category->category_title;
+                              }
+                              foreach ($categories as $category) {
+                                $report_csv .= ',' . (in_array($category, $incident_categories) ? "1" : "0");
+                              }
+
                             break;
                         
                             case 4:
