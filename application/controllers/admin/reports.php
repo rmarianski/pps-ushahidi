@@ -1091,7 +1091,7 @@ class Reports_Controller extends Admin_Controller
 
             // Add some rules, the input field, followed by a list of checks, carried out in order
             $post->add_rules('data_point.*','required','numeric','between[1,4]');
-            $post->add_rules('data_include.*','numeric','between[1,7]');
+            $post->add_rules('data_include.*','numeric','between[1,8]');
             $post->add_rules('from_date','date_mmddyyyy');
             $post->add_rules('to_date','date_mmddyyyy');
 
@@ -1171,21 +1171,28 @@ class Reports_Controller extends Admin_Controller
                         $report_csv .= "," . $category;
                       }
                     }
-                    
+
                     if ($item == 4) {
                         $report_csv .= ",LATITUDE";
                     }
-                    
+
                     if($item == 5) {
                         $report_csv .= ",LONGITUDE";
                     }
-                    
+
                     if($item == 6) {
                         $report_csv .= ",CITY_TO_BE_MORE";
                     }
 
                     if ($item == 7) {
                       $report_csv .= ",BOROUGH";
+                    }
+
+                    if ($item == 8) {
+                      $report_csv .= ",FIRST_NAME";
+                      $report_csv .= ",LAST_NAME";
+                      $report_csv .= ",NEIGHBORHOOD";
+                      $report_csv .= ",EMAIL";
                     }
                 }
                 $report_csv .= ",APPROVED,VERIFIED";
@@ -1219,15 +1226,15 @@ class Reports_Controller extends Admin_Controller
                               }
 
                             break;
-                        
+
                             case 4:
                                 $report_csv .= ',"'.$this->_csv_text($incident->location->latitude).'"';
                             break;
-                        
+
                             case 5:
                                 $report_csv .= ',"'.$this->_csv_text($incident->location->longitude).'"';
                             break;
-                        
+
                             case 6:
                                 $form_id = 1;
                                 $custom_form = ORM::factory('form', $form_id)->orderby('field_position','asc');
@@ -1251,9 +1258,23 @@ class Reports_Controller extends Admin_Controller
                         case 7:
                           $borough = $incident->location->borough;
                           $report_csv .= "," . ($borough ? $borough : "");
+                          break;
+
+                        case 8:
+                          $first_name = $incident->incident_person->person_first;
+                          $last_name = $incident->incident_person->person_last;
+                          $email = $incident->incident_person->person_email;
+                          $neighborhood = $incident->incident_person->person_neighborhood;
+
+                          $report_csv .= "," . ($first_name ? $first_name : "");
+                          $report_csv .= "," . ($last_name ? $last_name : "");
+                          $report_csv .= "," . ($email ? $email : "");
+                          $report_csv .= "," . ($neighborhood ? $neighborhood : "");
+
+                          break;
                         }
                     }
-                    
+
                     if ($incident->incident_active)
                     {
                         $report_csv .= ",YES";
@@ -1262,7 +1283,7 @@ class Reports_Controller extends Admin_Controller
                     {
                         $report_csv .= ",NO";
                     }
-                    
+
                     if ($incident->incident_verified)
                     {
                         $report_csv .= ",YES";

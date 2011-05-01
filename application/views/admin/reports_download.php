@@ -72,7 +72,7 @@
                                 </tr>
                                 <tr>
                                         <td><?php print form::checkbox('data_include[]','7',TRUE); ?>Include Borough</td>
-                                        <td></td>
+                                        <td><?php print form::checkbox('data_include[]','8',TRUE); ?>Include Optional Info</td>
                                 </tr>
 				<tr>
 					<td colspan="2">
