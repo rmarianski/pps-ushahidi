@@ -1266,10 +1266,10 @@ class Reports_Controller extends Admin_Controller
                           $neighborhood = $incident->incident_person->person_neighborhood;
                           $email = $incident->incident_person->person_email;
 
-                          $report_csv .= "," . ($first_name ? $first_name : "");
-                          $report_csv .= "," . ($last_name ? $last_name : "");
-                          $report_csv .= "," . ($neighborhood ? $neighborhood : "");
-                          $report_csv .= "," . ($email ? $email : "");
+                          $report_csv .= ",".$this->_safe_csv_text($first_name);
+                          $report_csv .= ",".$this->_safe_csv_text($last_name);
+                          $report_csv .= ",".$this->_safe_csv_text($neighborhood);
+                          $report_csv .= ",".$this->_safe_csv_text($email);
 
                           break;
                         }
@@ -1966,5 +1966,17 @@ class Reports_Controller extends Admin_Controller
     {
         $text = stripslashes(htmlspecialchars($text));
         return $text;
+    }
+
+    private function _safe_csv_text($text)
+    {
+      if ($text)
+      {
+          return '"'.$this->_csv_text($text).'"';
+      }
+      else
+      {
+          return "";
+      }
     }
 }
