@@ -1263,13 +1263,13 @@ class Reports_Controller extends Admin_Controller
                         case 8:
                           $first_name = $incident->incident_person->person_first;
                           $last_name = $incident->incident_person->person_last;
-                          $email = $incident->incident_person->person_email;
                           $neighborhood = $incident->incident_person->person_neighborhood;
+                          $email = $incident->incident_person->person_email;
 
                           $report_csv .= "," . ($first_name ? $first_name : "");
                           $report_csv .= "," . ($last_name ? $last_name : "");
-                          $report_csv .= "," . ($email ? $email : "");
                           $report_csv .= "," . ($neighborhood ? $neighborhood : "");
+                          $report_csv .= "," . ($email ? $email : "");
 
                           break;
                         }
