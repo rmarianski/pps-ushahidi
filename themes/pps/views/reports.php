@@ -1,5 +1,10 @@
 <div id="content">
-	<div class="content-bg">
+<div style="float: right; width: 200px">
+   <form method="get" action="<?php echo url::site('search'); ?>">
+     <input id="ideas-search" type="text" name="k" value="Search Ideas" />
+   </form>
+</div>
+	<div class="content-bg" style="clear: both">
 		<!-- start reports block -->
 		<div class="big-block">
 			<!--span><?php
@@ -145,3 +150,20 @@ if ($person_info['first_name'] || $person_info['last_name']) { ?>
 		<!-- end reports block -->
 	</div>
 </div>
+<script type="text/javascript">
+(function($) {
+$(document).ready(function() {
+$('#ideas-search')
+    .focus(function() {
+        if ($(this).val() === "Search Ideas") {
+            $(this).val('');
+        }
+    })
+    .blur(function() {
+        if ($(this).val().length === 0) {
+            $(this).val("Search Ideas");
+        }
+    });
+});
+})(jQuery);
+</script>
