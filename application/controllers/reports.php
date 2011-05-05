@@ -320,12 +320,15 @@ class Reports_Controller extends Main_Controller {
                 {
                     $visible_category_parentids[] = $visible_category_parent->id;
                 }
-                $category_visible_parent_in = 'parent_id IN ('.implode(',',$visible_category_parentids).')';
-                $query_user_categories = ORM::factory('category')->where($category_visible_parent_in)->find_all();
                 $user_categories = array();
-                foreach ($query_user_categories as $category)
+                if ($visible_category_parentids)
                 {
-                    $user_categories[] = $category;
+                    $category_visible_parent_in = 'parent_id IN ('.implode(',',$visible_category_parentids).')';
+                    $query_user_categories = ORM::factory('category')->where($category_visible_parent_in)->find_all();
+                    foreach ($query_user_categories as $category)
+                    {
+                        $user_categories[] = $category;
+                    }
                 }
                 $this->template->content->user_categories = $user_categories;
                 $this->template->content->selected_categories = $category_ids;
