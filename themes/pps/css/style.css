@@ -2277,3 +2277,59 @@ div.green-box ul, div.red-box ul{
     font-size: 0.9em;
     font-weight: normal;
 }
+
+.search-box {
+    float: right;
+    width: 200px;
+}
+
+.filter-block {
+    background-color: white;
+}
+
+.filter-by {
+    float: left;
+    width: 110px;
+}
+.filter-by h2 {
+    font-size: 1.5em;
+}
+
+.filter-context {
+    float: left;
+    width: 400px;
+}
+.filter-scale {
+    float: left;
+    width: 150px;
+}
+.filter-other {
+    float: left;
+    width: 255px;
+}
+.filter-other .select-row {
+    clear: both;
+    margin-bottom: 0.75em;
+}
+.filter-other .select-row h3 {
+    float: left;
+    width: 90px;
+    font-weight: bold;
+}
+.filter-other .submit {
+    margin: 10px 50px;
+}
+
+.filter-block h3 {
+    font-size: 1.5em;
+    font-weight: normal;
+}
+
+.filter-list li {
+    list-style: none;
+    float: left;
+    width: 125px;
+}
+.filter-list li label {
+    margin-left: 5px;
+}

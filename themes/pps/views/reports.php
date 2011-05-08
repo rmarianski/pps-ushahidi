@@ -1,52 +1,70 @@
+<?php
+function category_checkbox($category, $selected_categories) {
+  return '<input id="category_'.$category->id.'" type="checkbox" name="c[]" value="'.$category->id.'" '.(in_array($category->id, $selected_categories) ? 'checked="checked"' : '').'" /><label for="category_'.$category->id.'">'.$category->category_title.'</label>';
+}
+?>
 <div id="content">
-<div style="float: right; width: 200px">
+	<div class="content-bg">
+		<!-- start reports block -->
+		<div class="big-block">
+<div class="search-box">
    <form method="get" action="<?php echo url::site('search'); ?>">
      <input id="ideas-search" type="text" name="k" value="Search Ideas" />
    </form>
 </div>
-	<div class="content-bg" style="clear: both">
-		<!-- start reports block -->
-		<div class="big-block">
 			<!--span><?php
 			// Filter::report_stats - The block that contains reports list statistics
 			//Event::run('ushahidi_filter.report_stats', $report_stats);
 			//echo $report_stats;
 			?></span-->
 <h1><?php echo Kohana::lang('ui_main.reports').": ";?>
- <?php
-if (!empty($category_titles))
-     {
-       echo 'in '.implode(', ',$category_titles).' - ';
-     }
-?>
 <?php echo $pagination_stats; ?></h1>
+<div class="filter-block">
 <form method="GET" action="<?php echo url::site('reports'); ?>">
-<ul>
-<span style="font-weight: bold">Filter by</span>
-<?php
-foreach ($user_categories as $visible_category)
-  {
-          echo '<li style="list-style: none; display: inline; padding: 0 5px">'.category::display_category_checkbox($visible_category, $selected_categories, 'c').'</li>';
-  }
-?>
-<span style="font-weight: bold; margin-left: 1em">Borough</span>
-<select name="b">
-   <option value="any">Any</option>
-   <option value="Queens" <?php if (isset($_GET['b']) AND $_GET['b'] == "Queens"): ?>selected="true"<?php endif; ?>>Queens</option>
-   <option value="Brooklyn" <?php if (isset($_GET['b']) AND $_GET['b'] == "Brooklyn"): ?>selected="true"<?php endif; ?>>Brooklyn</option>
-   <option value="Manhattan" <?php if (isset($_GET['b']) AND $_GET['b'] == "Manhattan"): ?>selected="true"<?php endif; ?>>Manhattan</option>
-   <option value="Bronx" <?php if (isset($_GET['b']) AND $_GET['b'] == "Bronx"): ?>selected="true"<?php endif; ?>>Bronx</option>
-   <option value="Staten Island" <?php if (isset($_GET['b']) AND $_GET['b'] == "Staten Island"): ?>selected="true"<?php endif; ?>>Staten Island</option>
-</select>
-
-<span style="font-weight: bold; margin-left: 1em">Sort on</span>
-<select name="sort">
-   <option value="date">Date</option>
-   <option value="comments" <?php if (isset($_GET['sort']) AND $_GET['sort'] == "comments"): ?>selected="true"<?php endif; ?>>Comments</option>
-</select>
-<input type="submit" value="Apply" />
-</ul>
+<div class="filter-by">
+   <h2>Filter by</h2>
+</div>
+<div class="filter-context">
+   <h3>Context</h3>
+   <ul class="filter-list">
+   <?php
+   foreach ($context_categories as $visible_category) {
+  echo '<li>'.category_checkbox($visible_category, $selected_categories).'</li>';
+   } ?>
+   </ul>
+</div>
+<div class="filter-scale">
+  <h3>Scale</h3>
+  <ul class="filter-list">
+  <?php
+   foreach ($scale_categories as $visible_category) {
+  echo '<li>'.category_checkbox($visible_category, $selected_categories).'</li>';
+   } ?>
+   </ul>
+</div>
+<div class="filter-other">
+  <div class="select-row">
+    <h3>Borough</h3>
+    <select name="b">
+       <option value="any">Any</option>
+       <option value="Queens" <?php if (isset($_GET['b']) AND $_GET['b'] == "Queens"): ?>selected="true"<?php endif; ?>>Queens</option>
+       <option value="Brooklyn" <?php if (isset($_GET['b']) AND $_GET['b'] == "Brooklyn"): ?>selected="true"<?php endif; ?>>Brooklyn</option>
+       <option value="Manhattan" <?php if (isset($_GET['b']) AND $_GET['b'] == "Manhattan"): ?>selected="true"<?php endif; ?>>Manhattan</option>
+       <option value="Bronx" <?php if (isset($_GET['b']) AND $_GET['b'] == "Bronx"): ?>selected="true"<?php endif; ?>>Bronx</option>
+       <option value="Staten Island" <?php if (isset($_GET['b']) AND $_GET['b'] == "Staten Island"): ?>selected="true"<?php endif; ?>>Staten Island</option>
+    </select>
+  </div>
+  <div class="select-row">
+    <h3>Sort on</h3>
+    <select name="sort">
+       <option value="comments">Comments</option>
+       <option value="date" <?php if (isset($_GET['sort']) AND $_GET['sort'] == "date"): ?>selected="true"<?php endif; ?>>Date</option>
+    </select>
+  </div>
+  <input type="submit" value="Apply" class="submit" />
+</div>
 </form>
+</div>
 			<div style="clear:both;"></div>
 			<div class="r_cat_tooltip"> <a href="#" class="r-3">2a. Structures a risque | Structures at risk</a> </div>
 

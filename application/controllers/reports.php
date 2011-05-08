@@ -39,7 +39,6 @@ class Reports_Controller extends Main_Controller {
 	{
 		// Cacheable Controller
 		$this->is_cachable = TRUE;
-		
 		$this->template->header->this_page = 'reports';
 		$this->template->content = new View('reports');
 		$this->themes->js = new View('reports_js');
@@ -60,21 +59,22 @@ class Reports_Controller extends Main_Controller {
                 }
                 if (!empty($category_ids_string))
 		{
-                  //$category_id = $db->escape($_GET['c']);
                   foreach ($category_ids_string as $category_id) {
                     $category_ids[] = (int)str_replace("'", "", $db->escape($category_id));
                   }
                   $category_ids_string = implode(',',$category_ids);
                   $category_ids_in = "IN ($category_ids_string)";
-                  //			$query = 'SELECT ic.incident_id AS incident_id FROM '.$this->table_prefix.'incident_category AS ic INNER JOIN '.$this->table_prefix.'category AS c ON (ic.category_id = c.id)  WHERE c.id='.$category_id.' OR c.parent_id='.$category_id.';';
                   $query = 'SELECT ic.incident_id AS incident_id FROM '.$this->table_prefix.'incident_category AS ic INNER JOIN '.$this->table_prefix.'category AS c ON (ic.category_id = c.id)  WHERE c.id '.$category_ids_in.' OR c.parent_id '.$category_ids_in.';';
 			$query = $db->query($query);
 
-			foreach ( $query as $items )
-			{
-				$allowed_ids[] = $items->incident_id;
-			}
-		}
+                        if (count($query) === 0) {
+                          $allowed_ids[] = -1;
+                        } else {
+                          foreach ( $query as $items ) {
+                              $allowed_ids[] = $items->incident_id;
+                            }
+                        }
+                }
 
 		// Get location_ids if we are to filter by location
 		$location_ids = array();
@@ -172,7 +172,7 @@ class Reports_Controller extends Main_Controller {
 				));
 
 		// Reports
-                if (isset($_GET['sort']) AND $_GET['sort'] == 'comments')
+                if (!isset($_GET['sort']) OR $_GET['sort'] === 'comments')
                 {
                   $loc_id_in = (count($location_ids) === 0) ? "1=1" : "location.id in (".implode(',',$location_ids).")";
                   $inc_id_in = str_replace('id', 'incident.id', $incident_id_in);
@@ -273,27 +273,7 @@ class Reports_Controller extends Main_Controller {
 			$this->template->content->pagination_stats = '('.$pagination->total_items.' report'.$plural.')';
 		}
 
-		// Category Title, if Category ID available
-
-		//$category_id = ( isset($_GET['c']) AND !empty($_GET['c']) )
-		//	? $_GET['c'] : "0";
-                //		$categories = ORM::factory('category')
-		//	->find($category_id);
-
-                /*
-		if($category->loaded)
-		{
-			$translated_title = Category_Lang_Model::category_title($category_id,$l);
-			if($translated_title)
-			{
-				$this->template->content->category_title = $translated_title;
-			}else{
-				$this->template->content->category_title = $category->category_title;
-			}
-		}else{
-			$this->template->content->category_title = "";
-                        }*/
-
+                // this is used as text display for search results string
                 $category_titles = array();
                 if ($category_ids_in)
                 {
@@ -307,31 +287,24 @@ class Reports_Controller extends Main_Controller {
                 }
                 $this->template->content->category_titles = $category_titles;
 
-                $user_categories_cfg = Kohana::config('pps.user_categories');
-                $visible_category_titles = array();
-                foreach($user_categories_cfg as $visible_category_title)
-                {
-                  $visible_category_titles[] = $db->escape($visible_category_title);
+                $scale_category = ORM::factory('category')->where('category_title', 'Scale')->find();
+                $context_category = ORM::factory('category')->where('category_title', 'Context')->find();
+                $visible_categories = ORM::factory('category')
+                  ->where('parent_id IN ('.implode(",", array($scale_category->id, $context_category->id)).')')
+                  ->find_all();
+                $scale_categories = array();
+                $context_categories = array();
+                foreach ($visible_categories as $visible_category) {
+                  if ($visible_category->parent_id === $scale_category->id) {
+                    $scale_categories[] = $visible_category;
+                  } elseif ($visible_category->parent_id === $context_category->id) {
+                    $context_categories[] = $visible_category;
+                  }
                 }
-                $user_categories_in = 'category_title IN ('.implode(',',$visible_category_titles).')';
-                $query_visible_category_parents = ORM::factory('category')->where($user_categories_in)->find_all();
-                $visible_category_parentids = array();
-                foreach ($query_visible_category_parents as $visible_category_parent)
-                {
-                    $visible_category_parentids[] = $visible_category_parent->id;
-                }
-                $user_categories = array();
-                if ($visible_category_parentids)
-                {
-                    $category_visible_parent_in = 'parent_id IN ('.implode(',',$visible_category_parentids).')';
-                    $query_user_categories = ORM::factory('category')->where($category_visible_parent_in)->find_all();
-                    foreach ($query_user_categories as $category)
-                    {
-                        $user_categories[] = $category;
-                    }
-                }
-                $this->template->content->user_categories = $user_categories;
+                $this->template->content->scale_categories = $scale_categories;
+                $this->template->content->context_categories = $context_categories;
                 $this->template->content->selected_categories = $category_ids;
+
 
 		// Collect report stats
 		$this->template->content->report_stats = new View('reports_stats');

@@ -3,7 +3,6 @@
 // pps specific configuration values
 
 // what categories to list where
-$config['map_categories'] = array('Context');
 $config['user_categories'] = array('Scale');
 
 // og data to use
