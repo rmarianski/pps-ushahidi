@@ -3,7 +3,7 @@
 <head>
 	<title><?php echo $site_name; ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   <link rel="shortcut icon" href="/placemap/nyc-demo/favicon.ico">
+   <link rel="shortcut icon" href="/by-the-city/favicon.ico">
 
     <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
 	<?php echo $header_block; ?>
