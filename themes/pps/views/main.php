@@ -24,8 +24,6 @@
 					{
                                           // need to show subcategories for visible categories, and not top level
 						$category_title = $category_info[0];
-                                                if (!in_array($category_title, $map_categories))
-                                                  continue;
                                                 /*
 						$category_color = $category_info[1];
 						$category_image = '';
