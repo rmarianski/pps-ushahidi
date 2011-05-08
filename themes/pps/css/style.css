@@ -1760,7 +1760,7 @@ a.show-more {
 /*---New Reports Styles CB:10.14.10 ---*/
 
 /* Reports View */
-.reports-box {  }
+.reports-box { margin-top: 1em; }
 	
 	.rb_report { position:relative; border-top:1px solid #333; overflow:auto; padding-bottom:10px; }
 		.reports-box .hover { background: none; }
