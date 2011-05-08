@@ -188,7 +188,7 @@ foreach ($categories as $category)
 				<div class="report_row">
                 <h4>Map your Idea</h4>
               	  	<div class="report-find-location">
-							<p>Click anywhere on map to place marker.</p> <p> Click and drag map to move map. </p><p> Use <img src="http://urbandesignweek.org/by-the-city/themes/pps/images/plus.gif" / align="absmiddle" style="padding:2px;"> and <img src="http://urbandesignweek.org/by-the-city/themes/pps/images/minus.gif"  align="absmiddle" style="padding:2px;"/> icons to zoom map.</p><br /><p>If your idea is for a citywide system or condition, please select one representative site.</p>
+							<p>Click anywhere on map to place marker.</p> <p> Click and drag map to move map. </p><p> Use <img src="<?php echo url::site('themes/pps/images/plus.gif'); ?>" align="absmiddle" style="padding:2px;" /> and <img src="<?php echo url::site('themes/pps/images/minus.gif'); ?>"  align="absmiddle" style="padding:2px;" /> icons to zoom map.</p><br /><p>If your idea is for a citywide system or condition, please select one representative site.</p>
                    	</div>
 					<div id="divMap" class="report_map"></div>
                     <div style="clear:both;" id="find_text"><?php echo Kohana::lang('ui_main.pinpoint_location'); ?>.</div>
