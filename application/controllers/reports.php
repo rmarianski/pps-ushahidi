@@ -542,10 +542,11 @@ class Reports_Controller extends Main_Controller {
 				$location->location_date = date("Y-m-d H:i:s",time());
 
                                 // reverse geocode to get borough
-                                $borough = map::borough($post->latitude, $post->longitude);
-                                if ($borough) {
-                                  $location->borough = $borough;
-                                }
+                                // XXX don't want to geocode on denver
+                                //$borough = map::borough($post->latitude, $post->longitude);
+                                //if ($borough) {
+                                //  $location->borough = $borough;
+                                //}
 
                                 $location->save();
 
