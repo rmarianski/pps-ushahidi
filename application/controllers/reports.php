@@ -62,18 +62,16 @@ class Reports_Controller extends Main_Controller {
                   foreach ($category_ids_string as $category_id) {
                     $category_ids[] = (int)str_replace("'", "", $db->escape($category_id));
                   }
-                  $category_ids_string = implode(',',$category_ids);
-                  $category_ids_in = "IN ($category_ids_string)";
-                  $query = 'SELECT ic.incident_id AS incident_id FROM '.$this->table_prefix.'incident_category AS ic INNER JOIN '.$this->table_prefix.'category AS c ON (ic.category_id = c.id)  WHERE c.id '.$category_ids_in.' OR c.parent_id '.$category_ids_in.';';
-			$query = $db->query($query);
+                  $query = 'SELECT incident_id, count(*) AS count FROM incident_category WHERE category_id in ('.implode(',', $category_ids).') GROUP BY incident_id HAVING count='.count($category_ids);
+                  $query = $db->query($query);
 
-                        if (count($query) === 0) {
-                          $allowed_ids[] = -1;
-                        } else {
-                          foreach ( $query as $items ) {
-                              $allowed_ids[] = $items->incident_id;
-                            }
-                        }
+                  if (count($query) === 0) {
+                    $allowed_ids[] = -1;
+                  } else {
+                    foreach ( $query as $items ) {
+                      $allowed_ids[] = $items->incident_id;
+                    }
+                  }
                 }
 
 		// Get location_ids if we are to filter by location
