@@ -32,15 +32,15 @@ a:hover{
 
 /* header elements */
 h1, h2, h3, h4, h5, h6{
-    font-family:  Helvetica, Arial, sans-serif;
+    font-family: 'Cabin', helvetica, arial, serif;
     font-weight: bold;
     margin-top: 0;
     padding: 0;
-	color: #000;
+	color: #555;
 }
 
 h1{
-    font-size: 150%;
+    font-size: 125%;
     
 }
 
@@ -51,8 +51,9 @@ h2{
 }
 
 h3{
-    font-size: 225%;
+    font-size: 400%;
 	margin-bottom: .2em;
+	font-family: 'Just Another Hand', arial, serif;
     
 }
 
@@ -78,14 +79,14 @@ h6{
 
 /* page setup */
 body{
-    font-family: Helvetica, Arial, sans-serif;
+    font-family: 'Cabin', helvetica, arial, serif;
     color: #000;
     font-size: 12px;
 }
 
 body#page{
     
-  background: #C3DCF2 url(../images/page-bg.png) fixed no-repeat center top;
+  background: #fff url(../images/icon-bg.jpg) no-repeat center top;
 
 }
 
@@ -99,13 +100,13 @@ div.rapidxwpr{
 /* header */
 div#header{
     position: relative;
-    height: 220px;
+    height: 150px;
     margin: 0px 0px 0px 0px;
 }
 
 div#header a:hover{
+	display:none;
     position: absolute;
-	display: block;
     height: 220px;
 	width:240px;
     margin: 0px 0px 0px 24%;
@@ -113,8 +114,8 @@ div#header a:hover{
         text-decoration: none;
 }
 div#header a {
+display:none;
 	position: absolute;
- 	display: block;
     height: 220px;
 	width:240px;
     margin: 0px 0px 0px 24%;
@@ -132,15 +133,27 @@ div#logo{
     border: 0;
     background: none;
     float: left;
-    margin: 14px 0 0 0;
+    margin: 0px;
+	color: #fff;
+	padding: 35px 0px 20px 10px;
 }
+
 div#logo h1{
 	margin:0;
 	padding:0;
-	font-size: 36px;
-	text-transform: uppercase;
+	font-size: 48px;
+	color: #fff;
+	font-family: 'Permanent Marker', arial, serif;
+	font-weight:normal;
+	/*text-transform:uppercase;*/
+	
+}  
+
+div#logo h2{
+	color: #fff;
 	
 }
+
 div#logo span{
 	font-size:14px;
 }
@@ -203,7 +216,7 @@ div#equalright{
 div#main{
     width: auto;
     margin: 0px 0px 0px 0px;
-    padding: 15px 29px 15px 10px;
+    padding: 150px 29px 15px 10px;
 }
 
 div#mainmiddle{
@@ -413,17 +426,22 @@ div#mainmenu a{
     display: block;
     position: relative;
     padding: 7px 12px;
-    color: #f60;
+    color: #fff;
     overflow: hidden;
+	border: 2px #fff solid;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 120%;
+			-moz-border-radius:4px;
+	-khtml-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
 }
 
 div#mainmenu a:hover{
     text-decoration: none;
-    color: #fff;
-    background: #f60;
+    color: #f60;
+    background: #fff;
 			-moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
@@ -438,8 +456,8 @@ div#mainmenu a.active{
     text-transform: uppercase;
     font-weight: bold;
     text-decoration: none;
-    color: #fff;
-    background: #f60;
+    color: #f60;
+    background: #fff;
 		-moz-border-radius:4px;
 	-khtml-border-radius:4px;
 	-webkit-border-radius:4px;
@@ -578,13 +596,14 @@ div.cat-filters span a{
 }
 
 ul.category-filters{
-	 filter:alpha(opacity=75);
+	 /*filter:alpha(opacity=75);
         -moz-opacity:0.75;
         -khtml-opacity: 0.75;
-        opacity: 0.75;
+        opacity: 0.75;*/
     background: #fff;
-    border-top: #ccc 0px solid;
-    border-bottom: #ccc 0px solid;
+    border-top: #f60 2px solid;
+    border-bottom: #f60 2px solid;
+	border-right: #f60 2px solid;
     list-style: none;
     padding: 20 0 20 0;
 	-moz-border-radius-topright:8px;
@@ -1388,11 +1407,11 @@ label.error {
 	margin:20px 20px 20px 0px;
 	
 	padding: 20px 0px 0px 20px;
-		 filter:alpha(opacity=75);
+		/* filter:alpha(opacity=75);
         -moz-opacity:0.75;
         -khtml-opacity: 0.75;
-        opacity: 0.75;
-    background: #fff;
+        opacity: 0.75;*/
+    border: 2px #F60 solid;
 	
 	-moz-border-radius:8px;
 	-khtml-border-radius:8px;
@@ -1415,13 +1434,13 @@ label.error {
 }
 .report_right{
 	overflow:hidden;
-	width:180px;
+	width:240px;
 	margin:20px;
 	padding: 20px 20px 20px 20px;
-		 filter:alpha(opacity=75);
+		/* filter:alpha(opacity=75);
         -moz-opacity:0.75;
         -khtml-opacity: 0.75;
-        opacity: 0.75;
+        opacity: 0.75;*/
     background: #fff;
 	-moz-border-radius:8px;
 	-khtml-border-radius:8px;
@@ -1485,14 +1504,17 @@ label.error {
 .report_row h4{
 	margin:0 0 5px 0;
 	padding:0;
-	font-size:175%;
+	font-size:300%;
 	font-weight:bold;
+	font-family: 'Just Another Hand', arial, serif;
 }
+
 .report_row h4 .example{
 	font-weight: normal;
 	font-size: 12px;
 	line-height: 15px;
 	color: #777;
+	font-family: Helvetica, arial, serif;
 }
 .report_row .date-box{
 	float:left;
@@ -1548,6 +1570,7 @@ ul.treeview li.lastExpandable { width:155px; }
 	padding:0;
 	font-size:130%;
 	font-weight:bold;
+	font-family: Helvetica, arial, serif;
 }
 .report_optional h4
 {
@@ -1555,6 +1578,7 @@ ul.treeview li.lastExpandable { width:155px; }
 	padding:0;
 	font-size:110%;
 	font-weight:bold;
+	font-family: Helvetica, arial, serif;
 }
 
 .report_optional h4 .subtext
@@ -1659,7 +1683,13 @@ a.show-more {
 .big-block {
 	overflow:hidden;
 /*	width:930px; */
-	padding:16px 35px 10px 10px;
+	padding:140px 35px 10px 10px;
+	
+}
+.big-block h1{
+
+	padding:50px 0px 0px 0px;
+	font-size:200%;
 	
 }
 /* Min-Height */
@@ -1780,7 +1810,7 @@ a.show-more {
 			.r_cat_tooltip a:hover { text-decoration:none; color:#fff; }
 		
 		.r_details { float:left; width:782px; margin:15px 0; }
-			.r_details h3 { font-size:14px; margin-bottom:0px; width:670px; }
+			.r_details h3 { font-size:14px; margin-bottom:0px; width:670px;  font-family:  Helvetica, Arial, sans-serif; }
 			.r_details h3 a.r_title { font-size:14px; color:#f60; }
 			.hover .r_details h3 a.r_title { color:#f60; } 
 			.r_details h3 a.r_comments { color:#fff; font-size:11px; display:inline-block; text-align:center; height:19px; width:24px; padding:4px 0 3px; background:transparent url(../images/icon_sprite.png) 0 0 no-repeat; }
@@ -2200,23 +2230,17 @@ div.green-box {
 	border:0px solid #a7d1a7;
 	clear:both;
 	overflow:hidden;
-	filter:alpha(opacity=75);
+	/*filter:alpha(opacity=75);
     -moz-opacity:0.75;
     -khtml-opacity: 0.75;
-    opacity: 0.75;
+    opacity: 0.75;*/
     background: #fff;
 	-moz-border-radius:8px;
 	-khtml-border-radius:8px;
 	-webkit-border-radius:8px;
 	border-radius:8px;
-		-moz-box-shadow: 3px 3px 4px #ccc;
-	-webkit-box-shadow: 3px 3px 4px #ccc;
-	box-shadow: 3px 3px 4px #ccc;
-	/* For IE 8 */
-	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc')";
-	/* For IE 5.5 - 7 */
-	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#cccccc');
-	border: 1px #ccc solid;
+	
+	border: 2px #f60 solid;
 }
 div.red-box {
 	margin:10px 0 25px 0;

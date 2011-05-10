@@ -47,10 +47,13 @@
        <table border="0">
  
   <tr>
-    <td style="padding:20px;"><a href="http://urbandesignweek.org/"><img src="<?php echo url::site('themes/pps/images/logo_udw.png'); ?>" align="left" /></a></td>
-    <td valign="top" style="padding:20px;"><br /><br />Brought to you by<br />
-    <a href="http://www.ifud.org/"><img src="<?php echo url::site('themes/pps/images/logo_ifud.png'); ?>" align="left" /></a></td>
-    <td valign="top" style="padding:20px;"><br /><br />Digital Placemaking App by<br /><a href="http://www.pps.org"><img src="<?php echo url::site('themes/pps/images/logo_pps.png'); ?>"  align="left" /></a></td>
+  <td valign="top" style="padding:20px;"><br /><br />Digital Placemaking App created by<br /><a href="http://www.pps.org"><img src="<?php echo url::site('themes/pps/images/logo_pps.png'); ?>"  align="left" /></a></td>
+    
+    <td valign="top" style="padding:20px;"><br /><br />Made possible by<br /><br />
+    <a href="blank">FHWA</a><br /><a href="blank">Context Sensitive Solutions</a><br /><a href="blank">Denver Department of Public Works</a></td>
+    
+    
+    
   </tr>
 </table>
 

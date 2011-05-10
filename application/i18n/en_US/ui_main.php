@@ -91,7 +91,7 @@
 	'delete_spam' => 'Delete Spam',
 	'demo' => 'Demo',
 	'description' => 'So that people could...',
-	'detailed_location_example' => 'Example: Corner of 4th St & Broadway Manhattan, or All of the South Bronx',
+	'detailed_location_example' => 'Example: Corner of 31st St & Brighton Boulevard, or All of Brighton Blvd',
 	'details' => 'Details',
 	'direct_report' => 'Direct Report',
 	'disabled' => 'Disabled',

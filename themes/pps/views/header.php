@@ -5,7 +5,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
    <link rel="shortcut icon" href="/placemap/nyc-demo/favicon.ico">
 
-    <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Cabin:regular,regularitalic,bold,bolditalic' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
 	<?php echo $header_block; ?>
 	<?php
 	// Action::header_scripts - Additional Inline Scripts from Plugins
@@ -14,11 +18,11 @@
 <meta property="og:title" content="<?php echo Kohana::config('pps.og_title'); ?>" />
 <meta property="og:type" content="website" />
 <?php if (!isset($og_description) OR !$og_description): ?>
-<?php $og_description = "How would you improve New York City's public realm? From April 11-30 share ideas about improving the physical environment of your block, neighborhood, or your entire city, we want to hear it!"; ?>
+<?php $og_description = "How would you brighten Brighton Boulevard?"; ?>
 <?php endif; ?>
 <meta property="og:description" content="<?php echo $og_description; ?>" />
 <meta property="og:url" content="<?php echo url::base() . url::current() ?>" /> 
-<meta property="og:image" content="<?php echo url::site('themes/pps/images/btc-ftc.png'); ?>" />
+<meta property="og:image" content="<?php echo url::site('themes/pps/images/logo.png'); ?>" />
 <meta property="og:site_name" content="<?php echo $site_name; ?>" />
 <meta property="fb:admins" content="<?php echo Kohana::config('pps.fb_admins'); ?>" />
 
@@ -35,7 +39,7 @@
 
 			<!-- searchbox -->
 			<div id="searchbox">
-           <span class='st_twitter_button' displayText='Tweet' st_url="http://ht.ly/4uAcb" st_title="I just shared my idea for improving NYC. What's yours? #bythecity"></span><span class='st_facebook_button' displayText='Facebook'></span><span class='st_email_button' displayText='Email'></span><span class='st_sharethis_button' displayText='ShareThis'></span>
+           <span class='st_twitter_button' displayText='Tweet' st_url="http://ht.ly/4uAcb" st_title="I just shared my idea for brightening Brighton BLVD. What's yours? #brightenbrighton"></span><span class='st_facebook_button' displayText='Facebook'></span><span class='st_email_button' displayText='Email'></span><span class='st_sharethis_button' displayText='ShareThis'></span>
 				<!-- languages -->
 				<!--<?php echo $languages;?>-->
 				<!-- / languages -->
@@ -49,8 +53,8 @@
 
 			<!-- logo -->
 			<div id="logo">
-				<span><img src="<?php echo url::site('themes/pps/images/btc-ftc.png'); ?>" />
-				<?php echo $site_tagline; ?></span>
+				<h1><?php echo $site_name; ?></h1>
+				<h2><?php echo $site_tagline; ?></h2>
    </div><a href="<?php echo url::site('reports/submit'); ?>"><span><?php echo url::site('reports/submit'); ?></span></a>
 			<!-- / logo -->
 
@@ -67,7 +71,7 @@
 
 				<!-- mainmenu -->
 				<div id="mainmenu" class="clearingfix">
-					<ul><?php nav::main_tabs($this_page); ?></ul>
+					<ul><h1><?php nav::main_tabs($this_page); ?></h1></ul>
 
 				</div>
 				<!-- / mainmenu -->

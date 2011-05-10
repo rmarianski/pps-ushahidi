@@ -35,7 +35,7 @@
 				<div class="report_row">
 					<h3><?php echo Kohana::lang('ui_main.reports_title'); ?></h3>
                     
-					<?php print form::textarea('incident_title', $form['incident_title'], ' rows="2" class="textarea long" placeholder="...share one idea to improve your block, neighborhood, city..."'); ?>
+					<?php print form::textarea('incident_title', $form['incident_title'], ' rows="2" class="textarea long" placeholder="...share one idea to improve Brighton Boulevard corridor..."'); ?>
 				</div>
                  <div class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.reports_location_name'); ?><br /><span class="example"><?php echo Kohana::lang('ui_main.detailed_location_example'); ?></span></h4>
@@ -43,7 +43,7 @@
 				</div>
 				<div class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.reports_description'); ?></h4>
-					<?php print form::textarea('incident_description', $form['incident_description'], ' rows="2" class="textarea long" ') ?>
+					<?php print form::textarea('incident_description', $form['incident_description'], ' rows="2" class="textarea long" placeholder="...how will your idea make Brighton BLVD a better place to be..." ') ?>
 				</div>
                
 				<div class="report_row" style="display:none" id="datetime_default">
@@ -188,7 +188,7 @@ foreach ($categories as $category)
 				<div class="report_row">
                 <h4>Map your Idea</h4>
               	  	<div class="report-find-location">
-							<p>Click anywhere on map to place marker.</p> <p> Click and drag map to move map. </p><p> Use <img src="http://urbandesignweek.org/by-the-city/themes/pps/images/plus.gif" / align="absmiddle" style="padding:2px;"> and <img src="http://urbandesignweek.org/by-the-city/themes/pps/images/minus.gif"  align="absmiddle" style="padding:2px;"/> icons to zoom map.</p><br /><p>If your idea is for a citywide system or condition, please select one representative site.</p>
+							<p>Click anywhere on map to place marker.</p> <p> Click and drag map to move map. </p><p> Use <img src="http://urbandesignweek.org/by-the-city/themes/pps/images/plus.gif" / align="absmiddle" style="padding:2px;"> and <img src="http://urbandesignweek.org/by-the-city/themes/pps/images/minus.gif"  align="absmiddle" style="padding:2px;"/> icons to zoom map.</p><br /><p>If your idea is for a system wide Brighton Boulevard condition, please select one representative site.</p>
                    	</div>
 					<div id="divMap" class="report_map"></div>
                     <div style="clear:both;" id="find_text"><?php echo Kohana::lang('ui_main.pinpoint_location'); ?>.</div>
@@ -208,7 +208,7 @@ foreach ($categories as $category)
                 
 
 				<div class="report_optional">
-					<h4 style="font-size:175%"><?php echo Kohana::lang('ui_main.reports_optional'); ?><br /><span class="subtext"><?php echo Kohana::lang('ui_main.reports_optional_subtext'); ?></span></h4>
+					<h4 style="font-size:300%; font-weight:bold; font-family: 'Just Another Hand', arial, serif;"><?php echo Kohana::lang('ui_main.reports_optional'); ?></h4><span class="subtext"><?php echo Kohana::lang('ui_main.reports_optional_subtext'); ?></span>
 					<!-- News Fields -->
 				<div id="divNews" class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.reports_news'); ?></h4>
@@ -334,7 +334,7 @@ foreach ($categories as $category)
 						<?php print form::input('person_last', $form['person_last'], ' class="text long"'); ?>
 					</div>
                                         <div class="report_row">
-                                                  <h4>Your Neighborhood <span style="margin-left: 2em" class="discreet">Example: Astoria, Queens</span></h4>
+                                                  <h4>Your Neighborhood <span style="margin-left: 2em" class="discreet">Example: Clayton</span></h4>
                                                   <?php print form::input('person_neighborhood', $form['person_neighborhood'], ' class="text long"'); ?>
                                         </div>
 					<div class="report_row">
@@ -355,23 +355,15 @@ foreach ($categories as $category)
 		
                 
               
-              <h5 style=" font-size:120%; font-weight:normal;"><strong>From now through May 8th, we're gathering up your ideas:</strong> from local parks and squares to citywide issues like transit and pollution, what needs a re-design? You can explore, discuss, and debate everyone's ideas right here.</h5>
-              <h5 style=" font-size:120%; font-weight:normal;">Starting May 16th, we'll rally urban designers around the world to imagine the future of New York City based on your suggestions.</h5>
+              <h5 style=" font-size:125%; font-weight:normal;"><strong>From now through June 8th,</strong> we're gathering up your ideas about reinventing the Brighton Boulevard corridor. A massive transition in this area is underway to transform Brighton Boulevard from a car-dominated industral landscape, into a vibrant community with a strong economy that promotes biking, walking, and transit ridership. </h5>
+              <h5 style=" font-size:125%; font-weight:normal;">The ideas you enter here will be included in the redesign process for Brighton Boulevard. There will be future opportunities for input, but it would be wonderful to hear your ideas, both big and small, regarding what activities/land use, transportation, and environment of the area along the corridor, including adjacent communities. </h5>
 
-<h5  style=" font-size:120%; font-weight:bold;">Here are three great examples:</h5>
-<h5  style=" font-size:120%; font-weight:normal;">Wouldn't it be great if...</h5>
+<h5  style=" font-size:125%; font-weight:bold;">Here are three great examples of what we want to hear:</h5>
+<h5  style=" font-size:125%; font-weight:normal;">Wouldn't it be great if...</h5>
 
-<h5  style=" font-size:120%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/60">Create a traditional open air market place on the site of the old West Harlem Bernheimer Brewery and stables.</a></h5>
-<h5  style=" font-size:120%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/35">There was an easier way to get from Queens to Brooklyn.</a></h5>
-<h5  style=" font-size:120%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/51">corporate Manhattan recovered some of its messiness. Everyplace seems to be geared toward seating and eating comfort.</a></h5>
-
-
-				
-				
-
-				
-									
-				
+<h5  style=" font-size:125%; font-weight:normal;">...<a href="blank">There was a traditional open air market place on the site of the old West Harlem Bernheimer Brewery and stables.</a></h5>
+<h5  style=" font-size:125%; font-weight:normal;">...<a href="blank">There was an easier way to bike from the ballpark to Brighton Boulevard.</a></h5>
+<h5  style=" font-size:125%; font-weight:normal;">...<a href="blank">I could live along the corridor and get to downtown with safe and reliable transit while working on my iPad</a></h5>						
 			</div>
 		</div>
 		<?php print form::close(); ?>
