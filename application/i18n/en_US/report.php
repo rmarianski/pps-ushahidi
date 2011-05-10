@@ -1,7 +1,7 @@
 <?php
 	$lang = array(
 	'comments_form_error' => 'error!',
-        'custom_field[14]' => array(
+        "custom_field[<?php echo Kohana::config('pps.custom_field_id'); ?>]" => array(
                 'required' => "The what you want the city to be like field is required",
         ),
 	'custom_field' => array(

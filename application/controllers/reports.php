@@ -520,7 +520,7 @@ class Reports_Controller extends Main_Controller {
 
                         // XXX can make more generic by iterating through field definitions
                         // and verifying the required ones are present in the post
-                        $custom_fieldid = 14;
+                        $custom_fieldid = Kohana::config('pps.custom_field_id');
                         $custom_fieldname = "custom_field[$custom_fieldid]";
                         $custom_error = false;
                         if (!isset($custom_fields[$custom_fieldid]) OR
