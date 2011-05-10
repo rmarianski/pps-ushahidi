@@ -19,13 +19,13 @@
 			<ul id="category_switch" class="category-filters">
 				<li><a class="active" id="cat_0" href="#"><span class="swatch" style="background-color:<?php echo "#".$default_map_all;?>"></span><span class="category-title"><?php echo Kohana::lang('ui_main.all_categories');?></span></a></li>
 				<?php
-                                        $map_categories = Kohana::config('pps.map_categories');
+                                        //$map_categories = Kohana::config('pps.map_categories');
 					foreach ($categories as $category => $category_info)
 					{
                                           // need to show subcategories for visible categories, and not top level
 						$category_title = $category_info[0];
-                                                if (!in_array($category_title, $map_categories))
-                                                  continue;
+                                                //if (!in_array($category_title, $map_categories))
+                                                //  continue;
                                                 /*
 						$category_color = $category_info[1];
 						$category_image = '';
