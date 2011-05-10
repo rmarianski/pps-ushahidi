@@ -24,6 +24,7 @@ foreach ($user_categories as $visible_category)
           echo '<li style="list-style: none; display: inline; padding: 0 5px">'.category::display_category_checkbox($visible_category, $selected_categories, 'c').'</li>';
   }
 ?>
+<!--
 <span style="font-weight: bold; margin-left: 1em">Borough</span>
 <select name="b">
    <option value="any">Any</option>
@@ -33,6 +34,7 @@ foreach ($user_categories as $visible_category)
    <option value="Bronx" <?php if (isset($_GET['b']) AND $_GET['b'] == "Bronx"): ?>selected="true"<?php endif; ?>>Bronx</option>
    <option value="Staten Island" <?php if (isset($_GET['b']) AND $_GET['b'] == "Staten Island"): ?>selected="true"<?php endif; ?>>Staten Island</option>
 </select>
+-->
 
 <span style="font-weight: bold; margin-left: 1em">Sort on</span>
 <select name="sort">

@@ -71,8 +71,8 @@
                                         <td><?php print form::checkbox('data_include[]','6',TRUE); ?>Include "I want the city to be more"</td>
                                 </tr>
                                 <tr>
-                                        <td><?php print form::checkbox('data_include[]','7',TRUE); ?>Include Borough</td>
-                                        <td><?php print form::checkbox('data_include[]','8',TRUE); ?>Include Optional Info</td>
+                                        <td><?php print form::checkbox('data_include[]','7',TRUE); ?>Include Optional Info</td>
+                                        <td>&nbsp;</td>
                                 </tr>
 				<tr>
 					<td colspan="2">

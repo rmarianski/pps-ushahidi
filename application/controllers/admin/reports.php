@@ -1185,10 +1185,6 @@ class Reports_Controller extends Admin_Controller
                     }
 
                     if ($item == 7) {
-                      $report_csv .= ",BOROUGH";
-                    }
-
-                    if ($item == 8) {
                       $report_csv .= ",FIRST_NAME";
                       $report_csv .= ",LAST_NAME";
                       $report_csv .= ",NEIGHBORHOOD";
@@ -1256,11 +1252,6 @@ class Reports_Controller extends Admin_Controller
                             break;
 
                         case 7:
-                          $borough = $incident->location->borough;
-                          $report_csv .= "," . ($borough ? $borough : "");
-                          break;
-
-                        case 8:
                           $first_name = $incident->incident_person->person_first;
                           $last_name = $incident->incident_person->person_last;
                           $neighborhood = $incident->incident_person->person_neighborhood;
