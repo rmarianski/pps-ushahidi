@@ -9,3 +9,6 @@ $config['user_categories'] = array('Scale');
 // og data to use
 $config['og_title'] = 'By the City / For the City - Denver';
 $config['fb_admins'] = '753810374';
+
+// custom field id
+$config['custom_field_id'] = 2;
