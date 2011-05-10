@@ -6,6 +6,8 @@ body,div,dl,dt,dd,ul,ol,li,pre,form,fieldset,input,textarea,p,blockquote,th,td{
     padding: 0;
 }
 
+
+
 fieldset,img{
     border: 0;
 }
@@ -614,7 +616,7 @@ ul.category-filters li{
 
 ul.category-filters li a{
     display: block;
-    padding: 6px 8px 6px 13px;
+    padding: 4px 8px 4px 13px;
 /*    padding: 8px 10px 8px 35px; maxf change */
     font-size: 10px;
     text-transform: uppercase;
@@ -2280,11 +2282,34 @@ div.green-box ul, div.red-box ul{
 
 .search-box {
     float: right;
-    width: 200px;
+    width: 230px;
+}
+
+#ideas-search {
+   background: white;
+border: 0px solid #F60;
+color: #606060;
+float: left;
+font-family: Helvetica, sans-serif;
+font-size: 12px;
+font-weight: bold;
+margin: 0;
+padding: 5px;
+width: 200px;
 }
 
 .filter-block {
-    background-color: white;
+	overflow: hidden;
+padding: 10px;
+filter: alpha(opacity=75);
+-moz-opacity: 0.75;
+-khtml-opacity: 0.75;
+opacity: 0.75;
+background: white;
+-moz-border-radius: 8px;
+-khtml-border-radius: 8px;
+-webkit-border-radius: 8px;
+border-radius: 8px;
 }
 
 .filter-by {
@@ -2301,7 +2326,7 @@ div.green-box ul, div.red-box ul{
 }
 .filter-scale {
     float: left;
-    width: 150px;
+    width: 125px;
 }
 .filter-other {
     float: left;
@@ -2317,7 +2342,23 @@ div.green-box ul, div.red-box ul{
     font-weight: bold;
 }
 .filter-other .submit {
-    margin: 10px 50px;
+display: block;
+cursor:pointer;
+float: left;
+position: relative;
+margin: 30px 0px 0px 60px;
+padding: 8px 12px;
+overflow: hidden;
+text-transform: uppercase;
+font-weight: bold;
+text-decoration: none;
+border-width: 0px;
+color: white;
+background: #F60;
+-moz-border-radius: 16px;
+-khtml-border-radius: 16px;
+-webkit-border-radius: 16px;
+border-radius: 16px;
 }
 
 .filter-block h3 {
@@ -2327,6 +2368,7 @@ div.green-box ul, div.red-box ul{
 
 .filter-list li {
     list-style: none;
+	margin: 2px;
     float: left;
     width: 125px;
 }
