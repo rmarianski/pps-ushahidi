@@ -105,7 +105,7 @@
 					"incident_video[]": {
 						url: true
                                         },
-                                        "custom_field[14]": {
+                                        "custom_field[<?php echo Kohana::config('pps.custom_field_id'); ?>]": {
                                                 required: true
                                         }
 				},
@@ -156,7 +156,7 @@
 					"incident_news[]": {
 						url: "Please enter a valid link, e.g. http://domain.com/item"
                                         },
-                                        "custom_field[14]": {
+                                        "custom_field[<?php echo Kohana::config('pps.custom_field_id'); ?>]": {
                                                 required: "Please enter a response"
                                         }
 				},

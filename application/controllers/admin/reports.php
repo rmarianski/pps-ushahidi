@@ -1238,7 +1238,7 @@ class Reports_Controller extends Admin_Controller
                             case 6:
                                 $form_id = 1;
                                 $custom_form = ORM::factory('form', $form_id)->orderby('field_position','asc');
-                                $custom_fieldid = 14;
+                                $custom_fieldid = Kohana::config('pps.custom_field_id');
                                 $custom_field_written = FALSE;
                                 foreach ($custom_form->form_field as $custom_formfield) {
                                   if ($custom_formfield->id == $custom_fieldid) {
