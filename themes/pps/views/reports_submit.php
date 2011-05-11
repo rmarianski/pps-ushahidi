@@ -188,7 +188,7 @@ foreach ($categories as $category)
 				<div class="report_row">
                 <h4>Map your Idea</h4>
               	  	<div class="report-find-location">
-							<p>Click anywhere on map to place marker.</p> <p> Click and drag map to move map. </p><p> Use <img src="http://urbandesignweek.org/by-the-city/themes/pps/images/plus.gif" / align="absmiddle" style="padding:2px;"> and <img src="http://urbandesignweek.org/by-the-city/themes/pps/images/minus.gif"  align="absmiddle" style="padding:2px;"/> icons to zoom map.</p><br /><p>If your idea is for a system wide Brighton Boulevard condition, please select one representative site.</p>
+							<p>Click anywhere on map to place marker.</p> <p> Click and drag map to move map. </p><p> Use <img src="http://pps.org/placemap/denver/themes/pps/images/plus.gif" / align="absmiddle" style="padding:2px;"> and <img src="http://pps.org/placemap/denver/themes/pps/images/minus.gif"  align="absmiddle" style="padding:2px;"/> icons to zoom map.</p><br /><p>If your idea is for a system wide Brighton Boulevard condition, please select one representative site.</p>
                    	</div>
 					<div id="divMap" class="report_map"></div>
                     <div style="clear:both;" id="find_text"><?php echo Kohana::lang('ui_main.pinpoint_location'); ?>.</div>
@@ -208,7 +208,7 @@ foreach ($categories as $category)
                 
 
 				<div class="report_optional">
-					<h4 style="font-size:300%; font-weight:bold; font-family: 'Just Another Hand', arial, serif;"><?php echo Kohana::lang('ui_main.reports_optional'); ?></h4><span class="subtext"><?php echo Kohana::lang('ui_main.reports_optional_subtext'); ?></span>
+					<h4 style="font-size:150%; font-weight:bold; font-family: Helvetica, arial, serif;"><?php echo Kohana::lang('ui_main.reports_optional'); ?></h4><span class="subtext"><?php echo Kohana::lang('ui_main.reports_optional_subtext'); ?></span>
 					<!-- News Fields -->
 				<div id="divNews" class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.reports_news'); ?></h4>
@@ -355,15 +355,18 @@ foreach ($categories as $category)
 		
                 
               
-              <h5 style=" font-size:125%; font-weight:normal;"><strong>From now through June 8th,</strong> we're gathering up your ideas about reinventing the Brighton Boulevard corridor. A massive transition in this area is underway to transform Brighton Boulevard from a car-dominated industral landscape, into a vibrant community with a strong economy that promotes biking, walking, and transit ridership. </h5>
-              <h5 style=" font-size:125%; font-weight:normal;">The ideas you enter here will be included in the redesign process for Brighton Boulevard. There will be future opportunities for input, but it would be wonderful to hear your ideas, both big and small, regarding what activities/land use, transportation, and environment of the area along the corridor, including adjacent communities. </h5>
+              <h5 style=" font-size:125%; font-weight:normal;"><strong>From now through June 8th, we are asking you to contribute ideas towards a new identity for Brighton Boulevard.</strong> </h5>
+              <h5 style=" font-size:125%; font-weight:normal;">A visioning effort is underway to discuss ways to transform Brighton Boulevard to better serve the communities it touches.  The goal is to grow Brighton Boulevard into a reinvigorated, vibrant community with active residents and thriving businesses who feel comfortable as transit riders, pedestrians, drivers or cyclists.</h5>
+               <h5 style=" font-size:125%; font-weight:normal;">Share your big ideas and small ideas, your thoughts on desired land uses, activities, transportation modes, and other issues that contribute to the feeling and functionality of the corridor. The ideas you contribute here will be included in the visioning process for Brighton Boulevard. Let's move towards a new identity for this important piece of Denver's transportation network! If you've thought it - write it!</h5>
 
-<h5  style=" font-size:125%; font-weight:bold;">Here are three great examples of what we want to hear:</h5>
+<h5  style=" font-size:125%; font-weight:bold;">Here are three great examples</h5>
 <h5  style=" font-size:125%; font-weight:normal;">Wouldn't it be great if...</h5>
 
-<h5  style=" font-size:125%; font-weight:normal;">...<a href="blank">There was a traditional open air market place on the site of the old West Harlem Bernheimer Brewery and stables.</a></h5>
-<h5  style=" font-size:125%; font-weight:normal;">...<a href="blank">There was an easier way to bike from the ballpark to Brighton Boulevard.</a></h5>
-<h5  style=" font-size:125%; font-weight:normal;">...<a href="blank">I could live along the corridor and get to downtown with safe and reliable transit while working on my iPad</a></h5>						
+<h5  style=" font-size:125%; font-weight:normal;">...There was an open air market place where I could buy fresh fruits and vegetables.</h5>
+<h5  style=" font-size:125%; font-weight:normal;">...There was an easier way to bike from Brighton Boulevard to Coors Field to see a game.</h5>
+<h5  style=" font-size:125%; font-weight:normal;">...I could live along Brighton Boulevard and rely on comfortable frequent transit to get me to my downtown job?</h5>	
+<br /><br />
+<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.pps.org%2Fplacemap%2Fdenver%2F&amp;send=true&amp;layout=standard&amp;width=250&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:80px;" allowTransparency="true"></iframe>				
 			</div>
 		</div>
 		<?php print form::close(); ?>

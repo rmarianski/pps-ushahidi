@@ -47,10 +47,13 @@
        <table border="0">
  
   <tr>
-  <td valign="top" style="padding:20px;"><br /><br />Digital Placemaking App created by<br /><a href="http://www.pps.org"><img src="<?php echo url::site('themes/pps/images/logo_pps.png'); ?>"  align="left" /></a></td>
+  <td valign="top" style="padding:20px;"><br /><br />Digital Placemaking App created by<br /><a href="http://www.pps.org"><img style="margin-right:60px" src="<?php echo url::site('themes/pps/images/logo_pps.png'); ?>"  align="left" /></a></td>
     
     <td valign="top" style="padding:20px;"><br /><br />Made possible by<br /><br />
-    <a href="blank">FHWA</a><br /><a href="blank">Context Sensitive Solutions</a><br /><a href="blank">Denver Department of Public Works</a></td>
+    <a href="http://www.denvergov.org/"><img style="margin-right:140px" src="<?php echo url::site('themes/pps/images/logo-denver.jpg'); ?>" /></a><a href="http://www.fhwa.dot.gov/"><img style="margin-right:60px" src="<?php echo url::site('themes/pps/images/fhwa-logo.jpg'); ?>" /></a><a href="http://contextsensitivesolutions.org/"><img style="margin-right:60px" src="<?php echo url::site('themes/pps/images/css-logo.gif'); ?>" /></a><br /><br />
+    <a href="http://www.denvergov.org/Default.aspx?alias=www.denvergov.org/cpd">Denver Community Planning & Development</a><br />
+    
+    <a href="http://www.denvergov.org/Default.aspx?alias=www.denvergov.org/dpw">Denver Department of Public Works</a></td>
     
     
     

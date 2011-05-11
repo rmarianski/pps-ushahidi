@@ -3,10 +3,9 @@
 <head>
 	<title><?php echo $site_name; ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-   <link rel="shortcut icon" href="/placemap/nyc-demo/favicon.ico">
+   <link rel="shortcut icon" href="/placemap/denver/favicon.ico">
 
    <link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Cabin:regular,regularitalic,bold,bolditalic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
@@ -15,14 +14,14 @@
 	// Action::header_scripts - Additional Inline Scripts from Plugins
 	Event::run('ushahidi_action.header_scripts');
 	?>
-<meta property="og:title" content="<?php echo Kohana::config('pps.og_title'); ?>" />
+<meta property="og:title" content="Visioning Brighton BLVD" />
 <meta property="og:type" content="website" />
 <?php if (!isset($og_description) OR !$og_description): ?>
-<?php $og_description = "How would you brighten Brighton Boulevard?"; ?>
+<?php $og_description = "How do you vision Brighton Boulevard?"; ?>
 <?php endif; ?>
 <meta property="og:description" content="<?php echo $og_description; ?>" />
 <meta property="og:url" content="<?php echo url::base() . url::current() ?>" /> 
-<meta property="og:image" content="<?php echo url::site('themes/pps/images/logo.png'); ?>" />
+<meta property="og:image" content="<?php echo url::site('themes/pps/images/logo.jpg'); ?>" />
 <meta property="og:site_name" content="<?php echo $site_name; ?>" />
 <meta property="fb:admins" content="<?php echo Kohana::config('pps.fb_admins'); ?>" />
 
@@ -39,7 +38,7 @@
 
 			<!-- searchbox -->
 			<div id="searchbox">
-           <span class='st_twitter_button' displayText='Tweet' st_url="http://ht.ly/4uAcb" st_title="I just shared my idea for brightening Brighton BLVD. What's yours? #brightenbrighton"></span><span class='st_facebook_button' displayText='Facebook'></span><span class='st_email_button' displayText='Email'></span><span class='st_sharethis_button' displayText='ShareThis'></span>
+           <span class='st_twitter_button' displayText='Tweet' st_url="http://ht.ly/4uAcb" st_title="I just shared my idea for Brighton BLVD. What's yours?"></span><span class='st_email_button' displayText='Email'></span><span class='st_facebook_button' displayText='Facebook'></span><span class='st_sharethis_button' displayText='ShareThis'></span>
 				<!-- languages -->
 				<!--<?php echo $languages;?>-->
 				<!-- / languages -->
