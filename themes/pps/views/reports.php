@@ -16,8 +16,8 @@ if (!empty($category_titles))
 ?>
 <?php echo $pagination_stats; ?></h1>
 <form method="GET" action="<?php echo url::site('reports'); ?>">
-<ul>
-<span style="font-weight: bold">Filter by</span>
+<ul style="display:none;">
+<span style="font-weight: bold; display:">Filter by</span>
 <?php
 foreach ($user_categories as $visible_category)
   {
