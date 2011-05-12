@@ -348,6 +348,8 @@ foreach ($categories as $category)
 					?>
 				</div>
                 <div class="report_row">
+                                        <img id="submit-spinner" style="display: none"
+                                             src="<?php echo url::site('themes/pps/images/progress.gif'); ?>" />
 					<input name="submit" type="submit" value="<?php echo Kohana::lang('ui_main.reports_btn_submit'); ?>" class="btn_submit" /> 
 				</div>
 			</div>

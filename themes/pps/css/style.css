@@ -2308,3 +2308,9 @@ div.green-box ul, div.red-box ul{
     font-size: 0.9em;
     font-weight: normal;
 }
+
+#submit-spinner {
+    position: relative;
+    top: 2em;
+    left: 20em;
+}

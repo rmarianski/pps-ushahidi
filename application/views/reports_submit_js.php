@@ -175,7 +175,14 @@
 					}else{
 						error.insertAfter(element);
 					}
-				}
+                            },
+                              submitHandler: function(form) {
+                                $('#submit-spinner').show();
+                                $(form).find(':submit')
+                                    .attr('disabled', true)
+                                    .css('background-color', 'gray');
+                                return true;
+                            }
 			});
 		});
 		
