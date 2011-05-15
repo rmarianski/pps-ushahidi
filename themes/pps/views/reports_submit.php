@@ -361,9 +361,9 @@ foreach ($categories as $category)
 <h5  style=" font-size:120%; font-weight:bold;">Here are three great examples:</h5>
 <h5  style=" font-size:120%; font-weight:normal;">Wouldn't it be great if...</h5>
 
-<h5  style=" font-size:120%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/60">Create a traditional open air market place on the site of the old West Harlem Bernheimer Brewery and stables.</a></h5>
-<h5  style=" font-size:120%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/35">There was an easier way to get from Queens to Brooklyn.</a></h5>
-<h5  style=" font-size:120%; font-weight:normal;">...<a href="http://urbandesignweek.org/by-the-city/reports/view/51">corporate Manhattan recovered some of its messiness. Everyplace seems to be geared toward seating and eating comfort.</a></h5>
+<h5  style=" font-size:120%; font-weight:normal; ">...<a style="color:#f60;" href="http://urbandesignweek.org/by-the-city/reports/view/60">Create a traditional open air market place on the site of the old West Harlem Bernheimer Brewery and stables.</a></h5>
+<h5  style=" font-size:120%; font-weight:normal;">...<a style="color:#f60;" href="http://urbandesignweek.org/by-the-city/reports/view/35">There was an easier way to get from Queens to Brooklyn.</a></h5>
+<h5  style=" font-size:120%; font-weight:normal;">...<a style="color:#f60;" href="http://urbandesignweek.org/by-the-city/reports/view/51">corporate Manhattan recovered some of its messiness. Everyplace seems to be geared toward seating and eating comfort.</a></h5>
 
 
 				
