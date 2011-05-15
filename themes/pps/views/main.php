@@ -200,6 +200,21 @@
 </div>
 <!-- / main body -->
 
+<?php if (count($feeds) > 0): ?>
+<div class="feeds-container">
+  <h2 class="heading">Ideas Discussed <span class="source">Tumblr</span></h2>
+  <?php foreach ($feeds as $feed): ?>
+                                  <?php $feed_date = date('c', strtotime($feed->item_date)); ?>
+  <div class="feed-item">
+    <h3 class="feed-title"><?php echo $feed->item_title; ?></h3>
+    <p><?php echo $feed->item_description; ?></p>
+    <p class="date"><abbr class="timeago" title="<?php echo $feed_date; ?>"><?php echo $feed_date; ?></abbr></p>
+  </div>
+  <?php endforeach; ?>
+ </div>
+</div>
+<?php endif; ?>
+
 <!-- content -->
 <div class="content-container" style="display:none;">
 
@@ -297,3 +312,12 @@
 
 </div>
 <!-- content -->
+
+<script type="text/javascript" src="<?php echo url::site('media/js/jquery.timeago.js'); ?>"></script>
+<script type="text/javascript">
+(function($) {
+  $(document).ready(function() {
+    jQuery("abbr.timeago").timeago();
+  });
+})(jQuery);
+</script>

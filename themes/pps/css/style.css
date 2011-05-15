@@ -2375,3 +2375,32 @@ border-radius: 16px;
 .filter-list li label {
     margin-left: 5px;
 }
+
+.feeds-container {
+    margin-top: 2em;
+}
+.feeds-container .heading {
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.4em;
+    margin-bottom: 1em;
+}
+.feeds-container .heading .source {
+    font-size: 0.75em;
+}
+.feeds-container .feed-item {
+    padding: 20px;
+    margin: 0 0 3em 0;
+    background-color: white;
+}
+.feeds-container .feed-item .feed-title {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+.feeds-container .feed-item .date {
+    margin-top: 2em;
+}
+.feeds-container .feed-item .timeago {
+    border: none;
+    color: #aaa;
+}
