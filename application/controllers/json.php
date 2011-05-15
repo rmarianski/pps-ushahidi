@@ -200,8 +200,8 @@ class Json_Controller extends Template_Controller
 
         //$distance = 60;
         $distance = (10000000 >> $zoomLevel) / 100000;
-        // we want to take half the distance
-        $distance = $distance / 2;
+        // we want to use a smaller cluster distance
+        $distance = $distance / 4;
 
         // Category ID
         $category_id = (isset($_GET['c']) AND !empty($_GET['c']) &&
