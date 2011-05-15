@@ -22,9 +22,9 @@ class nav_Core {
 	// Reports Submit
 		if (Kohana::config('settings.allow_reports'))
 		{
-			$menu .= "<li><h1><a href=\"".url::site()."reports/submit\" ";
+			$menu .= "<li><a href=\"".url::site()."reports/submit\" ";
 			$menu .= ($this_page == 'reports_submit') ? " class=\"active\"":"";
-		 	$menu .= ">".Kohana::lang('ui_main.submit')."</a></h1></li>";
+		 	$menu .= ">".Kohana::lang('ui_main.submit')."</a></li>";
 		}
 		
 		

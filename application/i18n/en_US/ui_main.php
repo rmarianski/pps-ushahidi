@@ -10,7 +10,7 @@
 	'active' => 'Active',
 	'add' => 'Add',
 	'added_by' => 'Added By',
-	'additional_reports' => 'Additional Ideas',
+	'additional_reports' => 'Nearby Ideas',
 	'add_edit' => 'Add/Edit',
 	'add_field' => 'Add a Field',
 	'add_language' => 'Add Language',
