@@ -2458,3 +2458,6 @@ border-radius: 16px;
     border: none;
     color: #aaa;
 }
+.feeds-container .feed-item a {
+    color: #FF6600;
+}
