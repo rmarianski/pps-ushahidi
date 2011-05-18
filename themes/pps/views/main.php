@@ -202,7 +202,7 @@
 
 <?php if (count($feeds) > 0): ?>
 <div class="feeds-container">
-  <h2 class="heading">Ideas Discussed <span class="source">Tumblr</span></h2>
+  <h2 class="heading"><a href="http://urbandesignweek.tumblr.com/">Tumblr Feed</a></h2>
   <?php foreach ($feeds as $feed): ?>
                                   <?php $feed_date = date('c', strtotime($feed->item_date)); ?>
   <div class="feed-item">

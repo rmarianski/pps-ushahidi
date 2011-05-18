@@ -751,7 +751,7 @@ div.report-details{
 .report-when-where span {  padding: 3px 35px 3px 0px; } 
 
 div.report-category-list {
-	border-top:1px solid #f60;
+	border-top:1px solid #000;
 	border-bottom:0px solid #f60;
 	padding:10px 0px 10px 0px;
 	margin: 0px 20px 10px 0px;
@@ -1442,7 +1442,7 @@ label.error {
 	width:500px;
 	margin:7px 20px 20px 0px;
 	
-	padding: 20px 0px 0px 20px;
+	padding: 20px 20px 0px 20px;
 		/* filter:alpha(opacity=75);
         -moz-opacity:0.75;
         -khtml-opacity: 0.75;
@@ -1818,7 +1818,7 @@ a.show-more {
 /* Reports View */
 .reports-box { margin-top: 1em; }
 	
-	.rb_report { position:relative; border-top:1px solid #f60; overflow:auto; padding-bottom:10px; padding-top:10px; margin: 0px 20px 10px 0px; }
+	.rb_report { position:relative; border-top:1px solid #000; overflow:auto; padding-bottom:10px; padding-top:10px; margin: 0px 10px 10px 0px; }
 		.reports-box .hover { background: none; }
 		.r_media { float:left; width:100px; margin:15px 15px 15px 0; }
 		.r_photo a { display:inline-block; padding: 2px; border:1px solid #c0c2b8;}
@@ -2432,6 +2432,7 @@ border-radius: 16px;
 
 .feeds-container {
     margin-top: 2em;
+	margin-left: 10px;
 }
 .feeds-container .heading {
     text-transform: uppercase;
@@ -2446,9 +2447,16 @@ border-radius: 16px;
     padding: 20px;
     margin: 0 0 3em 0;
     background-color: white;
+	width:660px;
+
+}
+.feeds-container .feed-item p {
+    padding: 0px;
+    margin: 0 0 1em 0;
+	font-size:13px;
 }
 .feeds-container .feed-item .feed-title {
-    font-size: 1.5em;
+    font-size: 1.75em;
     margin-bottom: 1em;
 }
 .feeds-container .feed-item .date {

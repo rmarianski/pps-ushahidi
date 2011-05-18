@@ -79,9 +79,10 @@ div.olLayerDiv {
 	list-style-type: square;
 }
 .infowindow a, .infowindow a:visited{
-	/*color:#000;*/
+	color:#f60;
 }
 .infowindow a:hover{
+	color:#f60;
 	text-decoration: underline;
 }
 .infowindow .infowindow_meta{
