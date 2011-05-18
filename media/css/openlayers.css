@@ -85,6 +85,13 @@ div.olLayerDiv {
 	color:#f60;
 	text-decoration: underline;
 }
+.infowindow_list a, .infowindow_list a:visited{
+	color:#f60;
+}
+.infowindow_list a:hover{
+	color:#f60;
+	text-decoration: underline;
+}
 .infowindow .infowindow_meta{
 	display:none;
 	background-color:#eee;
