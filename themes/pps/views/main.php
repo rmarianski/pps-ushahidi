@@ -193,6 +193,7 @@
 				echo $div_timeline;
 				?>
 			</div>
+                        <div class="map-meta"><p><a title="kml" href="<?php echo url::site('kml'); ?>">KML</a></p></div>
 		</div>
 		<!-- / content column -->
 

@@ -2469,3 +2469,9 @@ border-radius: 16px;
 .feeds-container .feed-item a {
     color: #FF6600;
 }
+
+.map-meta {
+    width: 700px;
+    text-align: right;
+    font-weight: bold;
+}
