@@ -30,6 +30,7 @@ class Search_Controller extends Main_Controller {
         $this->template->content = new View('search');
         
         $search_query = "";
+        $count_query = "";
         $keyword_string = "";
         $where_string = "";
         $plus = "";
@@ -94,34 +95,75 @@ class Search_Controller extends Main_Controller {
                     }
                     
                     // Give relevancy weighting
-                    // Title weight = 2
-                    // Description weight = 1
+                    // Title weight = 3
+                    // Description weight = 2
+                    // everything else = 1
+
+                    //*
+                    $keywords_strings = array();
+                    $where_strings = array();
+                    $search_fields = array('incident_title',
+                                           'incident_description',
+                                           'location_name',
+                                           'form_response',
+                                           );
+                    $keyword_weights = array('incident_title' => 3,
+                                             'incident_description' => 2,
+                                             'location_name' => 1,
+                                             'form_response' => 1,
+                                             );
+                    foreach ($search_fields as $search_field) {
+                      if (isset($keyword_weights[$search_field])) {
+                        $keyword_weight = $keyword_weights[$search_field];
+                      } else {
+                        $keyword_weight = 1;
+                      }
+                      $keyword_strings[] = "(CASE WHEN ".$search_field." LIKE '%$chunk%' THEN ".$keyword_weight." ELSE 0 END)";
+                      $where_strings[] = $search_field." LIKE '%$chunk%'";
+                    }
+                    $keyword_string = implode(" + ", $keyword_strings);
+                    $where_string = implode(" OR ", $where_strings);
+
+                    /*/
                     $keyword_string = $keyword_string.$plus."(CASE WHEN incident_title LIKE '%$chunk%' THEN 2 ELSE 0 END) + (CASE WHEN incident_description LIKE '%$chunk%' THEN 1 ELSE 0 END)";
                     $where_string = $where_string.$or."incident_title LIKE '%$chunk%' OR incident_description LIKE '%$chunk%'";
                     $i++;
+                    /**/
                 }
             }
-            
+
             if (!empty($keyword_string) && !empty($where_string))
             {
                 // Limit the result set to only those reports that have been approved	
                 $where_string .= ' AND incident_active = 1';
-                $search_query = "SELECT *, (".$keyword_string.") AS relevance FROM ".$this->table_prefix."incident WHERE (".$where_string.") ORDER BY relevance DESC LIMIT ";
+                //$search_query = "SELECT *, (".$keyword_string.") AS relevance FROM ".$this->table_prefix."incident WHERE (".$where_string.") ORDER BY relevance DESC LIMIT ";
+                $custom_fieldid = 14;
+                $join_query = "INNER JOIN location l ON i.location_id=l.id INNER JOIN form_response fr ON i.id=fr.incident_id AND fr.form_field_id=$custom_fieldid";
+                $count_query = "SELECT COUNT(*) AS N FROM incident i $join_query WHERE ($where_string)";
+                $search_query = "SELECT *, (".$keyword_string.") AS relevance FROM incident i $join_query WHERE ($where_string) ORDER BY relevance DESC ";
             }
         }
-        
+
         if (!empty($search_query))
         {
+          $db = new Database();
             // Pagination
+          $query = $db->query($count_query);
+          $total_items = 0;
+          foreach ($query as $row) {
+            $total_items = intval($row->N);
+          }
+
             $pagination = new Pagination(array(
                 'query_string'    => 'page',
                 'items_per_page' => (int) Kohana::config('settings.items_per_page'),
-                'total_items'    => ORM::factory('incident')->where($where_string)->count_all()
+                'total_items' => $total_items,
+                //'total_items'    => ORM::factory('incident')->where($where_string)->count_all()
             ));
-            
-            $db = new Database();
-            $query = $db->query($search_query . $pagination->sql_offset . ",". (int)Kohana::config('settings.items_per_page'));
-            
+
+            //$db = new Database();
+            $query = $db->query($search_query . " LIMIT " . $pagination->sql_offset . ",". (int)Kohana::config('settings.items_per_page'));
+
             // Results Bar
             if ($pagination->total_items != 0)
             {
