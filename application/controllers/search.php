@@ -137,12 +137,12 @@ class Search_Controller extends Main_Controller {
             if (!empty($keyword_string) && !empty($where_string))
             {
                 // Limit the result set to only those reports that have been approved	
-                $where_string .= ' AND incident_active = 1';
+                $where_string = "($where_string) AND i.incident_active = 1";
                 //$search_query = "SELECT *, (".$keyword_string.") AS relevance FROM ".$this->table_prefix."incident WHERE (".$where_string.") ORDER BY relevance DESC LIMIT ";
                 $custom_fieldid = 14;
                 $join_query = "INNER JOIN location l ON i.location_id=l.id INNER JOIN form_response fr ON i.id=fr.incident_id AND fr.form_field_id=$custom_fieldid INNER JOIN incident_person ip on i.id=ip.incident_id";
-                $count_query = "SELECT COUNT(*) AS N FROM incident i $join_query WHERE ($where_string)";
-                $search_query = "SELECT *, (".$keyword_string.") AS relevance FROM incident i $join_query WHERE ($where_string) ORDER BY relevance DESC ";
+                $count_query = "SELECT COUNT(*) AS N FROM incident i $join_query WHERE $where_string";
+                $search_query = "SELECT i.*, (".$keyword_string.") AS relevance FROM incident i $join_query WHERE $where_string ORDER BY relevance DESC ";
             }
         }
 
