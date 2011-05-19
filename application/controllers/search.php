@@ -106,11 +106,13 @@ class Search_Controller extends Main_Controller {
                                            'incident_description',
                                            'location_name',
                                            'form_response',
+                                           'person_first',
+                                           'person_last',
+                                           'person_email',
+                                           'person_neighborhood',
                                            );
                     $keyword_weights = array('incident_title' => 3,
                                              'incident_description' => 2,
-                                             'location_name' => 1,
-                                             'form_response' => 1,
                                              );
                     foreach ($search_fields as $search_field) {
                       if (isset($keyword_weights[$search_field])) {
@@ -138,7 +140,7 @@ class Search_Controller extends Main_Controller {
                 $where_string .= ' AND incident_active = 1';
                 //$search_query = "SELECT *, (".$keyword_string.") AS relevance FROM ".$this->table_prefix."incident WHERE (".$where_string.") ORDER BY relevance DESC LIMIT ";
                 $custom_fieldid = 14;
-                $join_query = "INNER JOIN location l ON i.location_id=l.id INNER JOIN form_response fr ON i.id=fr.incident_id AND fr.form_field_id=$custom_fieldid";
+                $join_query = "INNER JOIN location l ON i.location_id=l.id INNER JOIN form_response fr ON i.id=fr.incident_id AND fr.form_field_id=$custom_fieldid INNER JOIN incident_person ip on i.id=ip.incident_id";
                 $count_query = "SELECT COUNT(*) AS N FROM incident i $join_query WHERE ($where_string)";
                 $search_query = "SELECT *, (".$keyword_string.") AS relevance FROM incident i $join_query WHERE ($where_string) ORDER BY relevance DESC ";
             }
