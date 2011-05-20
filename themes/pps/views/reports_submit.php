@@ -35,7 +35,7 @@
 				<div class="report_row">
 					<h3><?php echo Kohana::lang('ui_main.reports_title'); ?></h3>
                     
-					<?php print form::textarea('incident_title', $form['incident_title'], ' rows="2" class="textarea long" placeholder="...share one idea to improve Brighton Boulevard corridor..."'); ?>
+					<?php print form::textarea('incident_title', $form['incident_title'], ' rows="2" class="textarea long" placeholder="What could be done right now, at low cost? Or in the long term? With which partners or local talent?"'); ?>
 				</div>
                  <div class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.reports_location_name'); ?><br /><span class="example"><?php echo Kohana::lang('ui_main.detailed_location_example'); ?></span></h4>
@@ -186,7 +186,7 @@ foreach ($categories as $category)
 					 }
 				?>
 				<div class="report_row">
-                <h4>Map your Idea</h4>
+                <h4>Map It</h4>
               	  	<div class="report-find-location">
 							<p>Click anywhere on map to place marker.</p> <p> Click and drag map to move map. </p><p> Use <img src="http://pps.org/placemap/denver/themes/pps/images/plus.gif" / align="absmiddle" style="padding:2px;"> and <img src="http://pps.org/placemap/denver/themes/pps/images/minus.gif"  align="absmiddle" style="padding:2px;"/> icons to zoom map.</p><br /><p>If your idea is for a system wide Brighton Boulevard condition, please select one representative site.</p>
                    	</div>
@@ -361,12 +361,11 @@ foreach ($categories as $category)
               <h5 style=" font-size:125%; font-weight:normal;">A visioning effort is underway to discuss ways to transform Brighton Boulevard to better serve the communities it touches.  The goal is to grow Brighton Boulevard into a reinvigorated, vibrant community with active residents and thriving businesses who feel comfortable as transit riders, pedestrians, drivers or cyclists.</h5>
                <h5 style=" font-size:125%; font-weight:normal;">Share your big ideas and small ideas, your thoughts on desired land uses, activities, transportation modes, and other issues that contribute to the feeling and functionality of the corridor. The ideas you contribute here will be included in the visioning process for Brighton Boulevard. Let's move towards a new identity for this important piece of Denver's transportation network! If you've thought it - write it!</h5>
 
-<h5  style=" font-size:125%; font-weight:bold;">Here are three great examples</h5>
-<h5  style=" font-size:125%; font-weight:normal;">Wouldn't it be great if...</h5>
+<h5  style=" font-size:125%; font-weight:bold;">Here are three examples</h5>
 
-<h5  style=" font-size:125%; font-weight:normal;">...There was an open air market place where I could buy fresh fruits and vegetables.</h5>
-<h5  style=" font-size:125%; font-weight:normal;">...There was an easier way to bike from Brighton Boulevard to Coors Field to see a game.</h5>
-<h5  style=" font-size:125%; font-weight:normal;">...I could live along Brighton Boulevard and rely on comfortable frequent transit to get me to my downtown job?</h5>	
+<h5  style=" font-size:125%; font-weight:normal;">There was an open air market place where I could buy fresh fruits and vegetables.</h5>
+<h5  style=" font-size:125%; font-weight:normal;">There was an easier way to bike from Brighton Boulevard to Coors Field to see a game.</h5>
+<h5  style=" font-size:125%; font-weight:normal;">I could live along Brighton Boulevard and rely on comfortable frequent transit to get me to my downtown job?</h5>	
 <br /><br />
 <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.pps.org%2Fplacemap%2Fdenver%2F&amp;send=true&amp;layout=standard&amp;width=250&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:80px;" allowTransparency="true"></iframe>				
 			</div>

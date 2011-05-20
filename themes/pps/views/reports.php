@@ -128,7 +128,7 @@ foreach ($user_categories as $visible_category)
 						</div>
 
 						<div class="r_details">
-							<h3 class="r_title">Wouldn't it be great if... <a class="r_title" href="<?php echo url::site(); ?>reports/view/<?php echo $incident_id; ?>"><?php echo $incident_title; ?></a> <a href="<?php echo url::site(); ?>reports/view/<?php echo $incident_id; ?>#discussion" class="r_comments"><?php echo $comment_count; ?></a> <?php echo $incident_verified; ?></h3>
+							<h3 class="r_title"><a class="r_title" href="<?php echo url::site(); ?>reports/view/<?php echo $incident_id; ?>"><?php echo $incident_title; ?></a> <a href="<?php echo url::site(); ?>reports/view/<?php echo $incident_id; ?>#discussion" class="r_comments"><?php echo $comment_count; ?></a> <?php echo $incident_verified; ?></h3>
 							<p class="r_date r-3 bottom-cap"><?php echo $incident_date; ?></p>
 							<div class="r_description" style="display:none"> <?php echo $incident_description; ?> </div>
 							<h3 class="r_title">Where? <b style="font-weight:normal"><?php echo $location_name; ?></b></h3>
