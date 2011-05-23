@@ -26,7 +26,7 @@ class Kml_Controller extends Controller
 		}
 		else
 		{
-			$limit = 100;
+			$limit = 1000;
 		}
 		
 		$incidents = ORM::factory('incident')
