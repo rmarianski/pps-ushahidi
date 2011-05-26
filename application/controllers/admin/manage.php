@@ -1106,7 +1106,11 @@ class Manage_Controller extends Admin_Controller
 					{
 						// We need to check for duplicates!!!
 						// Maybe combination of Title + Date? (Kinda Heavy on the Server :-( )
-						$dupe_count = ORM::factory('feed_item')->where('item_title',$title)->where('item_date',date("Y-m-d H:i:s",strtotime($date)))->count_all();
+                                              $dupe_count = ORM::factory('feed_item')
+                                                  ->where('item_title',$title)
+                                                  ->where('item_date',date("Y-m-d H:i:s",strtotime($date)))
+                                                  ->where('feed_id', $feed->id)
+                                                  ->count_all();
 
 						if ($dupe_count == 0)
 						{
