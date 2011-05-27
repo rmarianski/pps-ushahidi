@@ -2422,7 +2422,7 @@ border-radius: 16px;
 
 .filter-list li {
     list-style: none;
-	margin: 2px;
+    margin: 2px;
     float: left;
     width: 125px;
 }
@@ -2431,8 +2431,7 @@ border-radius: 16px;
 }
 
 .feeds-container {
-    margin-top: 2em;
-	margin-left: 10px;
+    margin: 2em 0 0 10px;
 }
 .feeds-container .heading {
     text-transform: uppercase;
@@ -2447,13 +2446,11 @@ border-radius: 16px;
     padding: 20px;
     margin: 0 0 3em 0;
     background-color: white;
-	width:660px;
-
 }
 .feeds-container .feed-item p {
     padding: 0px;
     margin: 0 0 1em 0;
-	font-size:13px;
+    font-size:13px;
 }
 .feeds-container .feed-item .feed-title {
     font-size: 1.75em;
@@ -2468,6 +2465,14 @@ border-radius: 16px;
 }
 .feeds-container .feed-item a {
     color: #FF6600;
+}
+#feed-list {
+    float: left;
+    width: 450px;
+}
+#feed-post {
+    float: right;
+    width: 450px;
 }
 
 .map-meta {

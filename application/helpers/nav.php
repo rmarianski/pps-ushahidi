@@ -66,6 +66,11 @@ class nav_Core {
 		}
 		*/
 
+                // add in trends page
+                $menu .= '<li><a href="' . url::site('trends') . '"' .
+                         (($this_page === 'trends') ? ' class="active"' : '') .
+                         '>Trends</a></li>';
+
 		echo $menu;
 		
 		// Action::nav_admin_reports - Add items to the admin reports navigation tabs
