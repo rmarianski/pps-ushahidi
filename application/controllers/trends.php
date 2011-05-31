@@ -18,8 +18,8 @@ class Trends_Controller extends Main_Controller {
     $this->template->header->header_block = $this->themes->header_block();
     $this->template->content = new View('trends');
 
-    $feed_name_list = Kohana::config('pps.feed_list');
-    $feed_name_post = Kohana::config('pps.feed_post');
+    $feed_name_list = 'urban design week list';
+    $feed_name_post = 'urban design week post';
 
     $this->template->content->feed_list = $this->query_feed($feed_name_list);
     $this->template->content->feed_post = $this->query_feed($feed_name_post);
