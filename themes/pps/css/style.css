@@ -112,7 +112,7 @@ div#header a:hover{
     height: 220px;
 	width:240px;
     margin: 0px 0px 0px 24%;
-	background: transparent url(../images/sun_hover.png) no-repeat 38% top;
+	background: transparent url(../images/sun_a.png) no-repeat 38% top;
         text-decoration: none;
 }
 div#header a {
