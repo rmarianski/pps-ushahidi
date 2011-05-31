@@ -19,21 +19,6 @@ class nav_Core {
 		$menu = "";
 			
 		
-		// Home
-		$menu .= "<li><a href=\"".url::site()."main\" ";
-		$menu .= ($this_page == 'home') ? " class=\"active\"" : "";
-	 	$menu .= ">".Kohana::lang('ui_main.home')."</a></li>";
-
-		// Reports List
-		$menu .= "<li><a href=\"".url::site()."reports\" ";
-		$menu .= ($this_page == 'reports') ? " class=\"active\"" : "";
-	 	$menu .= ">".Kohana::lang('ui_main.reports')."</a></li>";
-
-                // add in trends page
-                $menu .= '<li><a href="' . url::site('trends') . '"' .
-                         (($this_page === 'trends') ? ' class="active"' : '') .
-                         '>Trends</a></li>';
-
 	// Reports Submit
 		if (Kohana::config('settings.allow_reports'))
 		{
@@ -43,6 +28,15 @@ class nav_Core {
 		}
 		
 		
+		// Home
+		$menu .= "<li><a href=\"".url::site()."main\" ";
+		$menu .= ($this_page == 'home') ? " class=\"active\"" : "";
+	 	$menu .= ">".Kohana::lang('ui_main.home')."</a></li>";
+
+		// Reports List
+		$menu .= "<li><a href=\"".url::site()."reports\" ";
+		$menu .= ($this_page == 'reports') ? " class=\"active\"" : "";
+	 	$menu .= ">".Kohana::lang('ui_main.reports')."</a></li>";
 		
 	
 		/** Alerts
@@ -71,6 +65,11 @@ class nav_Core {
 		 	$menu .= ">".Kohana::lang('ui_main.contact')."</a></li>";	
 		}
 		*/
+
+                // add in trends page
+                $menu .= '<li><a href="' . url::site('trends') . '"' .
+                         (($this_page === 'trends') ? ' class="active"' : '') .
+                         '>Trends</a></li>';
 
 		echo $menu;
 		
