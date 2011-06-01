@@ -19,15 +19,6 @@ class nav_Core {
 		$menu = "";
 			
 		
-	// Reports Submit
-		if (Kohana::config('settings.allow_reports'))
-		{
-			$menu .= "<li><a href=\"".url::site()."reports/submit\" ";
-			$menu .= ($this_page == 'reports_submit') ? " class=\"active\"":"";
-		 	$menu .= ">".Kohana::lang('ui_main.submit')."</a></li>";
-		}
-		
-		
 		// Home
 		$menu .= "<li><a href=\"".url::site()."main\" ";
 		$menu .= ($this_page == 'home') ? " class=\"active\"" : "";
@@ -37,6 +28,29 @@ class nav_Core {
 		$menu .= "<li><a href=\"".url::site()."reports\" ";
 		$menu .= ($this_page == 'reports') ? " class=\"active\"" : "";
 	 	$menu .= ">".Kohana::lang('ui_main.reports')."</a></li>";
+
+                // Trends page
+                // lookup the id from the database
+                $pages = ORM::factory("page")
+                  ->where("page_title", "Trends")
+                  ->where("page_active", "1")
+                  ->find_all();
+                if (!empty($pages)) {
+                  $page = $pages[0];
+
+                  $menu .= "<li><a href=\"".url::site()."page/index/".$page->id."\" ";
+                  $menu .= ($this_page == 'page_'.$page->id) ? " class=\"active\"" : "";
+                  $menu .= ">".$page->page_tab."</a></li>";
+                }
+
+	// Reports Submit
+		if (Kohana::config('settings.allow_reports'))
+		{
+			$menu .= "<li><a href=\"".url::site()."reports/submit\" ";
+			$menu .= ($this_page == 'reports_submit') ? " class=\"active\"":"";
+		 	$menu .= ">".Kohana::lang('ui_main.submit')."</a></li>";
+		}
+		
 		
 	
 		/** Alerts
@@ -52,9 +66,11 @@ class nav_Core {
 		$pages = ORM::factory('page')->where('page_active', '1')->find_all();
 		foreach ($pages as $page)
 		{
+                  if ($page->page_title !== "Trends") {
 			$menu .= "<li><a href=\"".url::site()."page/index/".$page->id."\" ";
 			$menu .= ($this_page == 'page_'.$page->id) ? " class=\"active\"" : "";
 		 	$menu .= ">".$page->page_tab."</a></li>";
+                  }
 		}
 		
 		/* // Contacts
