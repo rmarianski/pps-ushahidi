@@ -5,7 +5,7 @@
  * Sets the default route to "welcome"
  */
 
-$config['_default'] = 'reports/submit';
+$config['_default'] = 'home';
 $config['feed/atom'] = 'feed/index/atom';
 
 // If MHI is set and we are hitting the main site, forward to the welcome, instance signup page
