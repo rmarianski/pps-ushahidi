@@ -100,35 +100,25 @@ div.rapidxwpr{
 }
 
 /* header */
-div#header{
+div#header {
     position: relative;
     height: 220px;
     margin: 0px 0px 0px 0px;
 }
 
-div#header a:hover{
+div#header #starburst {
     position: absolute;
-	display: block;
+    display: block;
     height: 220px;
-	width:240px;
+    width: 240px;
     margin: 0px 0px 0px 24%;
-	background: transparent url(../images/sun_a.png) no-repeat 38% top;
-        text-decoration: none;
-}
-div#header a {
-	position: absolute;
- 	display: block;
-    height: 220px;
-	width:240px;
-    margin: 0px 0px 0px 24%;
-	background: transparent url(../images/sun_a.png) no-repeat 38% top;
+    background: transparent url(../images/sun_a.png) no-repeat 38% top;
+    text-decoration: none;
 }
 
 div#header a span {
-
-visibility: hidden;
+    visibility: hidden;
 }
-
 
 /* logo */
 div#logo{

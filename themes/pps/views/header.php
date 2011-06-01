@@ -51,13 +51,10 @@
 			<div id="logo">
 				<span><img src="<?php echo url::site('themes/pps/images/btc-ftc.png'); ?>" />
 				<?php echo $site_tagline; ?></span>
-   </div><a href="<?php echo url::site('reports/submit'); ?>"><span><?php echo url::site('reports/submit'); ?></span></a>
+                        </div>
 			<!-- / logo -->
+                        <span id="starburst"><?php echo $site_tagline; ?></span>
 
-			<!-- submit incident -->
-			<!--<?php echo $submit_btn; ?>-->
-			<!-- / submit incident -->
-			
 		</div>
 		<!-- / header -->
 
