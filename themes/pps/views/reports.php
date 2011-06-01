@@ -8,8 +8,11 @@ function category_checkbox($category, $selected_categories) {
 		<!-- start reports block -->
 		<div class="big-block">
 <div class="search-box">
-   <form method="get" action="<?php echo url::site('search'); ?>">
-     <input id="ideas-search" type="text" name="k" value="Search Ideas" />
+   <form class="search-form" method="get" action="<?php echo url::site('search'); ?>">
+     <input class="search-field" type="text" name="k" value="Search Ideas" />
+   </form>
+   <form class="search-form" method="get" action="<?php echo url::site('search/by_id'); ?>">
+     <input class="search-field" type="text" name="idea" value="Search By Idea #" />
    </form>
 </div>
 			<!--span><?php
@@ -149,7 +152,7 @@ function category_checkbox($category, $selected_categories) {
 						</div>
 
 						<div class="r_details">
-							<h3 class="r_title">Wouldn't it be great if... <a class="r_title" href="<?php echo url::site(); ?>reports/view/<?php echo $incident_id; ?>"><?php echo $incident_title; ?></a> <a href="<?php echo url::site(); ?>reports/view/<?php echo $incident_id; ?>#discussion" class="r_comments"><?php echo $comment_count; ?></a> <?php echo $incident_verified; ?></h3>
+                                        <h3 class="r_title">#<?php echo $incident_id; ?> Wouldn't it be great if... <a class="r_title" href="<?php echo url::site(); ?>reports/view/<?php echo $incident_id; ?>"><?php echo $incident_title; ?></a> <a href="<?php echo url::site(); ?>reports/view/<?php echo $incident_id; ?>#discussion" class="r_comments"><?php echo $comment_count; ?></a> <?php echo $incident_verified; ?></h3>
 							<p class="r_date r-3 bottom-cap"><?php echo $incident_date; ?></p>
 							<div class="r_description" style="display:none"> <?php echo $incident_description; ?> </div>
 							<h3 class="r_title">Where? <b style="font-weight:normal"><?php echo $location_name; ?></b></h3>
@@ -171,17 +174,19 @@ if ($person_info['first_name'] || $person_info['last_name']) { ?>
 <script type="text/javascript">
 (function($) {
 $(document).ready(function() {
-$('#ideas-search')
-    .focus(function() {
-        if ($(this).val() === "Search Ideas") {
-            $(this).val('');
-        }
-    })
-    .blur(function() {
-        if ($(this).val().length === 0) {
-            $(this).val("Search Ideas");
-        }
-    });
+$('.search-field').each(function() {
+  var text = $(this).val();
+  $(this).focus(function() {
+    if ($(this).val() === text) {
+        $(this).val('');
+    }
+  })
+  .blur(function() {
+    if ($(this).val().length === 0) {
+        $(this).val(text);
+    }
+  });
+});
 });
 })(jQuery);
 </script>

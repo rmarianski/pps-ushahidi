@@ -29,7 +29,7 @@ in <?php echo $submitted_neighborhood; ?>
         <!-- end submitby / date -->
         
         <!-- start questions/responses -->
-	<h3 class="report-title"><?php echo Kohana::lang('ui_main.reports_title');?></h3> <h6><?php
+<h3 class="report-title">#<?php echo $incident_id; ?> <?php echo Kohana::lang('ui_main.reports_title');?></h3> <h6><?php
 			echo $incident_title;
 			
 			// If Admin is Logged In - Allow For Edit Link

@@ -2326,20 +2326,36 @@ div.green-box ul, div.red-box ul{
 
 .search-box {
     float: right;
-    width: 230px;
+    width: 450px;
 }
 
-#ideas-search {
-   background: white;
+.search-field {
+background: white;
 border: 0px solid #F60;
 color: #606060;
-float: left;
 font-family: Helvetica, sans-serif;
 font-size: 12px;
 font-weight: bold;
-margin: 0;
 padding: 5px;
 width: 200px;
+-moz-border-radius: 8px;
+-khtml-border-radius: 8px;
+-webkit-border-radius: 8px;
+}
+
+form.search-form {
+float: right;
+margin-left: 0.5em;
+}
+
+div#search-by-idea {
+width: 950px;
+margin: 0 auto;
+text-align: center;
+}
+
+#search-by-idea h2 {
+margin: 2em 0 0.5em 0;
 }
 
 .filter-block {

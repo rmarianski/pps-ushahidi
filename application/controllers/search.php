@@ -255,4 +255,22 @@ class Search_Controller extends Main_Controller {
         // Rebuild Header Block
         $this->template->header->header_block = $this->themes->header_block();
     }
+
+    public function by_id() {
+      $no_query = true;
+      if (isset($_GET['idea'])) {
+        $no_query = false;
+        $id = (int)$_GET['idea'];
+        $resultset = ORM::factory('incident')->where("id", $id)->find_all();
+        $incident = $resultset[0];
+        if ($incident) {
+          url::redirect(url::site('reports/view/' . $incident->id));
+          return;
+        }
+      }
+      $this->template->content = new View('search_by_id');
+      $this->template->content->no_query = $no_query;
+      $this->template->header->header_block = $this->themes->header_block();
+    }
+
 }
