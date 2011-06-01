@@ -31,13 +31,12 @@ class nav_Core {
 
                 // Trends page
                 // lookup the id from the database
-                $pages = ORM::factory("page")
+                $page = ORM::factory("page")
                   ->where("page_title", "Trends")
                   ->where("page_active", "1")
                   ->find_all();
-                if (!empty($pages)) {
-                  $page = $pages[0];
-
+                $page = $page[0];
+                if ($page) {
                   $menu .= "<li><a href=\"".url::site()."page/index/".$page->id."\" ";
                   $menu .= ($this_page == 'page_'.$page->id) ? " class=\"active\"" : "";
                   $menu .= ">".$page->page_tab."</a></li>";

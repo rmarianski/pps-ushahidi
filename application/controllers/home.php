@@ -8,13 +8,13 @@
 class Home_Controller extends Main_Controller {
 
   public function index() {
-    $pages = ORM::factory("page")
+    $page = ORM::factory("page")
       ->where("page_title", "Trends")
       ->where("page_active", "1")
       ->find_all();
+    $page = $page[0];
 
-    if (!empty($pages)) {
-      $page = $pages[0];
+    if ($page) {
       $page_url = "page/index/" . $page->id;
     } else {
       $page_url = "main";
