@@ -10,9 +10,11 @@ function category_checkbox($category, $selected_categories) {
 <div class="search-box">
    <form class="search-form" method="get" action="<?php echo url::site('search'); ?>">
      <input class="search-field" type="text" name="k" value="Search Ideas" />
+     <input type="submit" value="Go" />
    </form>
    <form class="search-form" method="get" action="<?php echo url::site('search/by_id'); ?>">
      <input class="search-field" type="text" name="idea" value="Search By Idea #" />
+     <input type="submit" value="Go" />
    </form>
 </div>
 			<!--span><?php

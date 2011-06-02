@@ -8,7 +8,7 @@
 
 <form method="get" action="<?php echo url::site('search/by_id'); ?>">
 <input class="search-field" type="text" name="idea" value="<?php echo ($no_query ? "" : $_GET['idea']); ?>" />
-<input type="submit" value="Search" />
+<input type="submit" value="Go" />
 </form>
 
 </div>

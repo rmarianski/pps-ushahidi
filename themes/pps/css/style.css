@@ -2326,7 +2326,7 @@ div.green-box ul, div.red-box ul{
 
 .search-box {
     float: right;
-    width: 450px;
+    width: 550px;
 }
 
 .search-field {
@@ -2345,7 +2345,7 @@ width: 200px;
 
 form.search-form {
 float: right;
-margin-left: 0.5em;
+margin-left: 10px;
 }
 
 div#search-by-idea {

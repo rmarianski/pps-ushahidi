@@ -5,6 +5,7 @@
         <div class="search-box">
    <form method="get" action="<?php echo url::site('search'); ?>">
      <input class="search-field" type="text" name="k" value="<?php echo (isset($_GET['k']) ? $_GET['k'] : 'Search'); ?>" />
+     <input type="submit" value="Go" />
    </form>
 </div>
 			<h1>Search Results</h1>
