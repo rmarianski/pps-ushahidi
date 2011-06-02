@@ -55,7 +55,7 @@
 			<!-- / logo -->
                         <span id="starburst"><?php echo $site_tagline; ?></span>
 
-			<img style="position: relative; top: 50px; left: 300px" src="<?php echo url::site('themes/pps/images/cta.png'); ?>" />
+			<img class="cta" src="<?php echo url::site('themes/pps/images/cta.png'); ?>" />
 
 		</div>
 		<!-- / header -->

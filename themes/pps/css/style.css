@@ -2483,3 +2483,9 @@ border-radius: 16px;
     text-align: right;
     font-weight: bold;
 }
+
+img.cta {
+    position: relative;
+    top: 50px;
+    left: 300px
+}
