@@ -53,9 +53,12 @@
 				<?php echo $site_tagline; ?></span>
                         </div>
 			<!-- / logo -->
-                        <span id="starburst"><?php echo $site_tagline; ?></span>
+                        <a id="starburst"
+                           href="http://ifud.submishmash.com/Submit/5458/Account"
+                           ><?php echo $site_tagline; ?></a>
 
-			<img class="cta" src="<?php echo url::site('themes/pps/images/cta.png'); ?>" />
+                        <a href="http://ifud.submishmash.com/Submit/5458/Account"
+                           ><img class="cta" src="<?php echo url::site('themes/pps/images/cta.png'); ?>" /></a>
 
 		</div>
 		<!-- / header -->
