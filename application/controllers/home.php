@@ -9,7 +9,7 @@ class Home_Controller extends Main_Controller {
 
   public function index() {
     $page = ORM::factory("page")
-      ->where("page_title", "Trends")
+      ->where("page_tab", "Trends")
       ->where("page_active", "1")
       ->find_all();
     $page = $page[0];

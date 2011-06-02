@@ -32,7 +32,7 @@ class nav_Core {
                 // Trends page
                 // lookup the id from the database
                 $page = ORM::factory("page")
-                  ->where("page_title", "Trends")
+                  ->where("page_tab", "Trends")
                   ->where("page_active", "1")
                   ->find_all();
                 $page = $page[0];
@@ -65,7 +65,7 @@ class nav_Core {
 		$pages = ORM::factory('page')->where('page_active', '1')->find_all();
 		foreach ($pages as $page)
 		{
-                  if ($page->page_title !== "Trends") {
+                  if ($page->page_tab !== "Trends") {
 			$menu .= "<li><a href=\"".url::site()."page/index/".$page->id."\" ";
 			$menu .= ($this_page == 'page_'.$page->id) ? " class=\"active\"" : "";
 		 	$menu .= ">".$page->page_tab."</a></li>";
