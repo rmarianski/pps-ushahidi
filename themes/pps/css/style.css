@@ -1798,7 +1798,7 @@ a.show-more {
 	padding:0;
 	font-weight:bold;
 }
-.big-block .page_text p{
+.big-block .page_text .about_text {
 	margin-bottom:15px;
 	width: 550px;
 }
