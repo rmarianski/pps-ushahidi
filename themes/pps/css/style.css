@@ -2301,6 +2301,10 @@ div.green-box ul, div.red-box ul{
 	margin-bottom:10px;
 }
 
+.thanks_msg a {
+    color: #f60;
+}
+
 /* Rounded Corners */
 .r-3 { -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
 .r-4 { -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px; }
