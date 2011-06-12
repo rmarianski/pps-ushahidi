@@ -1334,7 +1334,7 @@ form {
 .textarea.error,
 .select.error,
 .file.error{
-	background-color:#FFE0DD;
+	background-color: #824D4D;
 	border:1px dotted red;
 }
 label.error {
