@@ -2334,7 +2334,7 @@ div.green-box {
         -moz-opacity:0.90;
         -khtml-opacity: 0.90;
         opacity: 0.90;*/
-    background: #fff;
+    background: #333;
 	-moz-border-radius:16px;
 	-khtml-border-radius:16px;
 	-webkit-border-radius:16px;
@@ -2364,7 +2364,7 @@ div.green-box ul, div.red-box ul{
 .alert_response, .thanks_msg {
 	margin:10px 15px 10px 15px;
 	border:0px #ccc solid;
-	background-color:#fff;
+	background-color: #333;
 	padding: 15px;
 	font:14px/17px Arial, Helvetica, sans-serif;
 }
