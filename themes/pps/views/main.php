@@ -1,4 +1,6 @@
+<div class="big-block">
 <!-- main body -->
+
 <div id="main" class="clearingfix">
 	<div id="mainmiddle" class="floatbox withright">
 
@@ -299,6 +301,8 @@
 	<!-- /content blocks -->
 
 </div>
+
 <!-- content -->
 <br />
 <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.pps.org%2Fplacemap%2Fdenver%2F&amp;send=true&amp;layout=standard&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80" scrolling="no" frameborder="0" style="border:none; margin-left:10px; overflow:hidden; width:500px; height:80px;" allowTransparency="true"></iframe>
+</div>

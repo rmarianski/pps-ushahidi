@@ -5,19 +5,19 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
    <link rel="shortcut icon" href="/placemap/denver/favicon.ico">
 
-   <link href='http://fonts.googleapis.com/css?family=Just+Another+Hand' rel='stylesheet' type='text/css'>
+   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Cabin:regular,regularitalic,bold,bolditalic' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Nunito:regular,bold' rel='stylesheet' type='text/css'>
 	<?php echo $header_block; ?>
 	<?php
 	// Action::header_scripts - Additional Inline Scripts from Plugins
 	Event::run('ushahidi_action.header_scripts');
 	?>
-<meta property="og:title" content="Visioning Brighton BLVD" />
+<meta property="og:title" content="San Antonio" />
 <meta property="og:type" content="website" />
 <?php if (!isset($og_description) OR !$og_description): ?>
-<?php $og_description = "How do you vision Brighton Boulevard?"; ?>
+<?php $og_description = "What's your idea for downtown San Antonio?"; ?>
 <?php endif; ?>
 <meta property="og:description" content="<?php echo $og_description; ?>" />
 <meta property="og:url" content="<?php echo url::base() . url::current() ?>" /> 
@@ -38,7 +38,7 @@
 
 			<!-- searchbox -->
 			<div id="searchbox">
-           <span class='st_twitter_button' displayText='Tweet' st_url="http://ht.ly/4uAcb" st_title="I just shared my idea for Brighton BLVD. What's yours?"></span><span class='st_email_button' displayText='Email'></span><span class='st_facebook_button' displayText='Facebook'></span><span class='st_sharethis_button' displayText='ShareThis'></span>
+           <span class='st_twitter_button' displayText='Tweet' st_url="http://pps.org/placemap/sanantonio/reports/submit" st_title="I just shared my idea for downtown San Antonio. What's yours?"></span><span class='st_email_button' displayText='Email'></span><span class='st_facebook_button' displayText='Facebook'></span><span class='st_sharethis_button' displayText='ShareThis'></span>
 				<!-- languages -->
 				<!--<?php echo $languages;?>-->
 				<!-- / languages -->

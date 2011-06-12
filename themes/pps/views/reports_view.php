@@ -1,6 +1,7 @@
+<div class="big-block">
 <div id="main" class="report_detail">
 
-	<div class="left-col" style="float:left;width:520px; margin-right:20px">
+	<div class="left-col" style="float:left;width:520px; margin-right:0px">
 	
   	  <?php
     	  if ($incident_verified)
@@ -166,7 +167,7 @@ if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])
 	
 	</div>
 	
-	<div style="float:right;width:360px;">
+	<div style="float:right;width:330px;">
 
 		<!--div class="report-media-box-tabs">
 			<ul>
@@ -215,4 +216,5 @@ if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])
 	
 	
 	
+</div>
 </div>
