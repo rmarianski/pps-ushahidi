@@ -1,7 +1,7 @@
 <div class="big-block">
 <div id="main" class="report_detail">
 
-	<div class="left-col" style="float:left;width:520px; margin-right:0px">
+	<div class="left-col" style="float:left;width:480px; margin-right:0px">
 	
   	  <?php
     	  if ($incident_verified)
@@ -28,6 +28,23 @@ in <?php echo $submitted_neighborhood; ?>
 		</p>
         
         <!-- end submitby / date -->
+        <!-- start twitter/facebook -->
+			<div class="report-news"><h4>Spread This Idea</h4></div>
+			<div class="report-category-list">
+<!--
+				<table class="rating-table" cellspacing="0" cellpadding="0" border="0">
+          <tr>
+            <td><?php echo Kohana::lang('ui_main.credibility');?>?</td>
+            <td><a href="javascript:rating('<?php echo $incident_id; ?>','add','original','oloader_<?php echo $incident_id; ?>')"><img id="oup_<?php echo $incident_id; ?>" src="<?php echo url::base() . 'media/img/'; ?>up.png" alt="UP" title="UP" border="0" /></a></td>
+            <td><a href="javascript:rating('<?php echo $incident_id; ?>','subtract','original')"><img id="odown_<?php echo $incident_id; ?>" src="<?php echo url::base() . 'media/img/'; ?>down.png" alt="DOWN" title="DOWN" border="0" /></a></td>
+            <td><a href="" class="rating_value" id="orating_<?php echo $incident_id; ?>"><?php echo $incident_rating; ?></a></td>
+            <td><a href="" id="oloader_<?php echo $incident_id; ?>" class="rating_loading" ></a></td>
+          </tr>
+        </table>-->
+<span style="padding-right:10px;" class='st_twitter_vcount' displayText='Tweet' st_url="<?php echo urlencode(url::base() . url::current()) ?>" st_title="A great #PowerOf10sa idea for downtown #SanAntonio"> </span>
+<iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo urlencode(url::base() . url::current()) ?>&amp;layout=standard&amp;show_faces=true&amp;width=292&amp;action=like&amp;font&amp;colorscheme=dark&amp;height=55" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:55px;" allowTransparency="true"></iframe>
+			</div>
+            <!-- end twitter/facebook -->
         
         <!-- start questions/responses -->
 	<h3 class="report-title"><?php echo Kohana::lang('ui_main.reports_title');?></h3> <h6><?php
@@ -57,7 +74,24 @@ if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])
 <?php endif; ?>
 
 <!-- end questions/responses -->
-<!-- start category list -->
+
+	<!-- start images -->
+			<?php if( count($incident_photos) > 0 ) { ?><div class="report-news"><h4>Photos</h4></div>
+            	<div class="report-category-list">
+					<div id="report-images">
+						<?php
+						foreach ($incident_photos as $photo)
+						{
+							$medium = str_replace(".","_m.",$photo);
+							$prefix = url::base().Kohana::config('upload.relative_directory');
+							echo '<a class="photothumb" rel="lightbox-group1" href="'.$prefix.'/'.$photo.'"><img height="225px" src="'.$prefix.'/'.$medium.'"/></a> ';
+						}
+						?>
+				</div></div>
+			<?php } ?>
+			<!-- end images -->
+           
+			<!-- start category list -->
 		<div class="report-news"><h4>Categories</h4></div>
         	<div class="report-category-list">
 		<p>
@@ -85,23 +119,6 @@ if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])
 			Event::run('ushahidi_action.report_meta', $incident_id);
 			?></p></div>
 		<!-- end category list -->
-	<!-- start images -->
-			<?php if( count($incident_photos) > 0 ) { ?><div class="report-news"><h4>Photos</h4></div>
-            	<div class="report-category-list">
-					<div id="report-images">
-						<?php
-						foreach ($incident_photos as $photo)
-						{
-							$medium = str_replace(".","_m.",$photo);
-							$prefix = url::base().Kohana::config('upload.relative_directory');
-							echo '<a class="photothumb" rel="lightbox-group1" href="'.$prefix.'/'.$photo.'"><img height="225px" src="'.$prefix.'/'.$medium.'"/></a> ';
-						}
-						?>
-				</div></div>
-			<?php } ?>
-			<!-- end images -->
-           
-			
 			<!-- start videos -->
 			<?php if( count($incident_videos) > 0 ) { ?>
 				<div id="report-video" style="display:none;">
@@ -129,23 +146,7 @@ if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])
 <?php endif; ?>
 <!-- end related links -->
 
-<!-- start twitter/facebook -->
-			<div class="report-news"><h4>Share It</h4></div>
-			<div class="report-category-list">
-<!--
-				<table class="rating-table" cellspacing="0" cellpadding="0" border="0">
-          <tr>
-            <td><?php echo Kohana::lang('ui_main.credibility');?>?</td>
-            <td><a href="javascript:rating('<?php echo $incident_id; ?>','add','original','oloader_<?php echo $incident_id; ?>')"><img id="oup_<?php echo $incident_id; ?>" src="<?php echo url::base() . 'media/img/'; ?>up.png" alt="UP" title="UP" border="0" /></a></td>
-            <td><a href="javascript:rating('<?php echo $incident_id; ?>','subtract','original')"><img id="odown_<?php echo $incident_id; ?>" src="<?php echo url::base() . 'media/img/'; ?>down.png" alt="DOWN" title="DOWN" border="0" /></a></td>
-            <td><a href="" class="rating_value" id="orating_<?php echo $incident_id; ?>"><?php echo $incident_rating; ?></a></td>
-            <td><a href="" id="oloader_<?php echo $incident_id; ?>" class="rating_loading" ></a></td>
-          </tr>
-        </table>-->
-<span style="padding-right:10px;" class='st_twitter_vcount' displayText='Tweet' st_url="<?php echo urlencode(url::base() . url::current()) ?>" st_title="I just shared my idea for improving NYC. What's yours? #bythecity"> </span>
-<iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo urlencode(url::base() . url::current()) ?>&amp;layout=standard&amp;show_faces=true&amp;width=292&amp;action=like&amp;font&amp;colorscheme=light&amp;height=55" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:55px;" allowTransparency="true"></iframe>
-			</div>
-            <!-- end twitter/facebook --></div>
+</div>
             
 		</div>
    
@@ -167,7 +168,7 @@ if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])
 	
 	</div>
 	
-	<div style="float:right;width:330px;">
+	<div style="float:right;width:360px;">
 
 		<!--div class="report-media-box-tabs">
 			<ul>

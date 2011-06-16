@@ -4,7 +4,7 @@
 
 // what categories to list where
 $config['map_categories'] = array('Context');
-$config['user_categories'] = array('Scale');
+$config['user_categories'] = array('Scale',  'Type');
 
 // og data to use
 $config['og_title'] = 'By the City / For the City - San Antonio';

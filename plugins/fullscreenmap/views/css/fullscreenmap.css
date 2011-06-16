@@ -3,7 +3,7 @@ div.fullscreenmap-btn{
 	/*background-image:url(../images/window.png);*/
 	background-repeat:no-repeat;
 	background-position:5px;
-	background-color:#f60;
+	background-color:#009ab6;
 	font-weight:bold;
 	padding:5px 5px 5px 0px;
 	margin: 30px 0px 30px 0px;
@@ -17,14 +17,10 @@ div.fullscreenmap-btn{
 	-khtml-border-radius-bottomright:8px;
 	-webkit-border-radius-bottomright:8px;
 	border-bottom-right-radius:8px;
-	 filter:alpha(opacity=75);
-        -moz-opacity:0.75;
-        -khtml-opacity: 0.75;
-        opacity: 0.75;
 }
 div.fullscreenmap-btn a{
 	padding:0 5px 0 5px;
-	background-color:#f60;
+	background-color:#009ab6;
 	color:#fff;
 }
 div.fullscreenmap_cats{

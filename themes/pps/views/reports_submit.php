@@ -35,7 +35,7 @@
 				<div class="report_row">
 					<h3><?php echo Kohana::lang('ui_main.reports_title'); ?></h3>
                     
-					<?php print form::textarea('incident_title', $form['incident_title'], ' rows="4" class="textarea long" placeholder="What could be done right now, at low cost? Or in the long term? With which partners or local talent?"'); ?>
+					<?php print form::textarea('incident_title', $form['incident_title'], ' rows="4" class="textarea long" placeholder="...short-term, low-cost, long-term, partnerships, all ideas welcome"'); ?>
 				</div>
                  <div class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.reports_location_name'); ?><br /><span class="example"><?php echo Kohana::lang('ui_main.detailed_location_example'); ?></span></h4>
@@ -43,7 +43,7 @@
 				</div>
 				<div class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.reports_description'); ?></h4>
-					<?php print form::textarea('incident_description', $form['incident_description'], ' rows="4" class="textarea long" placeholder="...how will your idea make downtown San Antonio a better place to be..." ') ?>
+					<?php print form::textarea('incident_description', $form['incident_description'], ' rows="4" class="textarea long"  ') ?>
 				</div>
                
 				<div class="report_row" style="display:none" id="datetime_default">
@@ -362,8 +362,7 @@ foreach ($categories as $category)
 
 
 
-<br /><br />
-<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.pps.org%2Fplacemap%2Fdenver%2F&amp;send=true&amp;layout=standard&amp;width=250&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font&amp;height=80" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:250px; height:80px;" allowTransparency="true"></iframe>				
+<br /><br />				
 			</div>
 		</div>
 		<?php print form::close(); ?>

@@ -162,7 +162,7 @@
 				{
 					case "wider-map":
 						$('.report-map').insertBefore($('.left-col'));
-						$('.map-holder').css({"height":"300px", "width": "900px"});
+						$('.map-holder').css({"height":"300px", "width": "840px"});
 						$('a[href=#report-map]').parent().hide();
 						$('a.taller-map').parent().show();
 						$('a.smaller-map').parent().show();
