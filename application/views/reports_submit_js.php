@@ -106,7 +106,7 @@
 						url: true
                                         },
                                         "custom_field[<?php echo Kohana::config('pps.custom_field_id'); ?>]": {
-                                                required: false
+                                                required: true
                                         }
 				},
 				messages: {

@@ -520,7 +520,6 @@ class Reports_Controller extends Main_Controller {
 
                         // XXX can make more generic by iterating through field definitions
                         // and verifying the required ones are present in the post
-                        /*
                         $custom_fieldid = Kohana::config('pps.custom_field_id');
                         $custom_fieldname = "custom_field[$custom_fieldid]";
                         $custom_error = false;
@@ -533,8 +532,8 @@ class Reports_Controller extends Main_Controller {
                         }
 
 			// Test to see if things passed the rule checks
-			if ($post->validate() AND !$custom_error)*/
-                        if ($post->validate())
+			if ($post->validate() AND !$custom_error)
+                          // if ($post->validate())
 			{
 				// STEP 1: SAVE LOCATION
 				$location = new Location_Model();
