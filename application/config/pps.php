@@ -11,4 +11,4 @@ $config['og_title'] = 'By the City / For the City - San Antonio';
 $config['fb_admins'] = '753810374';
 
 // custom field id
-$config['custom_field_id'] = 2;
+$config['custom_field_id'] = 1;
