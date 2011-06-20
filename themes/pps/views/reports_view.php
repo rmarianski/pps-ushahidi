@@ -66,11 +66,11 @@ in <?php echo $submitted_neighborhood; ?>
 <?php
 // XXX hard coded to return the custom field
 // can make this more generic by iterating through the custom form fields
-$cat_id = 14;
-if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])):
+$custom_fieldid = Kohana::config('pps.custom_field_id');
+if (isset($disp_custom_fields[$custom_fieldid]) AND !empty($disp_custom_fields[$custom_fieldid])):
 ?>
-<h4>Because I want the city to be...</h4>
-<h6><?php echo $disp_custom_fields[$cat_id]; ?></h6>
+<h4>Because I want downtown to be...</h4>
+<h6><?php echo $disp_custom_fields[$custom_fieldid]; ?></h6>
 <?php endif; ?>
 
 <!-- end questions/responses -->
