@@ -32,14 +32,14 @@
 				<input type="hidden" name="form_id" id="form_id" value="<?php echo $id?>">
 			</div>
 			<div class="report_left">
+                 <div class="report_row">
+					<h4><?php echo Kohana::lang('ui_main.reports_location_name'); ?><br /><span class="example"><?php echo Kohana::lang('ui_main.detailed_location_example'); ?></span></h4>
+					<?php print form::input('location_name', $form['location_name'], ' class="text long"'); ?>
+				</div>
 				<div class="report_row">
 					<h3><?php echo Kohana::lang('ui_main.reports_title'); ?></h3>
                     
 					<?php print form::textarea('incident_title', $form['incident_title'], ' rows="4" class="textarea long" placeholder="...short-term, low-cost, long-term, partnerships, all ideas welcome"'); ?>
-				</div>
-                 <div class="report_row">
-					<h4><?php echo Kohana::lang('ui_main.reports_location_name'); ?><br /><span class="example"><?php echo Kohana::lang('ui_main.detailed_location_example'); ?></span></h4>
-					<?php print form::input('location_name', $form['location_name'], ' class="text long"'); ?>
 				</div>
 				<div class="report_row">
 					<h4><?php echo Kohana::lang('ui_main.reports_description'); ?></h4>
