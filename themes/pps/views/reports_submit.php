@@ -353,16 +353,11 @@ foreach ($categories as $category)
 					<input name="submit" type="submit" value="<?php echo Kohana::lang('ui_main.reports_btn_submit'); ?>" class="btn_submit" /> 
 				</div>
 			</div>
-			<div class="report_right">
-		
-                
-              
-              <h5 style=" font-size:125%; font-weight:normal;"><strong>The Power of Ten:</strong> </h5>
-              <h5 style=" font-size:125%; font-weight:bold;">A great place typically has at least 10 things to do in it; a great district has at least 10 great places; and a great city has a least 10 of these great districts, plus other major destinations. </h5>   <h5 style=" font-size:125%; font-weight:bold;">Think about your special places and greatest opportunity places. Sharing your ideas for downtown San Antonio will help determine its strengths and prioritize a path forward.  </h5>   <h5 style=" font-size:125%; font-weight:bold;">Share ideas. Browse ideas. Comment. Tell your fiends. Let's Re-Imagine the Heart of San Antonio.  </h5>
-
-
-
-<br /><br />				
+			<div class="report_right sidebar-copy">
+                          <h5>Add your ideas to improve downtown San Antonio's places now through July!</h5>
+                          <h5>The Power of Ten:  A great place typically has at least 10 things to do in it; a great downtown has at least 10 great places.</h5>
+                          <h5>Tell us which downtown places matter most to you - the best, the worst, and the places that have the greatest opportunity. Tell us your ideas to improve them. Add as many places as you can. The results will add up to an agreement on the places we need to focus on.</h5>
+                          <h5>Share ideas. Browse ideas. Comment. Tell your friends. Let's Re-Imagine the Heart of San Antonio.</h5>
 			</div>
 		</div>
 		<?php print form::close(); ?>

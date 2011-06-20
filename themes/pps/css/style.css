@@ -1511,6 +1511,11 @@ label.error {
 	text-align: left;
 }
 
+.report_right.sidebar-copy h5 {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
 
 .report-description table { width: 100%; }
 
