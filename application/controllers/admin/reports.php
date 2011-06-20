@@ -137,16 +137,7 @@ class Reports_Controller extends Admin_Controller
                             // Action::report_approve - Approve a Report
                             Event::run('ushahidi_action.report_approve', $update);
 
-                            // XXX notify user that incident has been approved
-                            if (!empty($update->incident_person->person_email))
-                            {
-                              $to = $update->incident_person->person_email;
-                              $from = Kohana::lang('ui_admin.incident_approved_from');
-                              $subject = Kohana::lang('ui_admin.incident_approved_subject');
-                              $message = "Yay! Your entry has been approved.\n\n";
-                              $message .= "See it now: ".url::site('reports/view/'.$update->id)."\nHelp spread support for this idea, Facebook or Tweet it to your friends.\n\nHow else can you participate?\nAdd more ideas, and forward this to your friends: http://www.pps.org/placemap/sanantonio/\n\nWant to know more about what makes a place great?\n- What Makes a Successful Place\nhttp://pps.org/grplacefeat/\n- The Power of Ten offers a basic framework for thinking about where to focus improvements\nhttp://pps.org/the-power-of-10/\n\nWith a little help from you, together we can make downtown San Antonio great!\n\nThank you,\n\nThe San Antonio Center City Development Office \n& Project for Public Spaces";
-                              email::send($to, $from, $subject, $message);
-                            }
+                            $this->_send_email($update);
                         }
                     }
                     $form_action = strtoupper(Kohana::lang('ui_admin.approved'));
@@ -729,6 +720,7 @@ class Reports_Controller extends Admin_Controller
                 if ($post->incident_active == 1)
                 {
                     $verify->verified_status = '1';
+                    $this->_send_email($incident);
                 }
                 elseif ($post->incident_verified == 1)
                 {
@@ -1968,6 +1960,18 @@ class Reports_Controller extends Admin_Controller
       else
       {
           return "";
+      }
+    }
+
+    private function _send_email($incident) {
+      // XXX notify user that incident has been approved
+      if (!empty($incident->incident_person->person_email)) {
+          $to = $incident->incident_person->person_email;
+          $from = Kohana::lang('ui_admin.incident_approved_from');
+          $subject = Kohana::lang('ui_admin.incident_approved_subject');
+          $message = "Yay! Your entry has been approved.\n\n";
+          $message .= "See it now: ".url::site('reports/view/'.$incident->id)."\nHelp spread support for this idea, Facebook or Tweet it to your friends.\n\nHow else can you participate?\nAdd more ideas, and forward this to your friends: http://www.pps.org/placemap/sanantonio/\n\nWant to know more about what makes a place great?\n- What Makes a Successful Place\nhttp://pps.org/grplacefeat/\n- The Power of Ten offers a basic framework for thinking about where to focus improvements\nhttp://pps.org/the-power-of-10/\n\nWith a little help from you, together we can make downtown San Antonio great!\n\nThank you,\n\nThe San Antonio Center City Development Office \n& Project for Public Spaces";
+          email::send($to, $from, $subject, $message);
       }
     }
 }
