@@ -47,6 +47,7 @@ in <?php echo $submitted_neighborhood; ?>
             <!-- end twitter/facebook -->
         
         <!-- start questions/responses -->
+      <h4 class="report-title">Where</h4><h6><?php echo $incident_location; ?></h6>
 	<h3 class="report-title"><?php echo Kohana::lang('ui_main.reports_title');?></h3> <h6><?php
 			echo $incident_title;
 			
@@ -56,7 +57,6 @@ in <?php echo $submitted_neighborhood; ?>
 				echo " [&nbsp;<a href=\"".url::site()."admin/reports/edit/".$incident_id."\">".Kohana::lang('ui_main.edit')."</a>&nbsp;]";
 			}
 		?></h6> 
-      <h4 class="report-title">Where</h4><h6><?php echo $incident_location; ?></h6>
 	
 	
 		
