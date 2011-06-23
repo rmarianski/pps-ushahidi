@@ -2360,3 +2360,9 @@ div.green-box ul, div.red-box ul{
     top: 2em;
     left: 20em;
 }
+
+.report-meta a {
+    font-weight: bold;
+    font-size: 1.3em;
+    text-decoration: underline;
+}

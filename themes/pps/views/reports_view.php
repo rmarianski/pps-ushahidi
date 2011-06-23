@@ -114,11 +114,14 @@ if (isset($disp_custom_fields[$custom_fieldid]) AND !empty($disp_custom_fields[$
 				}
 			?>
 			
+</p></div>
+		<!-- end category list -->
+<div class="report-meta">
 			<?php
 			// Action::report_meta - Add Items to the Report Meta (Location/Date/Time etc.)
 			Event::run('ushahidi_action.report_meta', $incident_id);
-			?></p></div>
-		<!-- end category list -->
+			?>
+</div>
 			<!-- start videos -->
 			<?php if( count($incident_videos) > 0 ) { ?>
 				<div id="report-video" style="display:none;">
