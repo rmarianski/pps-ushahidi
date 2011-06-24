@@ -2361,8 +2361,18 @@ div.green-box ul, div.red-box ul{
     left: 20em;
 }
 
+.report-meta {
+    position: relative;
+    top: -35px;
+    height: 0px;
+    margin-left: 1em;
+}
+
 .report-meta a {
     font-weight: bold;
     font-size: 1.3em;
+    text-decoration: none;
+}
+.report-meta a:hover {
     text-decoration: underline;
 }

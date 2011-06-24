@@ -116,12 +116,6 @@ if (isset($disp_custom_fields[$custom_fieldid]) AND !empty($disp_custom_fields[$
 			
 </p></div>
 		<!-- end category list -->
-<div class="report-meta">
-			<?php
-			// Action::report_meta - Add Items to the Report Meta (Location/Date/Time etc.)
-			Event::run('ushahidi_action.report_meta', $incident_id);
-			?>
-</div>
 			<!-- start videos -->
 			<?php if( count($incident_videos) > 0 ) { ?>
 				<div id="report-video" style="display:none;">
@@ -201,7 +195,14 @@ if (isset($disp_custom_fields[$custom_fieldid]) AND !empty($disp_custom_fields[$
 		
 		
 		</div>
-      
+
+<div class="report-meta">
+			<?php
+			// Action::report_meta - Add Items to the Report Meta (Location/Date/Time etc.)
+			Event::run('ushahidi_action.report_meta', $incident_id);
+			?>
+</div>
+
 		<div class="report-additional-reports">
 			<h4><?php echo Kohana::lang('ui_main.additional_reports');?></h4>
 			<?php foreach($incident_neighbors as $neighbor) { ?>
