@@ -38,7 +38,7 @@
 			<div id="searchbox">
            <span class='st_twitter_button' displayText='Tweet' st_url="http://pps.org/placemap/sanantonio/reports/submit" st_title="How can Downtown #SanAntonio become great? Share your #PowerOf10sa ideas now:"></span><span class='st_email_button' displayText='Email'></span><span class='st_facebook_button' displayText='Facebook'></span><span class='st_sharethis_button' displayText='ShareThis'></span><br /><iframe src="http://www.facebook.com/plugins/like.php?app_id=196983760348250&amp;href=http%3A%2F%2Fwww.pps.org%2Fplacemap%2Fsanantonio%2F&amp;send=false&amp;layout=box_count&amp;width=200&amp;show_faces=true&amp;action=like&amp;colorscheme=light&amp;font=arial&amp;height=90" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:50px; height:90px; padding-top:30px" allowTransparency="true"></iframe>
 				<!-- languages -->
-				<!--<?php echo $languages;?>-->
+				<?php echo $languages;?>
 				<!-- / languages -->
 
 				<!-- searchform -->

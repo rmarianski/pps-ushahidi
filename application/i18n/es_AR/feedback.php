@@ -1,12 +1,11 @@
 <?php
 	$lang = array(
-	'feedback_actions' => 'Actions',
+	'feedback_actions' => 'Acciones',
 	'feedback_captcha' => array(
-		'required' => 'Please enter the Security Code.',
-		'valid' => 'Please enter a valid security code',
+		'required' => 'some message.',
 	),
-	'feedback_date' => 'Date',
-	'feedback_details' => 'Feedback Details',
+	'feedback_date' => 'Fecha',
+	'feedback_details' => 'Detalles',
 	'feedback_message' => array(
 		'required' => 'Please enter some information for the reply.',
 	),
