@@ -355,7 +355,7 @@ foreach ($categories as $category)
 		
                 
               
-              <h5 style=" font-size:120%; font-weight:normal;"><strong>From now through May 8th, we're gathering up your ideas:</strong> from local parks and squares to citywide issues like transit and pollution, what needs a re-design? You can explore, discuss, and debate everyone's ideas right here.</h5>
+              <h5 style=" font-size:120%; font-weight:normal;"><strong>We're gathering up your ideas:</strong> from local parks and squares to citywide issues like transit and pollution, what needs a re-design? You can explore, discuss, and debate everyone's ideas right here.</h5>
               <h5 style=" font-size:120%; font-weight:normal;">Starting May 31st, we'll rally urban designers around the world to imagine the future of New York City based on your suggestions.</h5>
 
 <h5  style=" font-size:120%; font-weight:bold;">Here are three great examples:</h5>

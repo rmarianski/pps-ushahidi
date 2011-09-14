@@ -14,7 +14,7 @@
 <meta property="og:title" content="<?php echo Kohana::config('pps.og_title'); ?>" />
 <meta property="og:type" content="website" />
 <?php if (!isset($og_description) OR !$og_description): ?>
-<?php $og_description = "How would you improve New York City's public realm? From April 11-30 share ideas about improving the physical environment of your block, neighborhood, or your entire city, we want to hear it!"; ?>
+<?php $og_description = "Calling all Designers: New Yorkers shared their ideas about making the city's public realm smarter, more beautiful, and accessible, and now it's your turn to respond! The By the City / For the City design competition will be open now through midnight on Thursday, July 14th!"; ?>
 <?php endif; ?>
 <meta property="og:description" content="<?php echo $og_description; ?>" />
 <meta property="og:url" content="<?php echo url::base() . url::current() ?>" /> 
@@ -35,7 +35,7 @@
 
 			<!-- searchbox -->
 			<div id="searchbox">
-           <span class='st_twitter_button' displayText='Tweet' st_url="http://ht.ly/4uAcb" st_title="I just shared my idea for improving NYC. What's yours? #bythecity"></span><span class='st_facebook_button' displayText='Facebook'></span><span class='st_email_button' displayText='Email'></span><span class='st_sharethis_button' displayText='ShareThis'></span>
+           <span class='st_twitter_button' displayText='Tweet' st_url="http://ht.ly/4uAcb" st_title="Calling all Designers: #ByTheCity / For the City design competition challenges YOU to address New Yorkers' top concerns: http://ht.ly/58GFp"></span><span class='st_facebook_button' displayText='Facebook'></span><span class='st_email_button' displayText='Email'></span><span class='st_sharethis_button' displayText='ShareThis'></span>
 				<!-- languages -->
 				<!--<?php echo $languages;?>-->
 				<!-- / languages -->

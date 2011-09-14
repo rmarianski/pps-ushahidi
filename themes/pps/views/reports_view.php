@@ -141,7 +141,7 @@ if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])
             <td><a href="" id="oloader_<?php echo $incident_id; ?>" class="rating_loading" ></a></td>
           </tr>
         </table>-->
-<span style="padding-right:10px;" class='st_twitter_vcount' displayText='Tweet' st_url="<?php echo urlencode(url::base() . url::current()) ?>" st_title="I just shared my idea for improving NYC. What's yours? #bythecity"> </span>
+<span style="padding-right:10px;" class='st_twitter_vcount' displayText='Tweet' st_url="<?php echo urlencode(url::base() . url::current()) ?>" st_title="The #ByTheCity / For the City design competition challenges YOU to address great ideas for improving #NYC"> </span>
 <iframe src="http://www.facebook.com/plugins/like.php?href=<?php echo urlencode(url::base() . url::current()) ?>&amp;layout=standard&amp;show_faces=true&amp;width=292&amp;action=like&amp;font&amp;colorscheme=light&amp;height=55" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:55px;" allowTransparency="true"></iframe>
 			</div>
             <!-- end twitter/facebook --></div>
