@@ -1047,6 +1047,15 @@ class Reports_Controller extends Main_Controller {
                 $this->template->content->submitted_first_name = $submitted_first_name;
                 $this->template->content->submitted_last_name = $submitted_last_name;
                 $this->template->content->submitted_neighborhood = $submitted_neighborhood;
+
+                // add in design response
+                $design_response_obj = ORM::factory('design_response')->where('incident_id', $incident->id)->find();
+                if ($design_response_obj->id > 0) {
+                  $design_response = $design_response_obj->text;
+                } else {
+                  $design_response = NULL;
+                }
+                $this->template->content->design_response = $design_response;
 	}
 
 	/**

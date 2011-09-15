@@ -56,6 +56,16 @@ if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])
 <?php endif; ?>
 
 <!-- end questions/responses -->
+
+<?php if ($design_response): ?>
+<div class="report-news">
+<h4>Form response</h4>
+<div class="report-category-list">
+<?php echo $design_response; ?>
+</div>
+</div>
+<?php endif; ?>
+
 <!-- start category list -->
 		<div class="report-news"><h4>Categories</h4></div>
         	<div class="report-category-list">
