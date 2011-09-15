@@ -376,7 +376,8 @@ class Reports_Controller extends Admin_Controller
             'incident_active' => '',
             'incident_verified' => '',
             'incident_source' => '',
-            'incident_information' => ''
+            'incident_information' => '',
+            'design_response' => '',
         );
 
         //  copy the form as errors, so the errors will be stored with keys corresponding to the form field names
@@ -704,8 +705,19 @@ class Reports_Controller extends Admin_Controller
                 $incident->incident_verified = $post->incident_verified;
                 $incident->incident_source = $post->incident_source;
                 $incident->incident_information = $post->incident_information;
+
                 //Save
                 $incident->save();
+
+                // design response
+                ORM::factory('Design_Response')->where('incident_id',$incident->id)->delete_all();
+                if ($post->design_response && trim($post->design_response)) {
+                  $design_response_str = trim($post->design_response);
+                  $design_response = new Design_Response_Model();
+                  $design_response->incident_id = $incident->id;
+                  $design_response->text = $design_response_str;
+                  $design_response->save();
+                }
 
                 // Tag this as a report that needs to be sent out as an alert
                 if ($incident->incident_active == '1' AND $incident->incident_alert_status != '2')
@@ -744,7 +756,6 @@ class Reports_Controller extends Admin_Controller
                 }
                 $verify->save();
 
-
                 // STEP 3: SAVE CATEGORIES
                 ORM::factory('Incident_Category')->where('incident_id',$incident->id)->delete_all();        // Delete Previous Entries
                 foreach($post->incident_category as $item)
@@ -754,7 +765,6 @@ class Reports_Controller extends Admin_Controller
                     $incident_category->category_id = $item;
                     $incident_category->save();
                 }
-
 
                 // STEP 4: SAVE MEDIA
                 ORM::factory('Media')->where('incident_id',$incident->id)->where('media_type <> 1')->delete_all();      // Delete Previous Entries
@@ -964,6 +974,14 @@ class Reports_Controller extends Admin_Controller
                         }
                     }
 
+                    // fetch design response
+                    $design_response_obj = ORM::factory('design_response')->where('incident_id', $incident->id)->find();
+                    if ($design_response_obj) {
+                      $design_response = $design_response_obj->text;
+                    } else {
+                      $design_response = '';
+                    }
+
                     // Combine Everything
                     $incident_arr = array
                     (
@@ -992,7 +1010,8 @@ class Reports_Controller extends Admin_Controller
                         'incident_active' => $incident->incident_active,
                         'incident_verified' => $incident->incident_verified,
                         'incident_source' => $incident->incident_source,
-                        'incident_information' => $incident->incident_information
+                        'incident_information' => $incident->incident_information,
+                        'design_response' => $design_response,
                     );
 
                     // Merge To Form Array For Display

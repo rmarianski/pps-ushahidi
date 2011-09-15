@@ -150,6 +150,10 @@
 									?>
 								</div>
 							</div>
+<div class="row">
+<h4>Design Response</h4>
+<?php echo form::textarea('design_response', $form['design_response'], ' style="height: 50px" rows="3"'); ?>
+</div>
 							<div class="row">
 								<h4><a href="#" id="category_toggle" class="new-cat"><?php echo Kohana::lang('ui_main.new_category');?></a><?php echo Kohana::lang('ui_main.categories');?> 
 								<span><?php echo Kohana::lang('ui_main.select_multiple');?>.</span></h4>
