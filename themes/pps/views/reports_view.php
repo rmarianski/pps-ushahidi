@@ -60,7 +60,7 @@ if (isset($disp_custom_fields[$cat_id]) AND !empty($disp_custom_fields[$cat_id])
 <?php if ($design_response): ?>
 <div class="report-news">
 <h4>Form response</h4>
-<div class="report-category-list">
+<div id="design-response" class="report-category-list">
 <?php echo $design_response; ?>
 </div>
 </div>

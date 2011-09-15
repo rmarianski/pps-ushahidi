@@ -753,6 +753,10 @@ div.report-category-list a:hover { text-decoration:underline; color:#f60; }
 
 div.report-category-list a span.r_cat-box { height:16px; width:16px; display:inline-block; margin:3px 3px 3px 0; }
 
+#design-response a {
+float: none;
+}
+
 div.report-description-text {
 	/* border-bottom:1px dotted #C0C2B8; */
 	padding:10px 0;
