@@ -976,7 +976,7 @@ class Reports_Controller extends Admin_Controller
 
                     // fetch design response
                     $design_response_obj = ORM::factory('design_response')->where('incident_id', $incident->id)->find();
-                    if ($design_response_obj) {
+                    if ($design_response_obj->id > 0) {
                       $design_response = $design_response_obj->text;
                     } else {
                       $design_response = '';
