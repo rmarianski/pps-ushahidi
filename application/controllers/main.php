@@ -131,6 +131,8 @@ class Main_Controller extends Template_Controller {
 
         // Get all active top level categories
 		$parent_categories = array();
+                $child_categories = array();
+                $design_response_category = ((int) Kohana::config('pps.design_response_category_id'));
 		foreach (ORM::factory('category')
 				->where('category_visible', '1')
 				->where('parent_id', '0')
@@ -158,6 +160,16 @@ class Main_Controller extends Template_Controller {
 					$child->category_color,
 					$child->category_image
 				);
+
+                                $new_child = array($display_title, 
+                                                   $child->category_color,
+                                                   $child->category_image,
+                                                   $child->id);
+                                if ($child->id === $design_response_category) {
+                                  array_unshift($child_categories, $new_child);
+                                } else {
+                                  array_push($child_categories, $new_child);
+                                }
 
 				if ($child->category_trusted)
 				{ // Get Trusted Category Count
@@ -202,6 +214,7 @@ class Main_Controller extends Template_Controller {
 			}
 		}
 		$this->template->content->categories = $parent_categories;
+		$this->template->content->child_categories = $child_categories;
 
 		// Get all active Layers (KMZ/KML)
 		$layers = array();

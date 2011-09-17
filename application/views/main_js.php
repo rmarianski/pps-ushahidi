@@ -446,6 +446,13 @@
 				
 				return false;
 			});
+
+                        // click on the first category, which will be
+                        // the design response
+                        var designResponseCategory = $("a[id^='cat_']")[1];
+                        if (designResponseCategory) {
+                          setTimeout(function() { $(designResponseCategory).click(); }, 0);
+                        }
 			
 			// Sharing Layer[s] Switch Action
 			$("a[id^='share_']").click(function()
