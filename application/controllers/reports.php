@@ -53,9 +53,14 @@ class Reports_Controller extends Main_Controller {
                 $category_ids_in = NULL;
                 $category_ids = array();
                 $category_ids_string = array();
+                $design_response_category = ((int)Kohana::config('pps.design_response_category_id'));
 		if (isset($_GET['c']) AND !empty($_GET['c']) AND $_GET['c']!=0)
                 {
                   $category_ids_string = is_array($_GET['c']) ? $_GET['c'] : array($_GET['c']);
+                }
+                else {
+                  // default to design response search
+                  $category_ids_string = array('' . $design_response_category);
                 }
                 if (!empty($category_ids_string))
 		{
@@ -296,7 +301,13 @@ class Reports_Controller extends Main_Controller {
                   if ($visible_category->parent_id === $scale_category->id) {
                     $scale_categories[] = $visible_category;
                   } elseif ($visible_category->parent_id === $context_category->id) {
-                    $context_categories[] = $visible_category;
+                    // design response category should be first in context list
+                    // also assuming that the design response is under the context category
+                    if ($visible_category->id === $design_response_category) {
+                      array_unshift($context_categories, $visible_category);
+                    } else {
+                      array_push($context_categories, $visible_category);
+                    }
                   }
                 }
                 $this->template->content->scale_categories = $scale_categories;
